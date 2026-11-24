@@ -28,7 +28,7 @@ Reklama (slib: „Jak může fungovat čtyřletý dluhopis financující obnovu 
 
 Formulář nikam nic neposílá ani neukládá a po dokončení to výslovně říká. Zobrazí jen, jak by kontakt zařadil CRM.
 
-### Dvě příklady návštěvy
+### Dva příklady návštěvy
 - **Investor 50+, 100 tis. Kč:** přečte podmínky a rizika, v průvodci zvolí „100–500 000“ a „v příštích 3 měsících“, dostane výsledek „Možný zájem o konzultaci“ a může zaškrtnout kontakt poradce. Pro obchodní tým je to prioritní kontakt, vždy s ověřením vhodnosti.
 - **Člověk s 20 tis. Kč:** zvolí „Méně než 50 000 Kč“, dostane vysvětlení, že minimum je 50 000 Kč, a obecnou pomůcku. Poradce se mu nenabízí. Má férovou cestu, ale není započítán jako kvalifikovaný.
 
