@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" preserveAspectRatio="xMidYMax slice" role="img" aria-label="Schematický výkres fasády staršího městského bytového domu (ilustrační placeholder)">
+<rect width="800" height="1000" fill="#E6ECEB"/>
+<rect y="860" width="800" height="140" fill="#D5DEDD"/>
+<g fill="none" stroke="#123D44" stroke-width="1.4" stroke-linecap="square">
+<rect x="140" y="200" width="520" height="660" fill="#F7F9F9"/>
+<path d="M126 200 H674 M132 186 H668 M140 186 L200 130 H600 L660 186" />
+<rect x="180.0" y="250" width="56" height="86" fill="#DCE7E5"/>
+<path d="M208.0 250 V336 M180.0 280 H236.0"/>
+<path d="M174.0 342 H242.0"/>
+<rect x="276.0" y="250" width="56" height="86" fill="#DCE7E5"/>
+<path d="M304.0 250 V336 M276.0 280 H332.0"/>
+<path d="M270.0 342 H338.0"/>
+<rect x="372.0" y="250" width="56" height="86" fill="#DCE7E5"/>
+<path d="M400.0 250 V336 M372.0 280 H428.0"/>
+<path d="M366.0 342 H434.0"/>
+<rect x="468.0" y="250" width="56" height="86" fill="#DCE7E5"/>
+<path d="M496.0 250 V336 M468.0 280 H524.0"/>
+<path d="M462.0 342 H530.0"/>
+<rect x="564.0" y="250" width="56" height="86" fill="#DCE7E5"/>
+<path d="M592.0 250 V336 M564.0 280 H620.0"/>
+<path d="M558.0 342 H626.0"/>
+<path d="M140 355 H660" stroke-opacity=".35"/>
+<rect x="180.0" y="375" width="56" height="86" fill="#DCE7E5"/>
+<path d="M208.0 375 V461 M180.0 405 H236.0"/>
+<path d="M174.0 467 H242.0"/>
+<rect x="276.0" y="375" width="56" height="86" fill="#DCE7E5"/>
+<path d="M304.0 375 V461 M276.0 405 H332.0"/>
+<path d="M270.0 467 H338.0"/>
+<rect x="372.0" y="375" width="56" height="86" fill="#DCE7E5"/>
+<path d="M400.0 375 V461 M372.0 405 H428.0"/>
+<path d="M366.0 467 H434.0"/>
+<rect x="468.0" y="375" width="56" height="86" fill="#DCE7E5"/>
+<path d="M496.0 375 V461 M468.0 405 H524.0"/>
+<path d="M462.0 467 H530.0"/>
+<rect x="564.0" y="375" width="56" height="86" fill="#DCE7E5"/>
+<path d="M592.0 375 V461 M564.0 405 H620.0"/>
+<path d="M558.0 467 H626.0"/>
+<path d="M140 480 H660" stroke-opacity=".35"/>
+<rect x="180.0" y="500" width="56" height="86" fill="#DCE7E5"/>
+<path d="M208.0 500 V586 M180.0 530 H236.0"/>
+<path d="M174.0 592 H242.0"/>
+<rect x="276.0" y="500" width="56" height="86" fill="#DCE7E5"/>
+<path d="M304.0 500 V586 M276.0 530 H332.0"/>
+<path d="M270.0 592 H338.0"/>
+<rect x="372.0" y="500" width="56" height="86" fill="#DCE7E5"/>
+<path d="M400.0 500 V586 M372.0 530 H428.0"/>
+<path d="M366.0 592 H434.0"/>
+<rect x="468.0" y="500" width="56" height="86" fill="#DCE7E5"/>
+<path d="M496.0 500 V586 M468.0 530 H524.0"/>
+<path d="M462.0 592 H530.0"/>
+<rect x="564.0" y="500" width="56" height="86" fill="#DCE7E5"/>
+<path d="M592.0 500 V586 M564.0 530 H620.0"/>
+<path d="M558.0 592 H626.0"/>
+<path d="M140 605 H660" stroke-opacity=".35"/>
+<rect x="180.0" y="625" width="56" height="86" fill="#DCE7E5"/>
+<path d="M208.0 625 V711 M180.0 655 H236.0"/>
+<path d="M174.0 717 H242.0"/>
+<rect x="276.0" y="625" width="56" height="86" fill="#DCE7E5"/>
+<path d="M304.0 625 V711 M276.0 655 H332.0"/>
+<path d="M270.0 717 H338.0"/>
+<rect x="372.0" y="625" width="56" height="86" fill="#DCE7E5"/>
+<path d="M400.0 625 V711 M372.0 655 H428.0"/>
+<path d="M366.0 717 H434.0"/>
+<rect x="468.0" y="625" width="56" height="86" fill="#DCE7E5"/>
+<path d="M496.0 625 V711 M468.0 655 H524.0"/>
+<path d="M462.0 717 H530.0"/>
+<rect x="564.0" y="625" width="56" height="86" fill="#DCE7E5"/>
+<path d="M592.0 625 V711 M564.0 655 H620.0"/>
+<path d="M558.0 717 H626.0"/>
+<path d="M140 730 H660" stroke-opacity=".35"/>
+<path d="M140 742 H660"/>
+<rect x="366.0" y="770" width="68" height="90" fill="#C9D8D6"/>
+<path d="M400.0 770 V860"/>
+<rect x="180.0" y="788" width="86" height="72" fill="#DCE7E5"/>
+<rect x="534.0" y="788" width="86" height="72" fill="#DCE7E5"/>
+<path d="M60 860 H740"/>
+<path d="M60 860 l-12 14" stroke-opacity=".35"/>
+<path d="M80 860 l-12 14" stroke-opacity=".35"/>
+<path d="M100 860 l-12 14" stroke-opacity=".35"/>
+<path d="M120 860 l-12 14" stroke-opacity=".35"/>
+<path d="M140 860 l-12 14" stroke-opacity=".35"/>
+<path d="M160 860 l-12 14" stroke-opacity=".35"/>
+<path d="M180 860 l-12 14" stroke-opacity=".35"/>
+<path d="M200 860 l-12 14" stroke-opacity=".35"/>
+<path d="M220 860 l-12 14" stroke-opacity=".35"/>
+<path d="M240 860 l-12 14" stroke-opacity=".35"/>
+<path d="M260 860 l-12 14" stroke-opacity=".35"/>
+<path d="M280 860 l-12 14" stroke-opacity=".35"/>
+<path d="M300 860 l-12 14" stroke-opacity=".35"/>
+<path d="M320 860 l-12 14" stroke-opacity=".35"/>
+<path d="M340 860 l-12 14" stroke-opacity=".35"/>
+<path d="M360 860 l-12 14" stroke-opacity=".35"/>
+<path d="M380 860 l-12 14" stroke-opacity=".35"/>
+<path d="M400 860 l-12 14" stroke-opacity=".35"/>
+<path d="M420 860 l-12 14" stroke-opacity=".35"/>
+<path d="M440 860 l-12 14" stroke-opacity=".35"/>
+<path d="M460 860 l-12 14" stroke-opacity=".35"/>
+<path d="M480 860 l-12 14" stroke-opacity=".35"/>
+<path d="M500 860 l-12 14" stroke-opacity=".35"/>
+<path d="M520 860 l-12 14" stroke-opacity=".35"/>
+<path d="M540 860 l-12 14" stroke-opacity=".35"/>
+<path d="M560 860 l-12 14" stroke-opacity=".35"/>
+<path d="M580 860 l-12 14" stroke-opacity=".35"/>
+<path d="M600 860 l-12 14" stroke-opacity=".35"/>
+<path d="M620 860 l-12 14" stroke-opacity=".35"/>
+<path d="M640 860 l-12 14" stroke-opacity=".35"/>
+<path d="M660 860 l-12 14" stroke-opacity=".35"/>
+<path d="M680 860 l-12 14" stroke-opacity=".35"/>
+<path d="M700 860 l-12 14" stroke-opacity=".35"/>
+<path d="M720 860 l-12 14" stroke-opacity=".35"/>
+<g stroke-dasharray="4 6" stroke-opacity=".5">
+<path d="M130 860 V320 H20 V860"/><path d="M670 860 V260 H780 V860"/>
+</g></g>
+<g fill="none" stroke="#123D44" stroke-width="1" stroke-opacity=".6"><path d="M694 200 V860 M688 200 h12 M688 860 h12"/></g>
+<text x="140" y="140" font-family="Helvetica,Arial,sans-serif" font-size="15" letter-spacing="2" fill="#123D44" fill-opacity=".75">SCHÉMA FASÁDY · ILUSTRAČNÍ PLACEHOLDER</text>
+</svg>
