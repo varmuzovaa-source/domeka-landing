@@ -8,10 +8,10 @@ Datum: 24. 11. 2026. Fiktivní klient, fiktivní dluhopis.
 |---|---|---|---|
 | 1 | Vizuál | Hlavní obraz byl CSS pseudoilustrace domu s gradienty, působila jako šablona. | Celoplošná fotografie opravené bytový fasády (AI ilustrace, označená v patičce), druhá fotografie nádvoří před opravou. Bez popisků pod obrázky. |
 | 2 | Vizuál | Plovoucí karta přes obraz, stíny, fixní odznak, zelenobéžová paleta s limetkou. | Plochý povrch, čáry místo stínů, jedna CTA barva (ocean `#123D44`). |
-| 3 | Mobil / UX | Hero na 375 px nedával dohromady produkt, minimum, dobu a další krok. | H1, 4 podmínky ve 2×2 mřížce a CTA jsou v prvním viewportu. |
+| 3 | Mobil / UX | Úvodní část na 375 px nedával dohromady produkt, minimum, dobu a další krok. | H1, 4 podmínky ve 2×2 mřížce a CTA jsou v prvním viewportu. |
 | 4 | Konverze | Kvalifikační formulář byl jeden blok s povinným e-mailem a bez větvení. | Dvoukrokový funnel. Dvě otázky bez kontaktu, potom čtyři různé výsledky a nepovinný kontakt. |
 | 5 | Konverze | Lead magnet byl „ebook“ bez konkrétní hodnoty. | „Pět otázek před nákupem firemního dluhopisu“ s viditelným náhledem všech pěti otázek. |
-| 6 | Regulace | Tvrzení o zajištění a výnosu bez kontextu, bez ilustrace výpočtu. | Riziko přímo u hero, samostatná sekce rizik, modelová sazba všude označená jako fiktivní. |
+| 6 | Regulace | Tvrzení o zajištění a výnosu bez kontextu, bez ilustrace výpočtu. | Riziko přímo v úvodní části, samostatná sekce rizik, modelová sazba všude označená jako fiktivní. |
 | 7 | Regulace | Formulář tvrdil „zaslání průvodce“, které by nenastalo. | Po dokončení výslovně: údaje se neodesílají, průvodce se neposílá. Žádná data se neukládají. |
 | 8 | Technika / přístupnost | Barevný kontrast, malá písma (~13 px), `select` místo radií, fixní badge, Google Fonts bez nutnosti. | Základ 17–18 px, radia 52 px, focus-visible, aria-live, `prefers-reduced-motion`, žádné externí požadavky. |
 
@@ -30,9 +30,9 @@ Výzkum 23. 11. je v `DESIGN_REFERENCE_LOCK.md`. Dne 24. 11. jsem znovu ověřil
 
 **MotionSites:** účet je na free plánu, premium prompty jsou zamčené. Nalezené návrhy (Luxury Real Estate, Investment Gate) jsou animované video šablony, které by narušily uzamčený směr, proto jsem je nepoužil.
 
-## 3. Varianty hero a vítěz
+## 3. Varianty úvodní části a vítěz
 
-| Varianta | H1 | Posouzení pro 50+ |
+| Varianta | Hlavní nadpis | Posouzení pro 50+ |
 |---|---|---|
 | A | „Starým domům nový začátek. Vašim penězům jasný plán.“ (původní) | Sloganový, neřekne produkt. Slibuje „jasný plán“. Zamítnuto. |
 | B | „Čtyři roky. Čtvrtletní úrok. Od 50 000 Kč.“ | Konkrétní, ale chladný a zdůrazňuje výnos. Vhodné do A/B testu. |
@@ -53,7 +53,7 @@ Do `assets/` patří licencovaná fotografie staršího městského bytovýho do
 
 ## 6. Redesign 24. 11. (odpoledne)
 
-Původní verze s výkresem působila slabě. Změny: celoplošný hero s fotografií a směrovým stínováním (text vlevo), velká typografie, čísla v „ledgeru“ místo karet, sekce „Z čeho se platí“ s konkrétním výpočtem (úroky z 150 mil. Kč = 900 000 Kč měsíčně = ≈ 64 pronajatých bytů při modelovém nájmu 14 000 Kč), náhled první strany průvodce, mezi-CTA po výpočtu a mobilní lišta s odkazem na průvodce (skrývá se u formuláře). Texty jsou konkrétní a vycházejí z čísel, ne z obecných slibů. Taste skill: bez popisků pod obrázky, jedna sekce = jedna myšlenka, stejné okraje, hover odezva tlačítek.
+Původní verze s výkresem působila slabě. Změny: celoplošná úvodní část s fotografií a směrovým stínováním (text vlevo), velká typografie, čísla v „ledgeru“ místo karet, sekce „Z čeho se platí“ s konkrétním výpočtem (úroky z 150 mil. Kč = 900 000 Kč měsíčně = ≈ 64 pronajatých bytů při modelovém nájmu 14 000 Kč), náhled první strany průvodce, mezi-CTA po výpočtu a mobilní lišta s odkazem na průvodce (skrývá se u formuláře). Texty jsou konkrétní a vycházejí z čísel, ne z obecných slibů. Taste skill: bez popisků pod obrázky, jedna sekce = jedna myšlenka, stejné okraje, hover odezva tlačítek.
 
 ## 7. Úprava po zpětné vazbě
 

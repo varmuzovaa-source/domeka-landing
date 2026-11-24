@@ -4,7 +4,7 @@
 
 Fiktivní klient a fiktivní dluhopis, vytvořeno pro praktický úkol (Junior AI Developer). Statický web v češtině: HTML, CSS a trocha JavaScriptu, bez knihoven, bez backendu, bez externích požadavků.
 
-- Vstup: `index.html`, fotografie v `assets/` (hero a nádvoří před opravou)
+- Vstup: `index.html`, fotografie v `assets/` (úvodní fotografie a nádvoří před opravou)
 - Rozhodnutí: `DESIGN_DECISIONS.md`, `DESIGN_REFERENCE_LOCK.md`
 - Funnel a hypotézy: `CRO_FUNNEL_SPEC.md` a sekce níže
 - QA: `QA_RELEASE_CHECKLIST.md`, `screenshots/`
@@ -13,19 +13,19 @@ Fiktivní klient a fiktivní dluhopis, vytvořeno pro praktický úkol (Junior A
 ## Shrnutí pro hodnotitele
 - **Lead magnet:** „Pět otázek před nákupem firemního dluhopisu“, dvě strany A4 s otázkami, kde hledat odpověď, ukázkovým výpočtem výplat a dotazy na poradce.
 - **Kdy žádám o kontakt:** až po vysvětlení produktu, výpočtu a rizik a po dvou krátkých otázkách (částka, horizont). E-mail i telefon jsou nepovinné.
-- **Co povede ke konverzi:** hero říká totéž co reklama (dluhopis, od 50 000 Kč, 4 roky, čtvrtletní úrok), ukazuje konkrétní výpočet a otevřeně mluví o rizicích.
+- **Co povede ke konverzi:** úvodní část říká totéž co reklama (dluhopis, od 50 000 Kč, 4 roky, čtvrtletní úrok), ukazuje konkrétní výpočet a otevřeně mluví o rizicích.
 - **Jak magnet ovlivní kvalitu kontaktů:** dvě otázky před kontaktem oddělí lidi s 50 000 Kč a víc v blízké době od zvědavých. Poradce se nabízí jen první skupině.
 - **Naměřeno (Lighthouse, mobil, živá URL):** výkon 99, přístupnost 100, doporučené postupy 100, SEO 100.
 
 ## Cíl
-Ne maximum formulářů, ale co nejvíc lidí, kteří rozumějí podmínkám a rizikům a mohou skutečně investovat alespoň 50 000 Kč. Proto web nejdřív vysvětluje, až potom se ptá, a kontakt je nepovinný.
+Ne maximum formulářů, ale co nejvíc lidí, kteří rozumějí podmínkám a rizikům a mohou skutečně investovat alespoň 50 000 Kč. Proto web nejprve vysvětluje, až potom se ptá, a kontakt je nepovinný.
 
-## Funnel
-Reklama (slib: „Jak může fungovat čtyřletý dluhopis financující obnovu bytových domů?“) → hero se stejným slibem → podmínky a vysvětlení → rizika → lead magnet → dvě otázky bez kontaktu → výsledek podle odpovědí → nepovinný kontakt → (v ostrém provozu) konzultace → případná investice.
+## Cesta zájemce (funnel)
+Reklama (slib: „Jak může fungovat čtyřletý dluhopis financující obnovu bytových domů?“) → úvodní část se stejným slibem → podmínky a vysvětlení → rizika → lead magnet → dvě otázky bez kontaktu → výsledek podle odpovědí → nepovinný kontakt → (v ostrém provozu) konzultace → případná investice.
 
 **Lead magnet:** „Pět otázek před nákupem firemního dluhopisu“. Konkrétní rozhodovací pomůcka (kontrolní seznam, ukázkový výpočet výplat, otázky na poradce), ne obecný e-book. V ukázce je navržený, ale **není vyrobený ke stažení**.
 
-**Proč kontakt až teď:** člověk 50+ s dluhopisy nezačíná e-mailem. Nejdřív musí vidět, co kupuje a co riskuje. Průvodce má pro něj reálnou hodnotu i tehdy, když nakonec neinvestuje, a proto je ochotnější o něj požádat. Dvě otázky před e-mailem odliší záměr od zvědavosti, takže obchodní tým nedostane stovky kontaktů pod minimem. Je to hypotéza, kterou by ověřil A/B test (níže).
+**Proč kontakt až teď:** člověk 50+ s dluhopisy nezačíná e-mailem. Nejprve musí vidět, co kupuje a co riskuje. Průvodce má pro něj reálnou hodnotu i tehdy, když nakonec neinvestuje, a proto je ochotnější o něj požádat. Dvě otázky před e-mailem odliší záměr od zvědavosti, takže obchodní tým nedostane stovky kontaktů pod minimem. Je to hypotéza, kterou by ověřil A/B test (níže).
 
 ### Větvení formuláře (otestováno, viz QA)
 | Odpovědi | Výsledek | Nabídka poradce |
@@ -54,7 +54,7 @@ Doplněno a **fiktivní**:
 Žádné reference, ocenění, počty investorů, loga regulátorů ani pojišťoven.
 
 ## CRO hypotézy pro skutečný provoz (ne naměřené výsledky)
-1. **Hero:** „4 roky / čtvrtletní výplata“ proti „obnova bytových domů“. Měřit qualified lead rate a podíl financovaných investorů spolu s kontrolou porozumění rizikům.
+1. **Úvodní část:** „4 roky / čtvrtletní výplata“ proti „obnova bytových domů“. Měřit qualified lead rate a podíl financovaných investorů spolu s kontrolou porozumění rizikům.
 2. **Pořadí formuláře:** dvě otázky před e-mailem proti e-mailu první. Měřit počet poradcem přijatých kontaktů na 100 kliků, nejen surovou konverzi.
 3. **Rámování magnetu:** „Pět otázek před nákupem“ proti „Dluhopis jednoduše“. Měřit přechod od stažení k smysluplnému rozhovoru a porozumění rizikům.
 

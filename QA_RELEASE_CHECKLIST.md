@@ -3,14 +3,14 @@
 Legenda: [x] ověřeno, [~] ověřeno částečně, [ ] neověřeno.
 
 ## Obsah / CRO
-- [x] Hero na 375 px: produkt, minimum, splatnost, výplata, CTA v prvním viewportu (screenshot `mobile-375-first-screen.png`).
+- [x] Úvodní část na 375 px: produkt, minimum, splatnost, výplata, CTA v prvním viewportu (screenshot `mobile-375-first-screen.png`).
 - [x] Primární CTA vede na průvodce, sekundární na „Jak dluhopis funguje“. Kotvy ověřeny v prohlížeči.
 - [x] Lead magnet má konkrétní hodnotu (pět otázek, výpočet, otázky na poradce).
 - [x] Telefon a e-mail jsou nepovinné. Zaškrtávací pole pro poradce se objeví jen u kvalifikovaného zájemce.
 - [x] Pod minimem: vzdělávací výsledek, bez poradce.
-- [x] Demo neslibuje odeslání ani PDF, nic neukládá. Skripty nevolají síť (jediný načtený zdroj je `hero-placeholder.svg`).
+- [x] Demo neslibuje odeslání ani PDF, nic neukládá. Skripty nevolají síť (načítají se jen dvě fotografie z `assets/`).
 - [x] Žádné reference, certifikace ani schválení regulátora.
-- [x] Fiktivní sazba označená na každém výskytu (hero, ledger, výpočet, FAQ, patička).
+- [x] Fiktivní sazba označená na každém výskytu (úvodní část, tabulka podmínek, výpočet, časté otázky, patička).
 - [ ] Korektura češtiny rodilým mluvčím (provedena jen autorem).
 
 ## Frontend / přístupnost
