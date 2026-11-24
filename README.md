@@ -23,7 +23,7 @@ Ne maximum formulářů, ale co nejvíc lidí, kteří rozumějí podmínkám a 
 ## Cesta zájemce (funnel)
 Reklama (slib: „Jak může fungovat čtyřletý dluhopis financující obnovu bytových domů?“) → úvodní část se stejným slibem → podmínky a vysvětlení → rizika → lead magnet → dvě otázky bez kontaktu → výsledek podle odpovědí → nepovinný kontakt → (v ostrém provozu) konzultace → případná investice.
 
-**Lead magnet:** „Pět otázek před nákupem firemního dluhopisu“. Konkrétní rozhodovací pomůcka (kontrolní seznam, ukázkový výpočet výplat, otázky na poradce), ne obecný e-book. V ukázce je navržený, ale **není vyrobený ke stažení**.
+**Lead magnet:** „Pět otázek před nákupem firemního dluhopisu“. Konkrétní rozhodovací pomůcka (kontrolní seznam, ukázkový výpočet výplat, otázky na poradce), ne obecný e-book. Je vyrobený jako dvoustránkové PDF ke stažení (`assets/Domeka-Pet-otazek-pred-nakupem-dluhopisu.pdf`, zdroj v `src/pruvodce.html`).
 
 **Proč kontakt až teď:** člověk 50+ s dluhopisy nezačíná e-mailem. Nejprve musí vidět, co kupuje a co riskuje. Průvodce má pro něj reálnou hodnotu i tehdy, když nakonec neinvestuje, a proto je ochotnější o něj požádat. Dvě otázky před e-mailem odliší záměr od zvědavosti, takže obchodní tým nedostane stovky kontaktů pod minimem. Je to hypotéza, kterou by ověřil A/B test (níže).
 
@@ -35,7 +35,7 @@ Reklama (slib: „Jak může fungovat čtyřletý dluhopis financující obnovu 
 | „Méně než 50 000 Kč“ | Pod minimem, nepočítá se jako kvalifikovaný | Ne |
 | „Zatím zjišťuji“ | Informační kontakt | Ne |
 
-Formulář nikam nic neposílá ani neukládá a po dokončení to výslovně říká. Zobrazí jen, jak by kontakt zařadil CRM.
+Texty stránky jsou psané jako ostrý provoz, bez označení „ukázka“. Formulář ale nemá backend: nic neodesílá ani neukládá (zadání to dovolovalo). Před ostrým spuštěním je nutné napojit ho na e-mailovou službu a CRM.
 
 ### Dva příklady návštěvy
 - **Investor 50+, 100 tis. Kč:** přečte podmínky a rizika, v průvodci zvolí „100–500 000“ a „v příštích 3 měsících“, dostane výsledek „Možný zájem o konzultaci“ a může zaškrtnout kontakt poradce. Pro obchodní tým je to prioritní kontakt, vždy s ověřením vhodnosti.
