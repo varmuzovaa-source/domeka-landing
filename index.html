@@ -3,146 +3,167 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#123D44">
+<meta name="theme-color" content="#0E3138">
 <title>DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)</title>
-<meta name="description" content="Fiktivní ukázka: čtyřletý dluhopis na obnovu bytových domů od 50 000 Kč s čtvrtletní výplatou úroku. Nejprve podmínky a rizika, teprve potom rozhodnutí.">
+<meta name="description" content="Fiktivní ukázka: čtyřletý dluhopis od 50 000 Kč, úrok čtvrtletně. Spočítáme, z čeho by firma úroky platila, a ukážeme rizika dřív, než se rozhodnete.">
+<link rel="preload" as="image" href="assets/hero.jpg" fetchpriority="high">
 <style>
-/* ===== Design tokens (viz DESIGN_DECISIONS.md) ===== */
 :root{
-  --canvas:#fff; --support:#F4F6F6; --ink:#16242A; --muted:#4E5D63; --line:#DCE3E3; --line-strong:#B9C6C7;
-  --ocean:#123D44; --ocean-hover:#0C2D33; --signal:#C4E4DE; --tint:#EAF2F1; --warn:#7A4B00;
+  --canvas:#fff; --support:#F3F5F4; --ink:#14232A; --muted:#4B5A60; --line:#DDE3E3; --line-strong:#B6C3C4;
+  --ocean:#0E3138; --ocean-hover:#08242A; --signal:#BFE3DB; --tint:#E9F2F0; --warn:#7A4B00;
   --font:Inter,"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
-  --gutter:20px; --max:1200px; --radius:8px; --pill:999px;
-  --sp-section:64px;
+  --gutter:20px; --max:1240px; --radius:8px; --pill:999px; --sp:68px;
 }
-@media (min-width:768px){:root{--gutter:32px;--sp-section:96px}}
+@media (min-width:768px){:root{--gutter:36px;--sp:112px}}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-padding-top:16px}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:12px}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-body{margin:0;background:var(--canvas);color:var(--ink);font:400 17px/1.55 var(--font);font-feature-settings:"tnum" 1;overflow-x:hidden}
+body{margin:0;background:var(--canvas);color:var(--ink);font:400 17px/1.55 var(--font);overflow-x:hidden}
 @media (min-width:768px){body{font-size:18px}}
-img,svg{display:block;max-width:100%}
+img{display:block;max-width:100%}
 a{color:var(--ocean);text-underline-offset:3px}
 p{margin:0 0 1em}
-h1,h2,h3{font-weight:500;letter-spacing:-.03em;margin:0;color:var(--ink)}
-h1{font-size:clamp(2.1rem,8.4vw,4.4rem);line-height:1.04}
-h2{font-size:clamp(1.9rem,5.6vw,3.4rem);line-height:1.06;max-width:16ch}
-h3{font-size:1.2rem;line-height:1.25;letter-spacing:-.015em}
+h1,h2,h3{font-weight:500;letter-spacing:-.035em;margin:0;line-height:1.05}
+h2{font-size:clamp(2rem,6vw,3.6rem);max-width:17ch}
+h3{font-size:1.2rem;letter-spacing:-.015em;line-height:1.25}
 .wrap{width:min(var(--max),100% - 2*var(--gutter));margin-inline:auto}
-.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
-.section{padding-block:var(--sp-section);border-top:1px solid var(--line)}
-.lead{font-size:1.12rem;color:var(--muted);max-width:60ch}
+.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+.lead{font-size:1.12rem;color:var(--muted);max-width:58ch}
+.section{padding-block:var(--sp);border-top:1px solid var(--line)}
 :focus-visible{outline:3px solid var(--ocean);outline-offset:3px;border-radius:4px}
-.dark :focus-visible{outline-color:#fff}
-.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--ink);padding:10px 14px;z-index:20}
+.dark :focus-visible,.hero :focus-visible{outline-color:#fff}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--ink);padding:10px 14px;z-index:50}
 .skip:focus{left:8px}
 
-/* ===== Disclaimer + header ===== */
-.notice-bar{background:var(--support);border-bottom:1px solid var(--line);font-size:.82rem;line-height:1.4;padding:9px 0;color:var(--ink)}
-.notice-bar strong{font-weight:700}
-header.top{border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:60px;gap:16px}
-.brand{font-weight:700;letter-spacing:.22em;font-size:1.05rem;color:var(--ink);text-decoration:none}
-nav.main{display:flex;align-items:center;gap:26px}
-nav.main a.link{display:none;color:var(--ink);text-decoration:none;font-size:.95rem}
-nav.main a.link:hover{text-decoration:underline}
-@media (min-width:860px){nav.main a.link{display:inline}}
+/* ---------- Upozornění ---------- */
+.notice-bar{background:var(--ink);color:#fff;font-size:.82rem;line-height:1.4;padding:9px 0}
+.notice-bar strong{font-weight:700;color:var(--signal)}
 
-/* ===== Buttons ===== */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:13px 24px;border-radius:var(--pill);background:var(--ocean);color:#fff;font:600 1rem/1.2 var(--font);text-decoration:none;border:2px solid var(--ocean);cursor:pointer;transition:background-color .2s}
+/* ---------- Tlačítka ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:14px 26px;border-radius:var(--pill);background:var(--ocean);color:#fff;font:600 1rem/1.2 var(--font);text-decoration:none;border:2px solid var(--ocean);cursor:pointer;transition:background-color .2s,transform .2s}
 .btn:hover{background:var(--ocean-hover);border-color:var(--ocean-hover)}
+.btn:active{transform:translateY(1px)}
 .btn svg{width:18px;height:14px;flex:none}
 .btn.ghost{background:transparent;color:var(--ocean);border-color:var(--line-strong)}
 .btn.ghost:hover{background:var(--tint);border-color:var(--ocean)}
-.btn.small{min-height:44px;padding:9px 18px;font-size:.92rem}
+.btn.small{min-height:44px;padding:9px 20px;font-size:.92rem}
 .btn.block{width:100%}
+.btn.light{background:#fff;color:var(--ocean);border-color:#fff}
+.btn.light:hover{background:var(--signal);border-color:var(--signal)}
+.btn.line-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
+.btn.line-light:hover{background:rgba(255,255,255,.14);border-color:#fff}
 
-/* ===== Hero ===== */
-.hero{padding:28px 0 var(--sp-section)}
-.hero-grid{display:grid;gap:28px}
-.hero .tagline{font-size:clamp(1.15rem,4.6vw,1.6rem);font-weight:500;letter-spacing:-.02em;line-height:1.25;color:var(--ocean);margin:14px 0 14px}
-.hero .lead{margin-bottom:20px}
-.facts{display:grid;grid-template-columns:1fr 1fr;margin:0 0 22px;border-top:1px solid var(--ink)}
-.facts div{padding:12px 12px 12px 0;border-bottom:1px solid var(--line)}
-.facts div:nth-child(even){padding-left:14px;border-left:1px solid var(--line)}
-.facts dt{font-size:.78rem;color:var(--muted);line-height:1.3;order:2}
-.facts dd{order:1}
-.facts dd{margin:0;font-size:1.45rem;font-weight:500;letter-spacing:-.03em;line-height:1.15}
-.facts div{display:flex;flex-direction:column}
-.facts .model{font-size:.7rem;font-weight:600;color:var(--warn);letter-spacing:.04em;text-transform:uppercase}
+/* ---------- Hero ---------- */
+.hero{position:relative;color:#fff;background:var(--ocean);display:flex;flex-direction:column;min-height:calc(100svh - 56px);isolation:isolate}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 50%;z-index:-2}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,26,30,.5) 0%,rgba(6,26,30,.45) 30%,rgba(6,26,30,.9) 100%)}
+@media (min-width:860px){.hero:after{background:linear-gradient(90deg,rgba(6,26,30,.86) 0%,rgba(6,26,30,.7) 40%,rgba(6,26,30,.12) 78%),linear-gradient(180deg,rgba(6,26,30,.35) 0%,rgba(6,26,30,0) 22%,rgba(6,26,30,.55) 100%)}}
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{font-weight:700;letter-spacing:.26em;font-size:1.05rem;color:#fff;text-decoration:none}
+nav.main{display:flex;align-items:center;gap:28px}
+nav.main a.link{display:none;color:#fff;text-decoration:none;font-size:.95rem}
+nav.main a.link:hover{text-decoration:underline}
+@media (min-width:860px){nav.main a.link{display:inline}}
+.hero-body{margin-top:auto;padding:36px 0 32px}
+.hero .eyebrow{color:var(--signal)}
+.hero h1{font-size:clamp(2.35rem,9.4vw,5.6rem);max-width:15ch;line-height:1.02}
+.hero .sub{font-size:clamp(1.05rem,3.9vw,1.4rem);line-height:1.4;max-width:46ch;margin:18px 0 24px;color:#EAF3F1}
+.hero .sub b{font-weight:600;color:#fff}
+.facts{list-style:none;margin:0 0 26px;padding:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.4)}
+.facts li{padding:12px 12px 12px 0;border-bottom:1px solid rgba(255,255,255,.22);display:flex;flex-direction:column}
+.facts li:nth-child(even){padding-left:14px;border-left:1px solid rgba(255,255,255,.22)}
+.facts b{font-size:1.4rem;font-weight:500;letter-spacing:-.03em;line-height:1.15}
+.facts span{font-size:.8rem;color:#D3E4E1;line-height:1.3;margin-top:2px}
+.facts .m{color:#FFD890;font-weight:600}
 .hero-actions{display:flex;flex-direction:column;gap:12px}
-.risk-line{font-size:.88rem;color:var(--muted);margin:18px 0 0;max-width:56ch}
-.figure{margin:0}
-.figure .frame{border-radius:var(--radius);overflow:hidden;background:#E6ECEB;aspect-ratio:4/3}
-.figure img{width:100%;height:100%;object-fit:cover}
-.figure figcaption{font-size:.8rem;color:var(--muted);margin-top:10px;line-height:1.4}
+.hero .risk{font-size:.86rem;color:#D3E4E1;margin:18px 0 0;max-width:58ch}
+.hero .risk b{color:#fff}
 @media (min-width:560px){.hero-actions{flex-direction:row;flex-wrap:wrap}}
-@media (min-width:600px){.facts{grid-template-columns:repeat(4,1fr)}.facts div,.facts div:nth-child(even){padding:14px 14px 14px 0;border-left:0;border-bottom:0}.facts div:nth-child(n+2){padding-left:16px;border-left:1px solid var(--line)}}
-@media (min-width:992px){
-  .hero{padding-top:56px}
-  .hero-grid{grid-template-columns:7fr 5fr;gap:64px;align-items:end}
-  .figure .frame{aspect-ratio:4/5}
-}
+@media (min-width:700px){.facts{grid-template-columns:repeat(4,1fr);max-width:900px}.facts li,.facts li:nth-child(even){padding:16px 18px 0 0;border-bottom:0;border-left:0}.facts li:nth-child(n+2){padding-left:20px;border-left:1px solid rgba(255,255,255,.28)}.hero-body{padding-bottom:52px}}
 
-/* ===== Section heads / ledger ===== */
-.sec-head{display:grid;gap:18px;margin-bottom:40px}
-@media (min-width:992px){.sec-head{grid-template-columns:5fr 6fr;gap:64px;align-items:end;margin-bottom:56px}}
-.sec-head p{margin:0}
-.ledger{margin:0;border-top:1px solid var(--ink)}
-.ledger .row{display:grid;gap:4px;padding:18px 0;border-bottom:1px solid var(--line)}
-.ledger dt{font-size:.9rem;color:var(--muted)}
-.ledger dd{margin:0;font-size:1.1rem}
+/* ---------- Co kupujete ---------- */
+.split{display:grid;gap:36px}
+@media (min-width:992px){.split{grid-template-columns:5fr 7fr;gap:80px;align-items:stretch}}
+.photo{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--support);min-height:320px}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo.tall{aspect-ratio:4/5}
+@media (min-width:992px){.photo.tall{aspect-ratio:auto;height:100%;min-height:560px}}
+.head h2{margin-bottom:20px}
+.ledger{margin:30px 0 0;border-top:1px solid var(--ink)}
+.ledger .row{display:grid;gap:3px;padding:16px 0;border-bottom:1px solid var(--line)}
+.ledger dt{font-size:.88rem;color:var(--muted)}
+.ledger dd{margin:0;font-size:1.08rem}
 .ledger dd strong{font-weight:600}
-.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--warn);background:#FFF4DE;border-radius:4px;padding:2px 7px;margin-left:8px;vertical-align:2px}
-@media (min-width:768px){.ledger .row{grid-template-columns:5fr 7fr;gap:32px;padding:22px 0}}
-.fine{font-size:.9rem;color:var(--muted);max-width:70ch;margin-top:18px}
+@media (min-width:640px){.ledger .row{grid-template-columns:200px 1fr;gap:24px;padding:18px 0}}
+.tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--warn);background:#FFF1D6;border-radius:4px;padding:2px 7px;margin-left:8px;vertical-align:2px}
+.fine{font-size:.9rem;color:var(--muted);max-width:70ch;margin-top:16px}
 
-/* ===== How it works ===== */
-.steps{list-style:none;margin:0 0 48px;padding:0;border-top:1px solid var(--ink);counter-reset:s}
-.steps li{display:grid;grid-template-columns:44px 1fr;gap:6px 12px;padding:20px 0;border-bottom:1px solid var(--line);counter-increment:s}
-.steps li:before{content:counter(s,decimal-leading-zero);font-size:.9rem;font-weight:600;color:var(--muted);padding-top:3px}
-.steps h3{margin-bottom:4px}
-.steps p{margin:0;color:var(--muted)}
-@media (min-width:992px){.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}.steps li{display:block;padding:22px 24px 26px 0;border-bottom:0}.steps li+li{padding-left:24px;border-left:1px solid var(--line)}.steps li:before{display:block;margin-bottom:28px}}
-.calc{display:grid;gap:28px;background:var(--support);border-radius:var(--radius);padding:28px var(--gutter)}
-.calc .big{font-size:clamp(2.6rem,10vw,4.8rem);font-weight:300;letter-spacing:-.04em;line-height:1}
-.calc .big small{font-size:.35em;letter-spacing:0;font-weight:400;color:var(--muted)}
-.calc ul{margin:0;padding:0;list-style:none}
-.calc li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
-.calc li span:last-child{font-weight:600;text-align:right}
-@media (min-width:768px){.calc{grid-template-columns:1fr 1fr;padding:44px;gap:64px;align-items:end}}
-.compare{margin-top:48px;display:grid;gap:0;border-top:1px solid var(--ink)}
+/* ---------- Z čeho se platí ---------- */
+.pay{display:grid;gap:40px}
+@media (min-width:992px){.pay{grid-template-columns:6fr 5fr;gap:80px;align-items:start}}
+.stat{border-top:1px solid var(--ink);padding:22px 0 26px}
+.stat .n{font-size:clamp(3rem,11vw,6rem);font-weight:300;letter-spacing:-.045em;line-height:1;color:var(--ink)}
+.stat .n small{font-size:.32em;font-weight:400;letter-spacing:0;color:var(--muted);margin-left:6px}
+.stat p{margin:12px 0 0;color:var(--muted);max-width:44ch;font-size:1rem}
+.stat p b{color:var(--ink);font-weight:600}
+.flow{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink);counter-reset:s}
+.flow li{display:grid;grid-template-columns:40px 1fr;gap:4px 10px;padding:16px 0;border-bottom:1px solid var(--line);counter-increment:s}
+.flow li:before{content:counter(s,decimal-leading-zero);font-size:.85rem;font-weight:600;color:var(--muted);padding-top:3px}
+.flow h3{font-size:1.08rem}
+.flow p{margin:2px 0 0;color:var(--muted);font-size:.98rem;grid-column:2}
+.you{margin-top:52px;display:grid;gap:26px;background:var(--support);border-radius:var(--radius);padding:30px var(--gutter)}
+.you .big{font-size:clamp(2.6rem,10vw,4.8rem);font-weight:300;letter-spacing:-.045em;line-height:1}
+.you .big small{font-size:.34em;color:var(--muted);letter-spacing:0;font-weight:400}
+.you ul{margin:0;padding:0;list-style:none}
+.you li{padding:10px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.you li span:last-child{font-weight:600;text-align:right}
+@media (min-width:768px){.you{grid-template-columns:1fr 1fr;padding:44px;gap:64px;align-items:end}}
+.compare{margin-top:48px;display:grid;border-top:1px solid var(--ink)}
 .compare>div{padding:18px 0;border-bottom:1px solid var(--line)}
 .compare h3{font-size:1rem;margin-bottom:6px}
 .compare p{margin:0;color:var(--muted);font-size:.98rem}
 @media (min-width:768px){.compare{grid-template-columns:1fr 1fr}.compare>div:first-child{padding-right:32px;border-right:1px solid var(--line)}.compare>div+div{padding-left:32px}}
 
-/* ===== Risks ===== */
+/* ---------- Před a po ---------- */
+.band{position:relative;min-height:62svh;display:flex;align-items:flex-end;color:#fff;isolation:isolate;background:#2a2118}
+.band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.band:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.05) 25%,rgba(10,16,18,.82) 100%)}
+.band .wrap{padding:44px 0}
+.band h2{color:#fff;max-width:20ch}
+.band p{max-width:52ch;color:#E6EEEC;margin:18px 0 0}
+
+/* ---------- Rizika ---------- */
+.sec-head{display:grid;gap:18px;margin-bottom:40px}
+@media (min-width:992px){.sec-head{grid-template-columns:5fr 6fr;gap:80px;align-items:end;margin-bottom:56px}}
+.sec-head p{margin:0}
 .risks{list-style:none;padding:0;margin:0;border-top:1px solid var(--ink)}
 .risks li{display:grid;gap:6px;padding:22px 0;border-bottom:1px solid var(--line)}
 .risks .n{font-size:.9rem;font-weight:600;color:var(--muted)}
 .risks h3{font-size:1.35rem;letter-spacing:-.025em}
 .risks p{margin:0;color:var(--muted);max-width:56ch}
 @media (min-width:768px){.risks li{grid-template-columns:72px 4fr 5fr;gap:32px;padding:30px 0}}
-.principle{margin:36px 0 0;font-size:clamp(1.25rem,3.4vw,1.7rem);line-height:1.3;letter-spacing:-.02em;max-width:34ch;font-weight:500}
+.principle{margin:36px 0 0;font-size:clamp(1.25rem,3.4vw,1.75rem);line-height:1.3;letter-spacing:-.02em;max-width:34ch;font-weight:500}
 
-/* ===== Lead magnet chapter ===== */
+/* ---------- Průvodce + formulář ---------- */
 .dark{background:var(--ocean);color:#fff}
 .dark h2,.dark h3{color:#fff}
 .dark .eyebrow{color:var(--signal)}
-.dark .lead,.dark p{color:#D6E6E3}
-.magnet{display:grid;gap:40px}
-@media (min-width:992px){.magnet{grid-template-columns:5fr 6fr;gap:72px;align-items:start}}
-.qlist{list-style:none;counter-reset:q;padding:0;margin:28px 0;border-top:1px solid rgba(255,255,255,.25)}
-.qlist li{counter-increment:q;display:grid;grid-template-columns:36px 1fr;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.18);color:#fff;font-weight:500}
-.qlist li:before{content:counter(q);color:var(--signal);font-weight:600}
-.receive{font-size:.95rem}
-.receive strong{color:#fff}
-.draft-note{display:inline-block;font-size:.82rem;border:1px solid rgba(255,255,255,.4);border-radius:4px;padding:6px 10px;color:#fff}
-
-.card{background:#fff;color:var(--ink);border-radius:var(--radius);padding:24px var(--gutter) 28px}
-@media (min-width:768px){.card{padding:36px 40px 40px}}
-.card h3{color:var(--ink);font-size:1.45rem;letter-spacing:-.025em;margin-bottom:10px}
+.dark .lead{color:#D6E6E3}
+.magnet{display:grid;gap:44px}
+@media (min-width:992px){.magnet{grid-template-columns:6fr 5fr;gap:80px;align-items:start}}
+.sheet{margin-top:34px;background:#fff;color:var(--ink);border-radius:6px;padding:26px 24px 20px}
+.sheet .st{display:flex;justify-content:space-between;gap:12px;font-size:.74rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding-bottom:10px}
+.sheet ol{list-style:none;margin:0;padding:0;counter-reset:q}
+.sheet li{counter-increment:q;display:grid;grid-template-columns:30px 1fr;gap:2px 8px;padding:12px 0;border-bottom:1px solid var(--line)}
+.sheet li:before{content:counter(q);font-weight:700;color:var(--ocean);grid-row:span 2}
+.sheet li b{font-weight:600;font-size:1.02rem;letter-spacing:-.01em}
+.sheet li span{color:var(--muted);font-size:.9rem;line-height:1.4}
+.sheet .p2{padding-top:14px;font-size:.88rem;color:var(--muted)}
+.draft-note{display:inline-block;margin-top:18px;font-size:.82rem;border:1px solid rgba(255,255,255,.4);border-radius:4px;padding:6px 10px;color:#fff}
+.card{background:#fff;color:var(--ink);border-radius:var(--radius);padding:26px var(--gutter) 30px}
+@media (min-width:768px){.card{padding:38px 42px 42px}}
+@media (min-width:992px){.card{position:sticky;top:20px}}
+.card h3{color:var(--ink);font-size:1.5rem;letter-spacing:-.025em;margin-bottom:10px}
 .card p{color:var(--muted)}
 .stepper{display:flex;gap:8px;align-items:center;font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:14px}
 .stepper i{flex:1;height:4px;border-radius:2px;background:var(--line);max-width:90px}
@@ -150,17 +171,16 @@ nav.main a.link:hover{text-decoration:underline}
 fieldset{border:0;margin:0 0 24px;padding:0;min-width:0}
 legend{font-size:1.05rem;font-weight:600;padding:0;margin-bottom:10px;color:var(--ink)}
 .opts{display:grid;gap:8px}
-.opt{display:flex;align-items:center;gap:12px;min-height:52px;padding:12px 16px;border:1px solid var(--line-strong);border-radius:var(--radius);cursor:pointer;font-size:1rem;color:var(--ink);background:#fff}
+.opt{display:flex;align-items:center;gap:12px;min-height:54px;padding:12px 16px;border:1px solid var(--line-strong);border-radius:var(--radius);cursor:pointer;font-size:1rem;color:var(--ink);background:#fff;transition:border-color .15s,background-color .15s}
 .opt:hover{border-color:var(--ocean)}
 .opt input{width:22px;height:22px;margin:0;accent-color:var(--ocean);flex:none}
 .opt:has(input:checked){border-color:var(--ocean);box-shadow:inset 0 0 0 1px var(--ocean);background:var(--tint)}
 .opt:has(input:focus-visible){outline:3px solid var(--ocean);outline-offset:2px}
 .field{margin-bottom:18px}
 .field label.l{display:block;font-weight:600;margin-bottom:6px;color:var(--ink)}
-.field .hint{font-size:.88rem;color:var(--muted);margin:0 0 8px}
-input[type=email],input[type=tel]{width:100%;min-height:52px;padding:12px 14px;border:1px solid var(--line-strong);border-radius:var(--radius);font:inherit;color:var(--ink);background:#fff}
+input[type=email],input[type=tel]{width:100%;min-height:54px;padding:12px 14px;border:1px solid var(--line-strong);border-radius:var(--radius);font:inherit;color:var(--ink);background:#fff}
 input[type=email]:focus-visible,input[type=tel]:focus-visible{outline:3px solid var(--ocean);outline-offset:2px}
-.err{color:#9A1B1B;font-size:.92rem;font-weight:600;margin:10px 0 0;min-height:1.2em}
+.err{color:#9A1B1B;font-size:.92rem;font-weight:600;margin:10px 0 0}
 .err:empty{display:none}
 input[aria-invalid=true]{border-color:#9A1B1B;border-width:2px}
 .result-kicker{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:4px;padding:4px 8px;background:var(--tint);color:var(--ocean);margin-bottom:12px}
@@ -174,170 +194,195 @@ input[aria-invalid=true]{border-color:#9A1B1B;border-width:2px}
 .check input{width:22px;height:22px;margin:2px 0 0;accent-color:var(--ocean);flex:none}
 [hidden]{display:none!important}
 
-/* ===== FAQ ===== */
+/* ---------- Mezi-CTA ---------- */
+.cta-strip{background:var(--tint);padding:40px 0}
+.cta-strip .wrap{display:grid;gap:20px;align-items:center}
+.cta-strip p{margin:0;font-size:clamp(1.2rem,3.6vw,1.7rem);letter-spacing:-.02em;line-height:1.25;font-weight:500;max-width:30ch}
+@media (min-width:860px){.cta-strip .wrap{grid-template-columns:1fr auto;gap:48px}}
+
+/* ---------- FAQ ---------- */
 .faq{border-top:1px solid var(--ink)}
 .faq details{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:64px;padding:16px 0;font-weight:500;font-size:1.12rem;letter-spacing:-.015em}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:66px;padding:16px 0;font-weight:500;font-size:1.12rem;letter-spacing:-.015em}
 .faq summary::-webkit-details-marker{display:none}
 .faq summary:after{content:"+";font-size:1.5rem;line-height:1;color:var(--ocean);flex:none;width:28px;text-align:center}
 .faq details[open] summary:after{content:"–"}
 .faq details p{color:var(--muted);margin:0 0 20px;max-width:64ch}
 
-/* ===== Closing + footer ===== */
+/* ---------- Závěr + patička ---------- */
 .closing{background:var(--support)}
 .closing .inner{display:grid;gap:28px}
 .closing h2{max-width:18ch}
-@media (min-width:992px){.closing .inner{grid-template-columns:7fr 5fr;align-items:end;gap:64px}}
-footer{padding:48px 0 32px;border-top:1px solid var(--line)}
-.mast{font-weight:600;letter-spacing:.04em;font-size:clamp(3.4rem,17vw,11rem);line-height:.9;color:var(--ink);margin:0 0 28px}
-.foot-grid{display:grid;gap:18px;font-size:.88rem;color:var(--muted)}
+@media (min-width:992px){.closing .inner{grid-template-columns:7fr 5fr;align-items:end;gap:80px}}
+footer{padding:52px 0 40px;border-top:1px solid var(--line)}
+.mast{font-weight:600;letter-spacing:.04em;font-size:clamp(3.4rem,18vw,12rem);line-height:.9;color:var(--ink);margin:0 0 30px}
+.foot-grid{display:grid;gap:16px;font-size:.88rem;color:var(--muted)}
 .foot-grid p{margin:0;max-width:78ch}
 .foot-grid strong{color:var(--ink)}
 @media (min-width:768px){.foot-grid{grid-template-columns:1fr 1fr;gap:48px}}
+@media (max-width:859px){footer{padding-bottom:96px}}
+
+/* ---------- Mobilní lišta ---------- */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .25s}
+.dock.on{transform:none}
+.dock .btn{width:100%}
+@media (min-width:860px){.dock{display:none}}
+@media (prefers-reduced-motion:reduce){.dock{transition:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
-
-<div class="notice-bar" role="note"><div class="wrap"><strong>Fiktivní ukázka.</strong> Společnost Domeka i dluhopis jsou modelové. Nejde o nabídku investice ani o investiční doporučení.</div></div>
-
-<header class="top">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="DOMEKA, začátek stránky">DOMEKA</a>
-    <nav class="main" aria-label="Hlavní navigace">
-      <a class="link" href="#jak">Jak to funguje</a>
-      <a class="link" href="#rizika">Rizika</a>
-      <a class="link" href="#faq">Otázky</a>
-      <a class="btn small" href="#pruvodce">Získat průvodce</a>
-    </nav>
-  </div>
-</header>
+<div class="notice-bar" role="note"><div class="wrap"><strong>Fiktivní ukázka.</strong> Domeka i dluhopis jsou modelové. Nejde o nabídku investice.</div></div>
 
 <main id="obsah">
 <!-- ================= HERO ================= -->
 <section class="hero" id="top" aria-labelledby="h1">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Modelový dluhopis · 4 roky</p>
-      <h1 id="h1">Dluhopis na obnovu bytových domů</h1>
-      <p class="tagline">Nejprve porozumět. Potom se rozhodnout.</p>
-      <p class="lead">Domeka nakupuje starší bytové domy, opravuje je a pronajímá byty. Z emise chce financovat další domy. Tady se dočtete, jak dluhopis funguje i co se může pokazit.</p>
+  <img class="hero-img" src="assets/hero.jpg" width="1920" height="1072" alt="Opravená činžovní fasáda z konce 19. století v ulici se stromy, v zlatém světle">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#top" aria-label="DOMEKA, začátek stránky">DOMEKA</a>
+      <nav class="main" aria-label="Hlavní navigace">
+        <a class="link" href="#podminky">Podmínky</a>
+        <a class="link" href="#jak">Z čeho se platí</a>
+        <a class="link" href="#rizika">Rizika</a>
+        <a class="btn light small" href="#pruvodce">Získat průvodce</a>
+      </nav>
+    </div>
+  </div>
+  <div class="wrap hero-body">
+    <p class="eyebrow">Modelová emise · 150 mil. Kč</p>
+    <h1 id="h1">Dluhopis na obnovu bytových domů</h1>
+    <p class="sub">Půjčíte Domece od <b>50 000 Kč na 4 roky</b>. Úrok dostanete čtvrtletně: při modelové sazbě 7,2 % je to <b>900 Kč z každých 50 000 Kč</b>, pokud firma plní své závazky.</p>
+    <ul class="facts" aria-label="Základní podmínky modelové emise">
+      <li><b>50 000 Kč</b><span>minimální investice</span></li>
+      <li><b>4 roky</b><span>splatnost</span></li>
+      <li><b>4× ročně</b><span>výplata pevného úroku</span></li>
+      <li><b>7,2 % p. a.</b><span>modelová sazba <span class="m">(fiktivní)</span></span></li>
+    </ul>
+    <div class="hero-actions">
+      <a class="btn light" href="#pruvodce">Prohlédnout podmínky a získat průvodce
+        <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a>
+      <a class="btn line-light" href="#jak">Jak dluhopis funguje</a>
+    </div>
+    <p class="risk"><b>Dluhopis není bankovní vklad.</b> Můžete přijít o část nebo celou investici. Zajištění riziko neodstraňuje.</p>
+  </div>
+</section>
 
-      <dl class="facts" aria-label="Základní podmínky modelové emise">
-        <div><dt>minimální investice</dt><dd>od 50 000 Kč</dd></div>
-        <div><dt>splatnost</dt><dd>4 roky</dd></div>
-        <div><dt>výplata pevného úroku</dt><dd>čtvrtletně</dd></div>
-        <div><dt>modelová sazba <span class="model">(fiktivní)</span></dt><dd>7,2 % p. a.</dd></div>
+<!-- ================= CO KUPUJETE ================= -->
+<section class="section" id="podminky" aria-labelledby="h-podm" style="border-top:0">
+  <div class="wrap split">
+    <figure class="photo tall"><img src="assets/interior.jpg" width="640" height="893" loading="lazy" alt="Slunný obývací pokoj po rekonstrukci v činžovním domě, štuková římsa a dubová parketa"></figure>
+    <div class="head">
+      <p class="eyebrow">Co kupujete</p>
+      <h2 id="h-podm">Půjčku firmě, ne byt</h2>
+      <p class="lead">Dluhopis nedává podíl na firmě ani na domě. Dostanete úrok, a když vše dopadne dobře, na konci čtvrtého roku vám Domeka vrátí půjčených 50 000 Kč.</p>
+      <dl class="ledger">
+        <div class="row"><dt>Emitent</dt><dd>Domeka <span class="tag">fiktivní</span></dd></div>
+        <div class="row"><dt>Cíl emise</dt><dd><strong>150 mil. Kč</strong></dd></div>
+        <div class="row"><dt>Minimální investice</dt><dd><strong>50 000 Kč</strong></dd></div>
+        <div class="row"><dt>Splatnost</dt><dd><strong>4 roky</strong>, jistina se vrací na konci</dd></div>
+        <div class="row"><dt>Úrok</dt><dd><strong>pevný, čtvrtletně</strong>, modelově 7,2 % p. a. <span class="tag">fiktivní předpoklad</span></dd></div>
+        <div class="row"><dt>Zajištění</dt><dd>Nemovitostmi firmy. Které domy a v jakém pořadí, v ukázce určeno není.</dd></div>
+        <div class="row"><dt>Prodej před splatností</dt><dd>Neurčeno. Počítejte s tím, že nepůjde.</dd></div>
       </dl>
-
-      <div class="hero-actions">
-        <a class="btn" href="#pruvodce">Prohlédnout podmínky a získat průvodce
-          <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a>
-        <a class="btn ghost" href="#jak">Jak dluhopis funguje</a>
-      </div>
-      <p class="risk-line"><strong>Dluhopis není bankovní vklad.</strong> Můžete přijít o část nebo celou investici. Zajištění riziko neodstraňuje.</p>
+      <p class="fine">Sazba 7,2 % p. a. je výhradně modelový předpoklad této ukázky. Není to ověřená nabídka ani slib výnosu.</p>
     </div>
-
-    <figure class="figure">
-      <div class="frame"><img src="assets/hero-placeholder.svg" width="800" height="1000" alt="Schematický výkres fasády staršího městského bytového domu. Ilustrační placeholder." fetchpriority="high"></div>
-      <figcaption>Schematický výkres, placeholder za licencovanou fotografii. Ilustrace, nejde o nemovitost společnosti Domeka.</figcaption>
-    </figure>
   </div>
 </section>
 
-<!-- ================= PODMÍNKY ================= -->
-<section class="section" id="podminky" aria-labelledby="h-podm">
+<!-- ================= PŘED A PO ================= -->
+<section class="band" aria-labelledby="h-band">
+  <img src="assets/courtyard.jpg" width="1600" height="893" loading="lazy" alt="Dvorek starého činžovního domu s lešením, oprýskanou omítkou a stohy řeziva">
   <div class="wrap">
-    <div class="sec-head">
-      <div><p class="eyebrow">Podmínky modelové emise</p><h2 id="h-podm">Co přesně byste koupili</h2></div>
-      <p class="lead">Základ je ze zadání. Co v něm chybělo, jsme doplnili a výslovně označili jako fiktivní. Ostrá nabídka by vždy vycházela z emisních podmínek.</p>
-    </div>
-    <dl class="ledger">
-      <div class="row"><dt>Emitent</dt><dd>Domeka <span class="tag">fiktivní</span></dd></div>
-      <div class="row"><dt>Cíl emise</dt><dd><strong>150 mil. Kč</strong></dd></div>
-      <div class="row"><dt>Minimální investice</dt><dd><strong>50 000 Kč</strong></dd></div>
-      <div class="row"><dt>Splatnost</dt><dd><strong>4 roky</strong>. Jistina se splácí na konci, pokud emitent splní závazky.</dd></div>
-      <div class="row"><dt>Úrok</dt><dd><strong>pevný, vyplácený čtvrtletně</strong>. Modelová sazba 7,2 % p. a. <span class="tag">fiktivní předpoklad</span></dd></div>
-      <div class="row"><dt>Zajištění</dt><dd>Nemovitostmi společnosti. Právní forma, hodnota ani pořadí zástavy v této ukázce určeny nejsou.</dd></div>
-      <div class="row"><dt>Prodej před splatností</dt><dd>Neurčeno. Nepočítejte s tím, že půjde snadno.</dd></div>
-    </dl>
-    <p class="fine">Sazba 7,2 % p. a. je výhradně modelový předpoklad pro tuto ukázku. Není to ověřená nabídka ani slib výnosu.</p>
+    <p class="eyebrow" style="color:var(--signal)">Kam peníze jdou</p>
+    <h2 id="h-band">Do domů, které teprve potřebují opravu</h2>
+    <p>Domeka podle zadání nakupuje starší bytové domy, opravuje je a byty pronajímá. Z emise by financovala nákupy a stavební práce. Snímek ukazuje, jak taková oprava vypadá. Dům firmy to není.</p>
   </div>
 </section>
 
-<!-- ================= JAK TO FUNGUJE ================= -->
-<section class="section" id="jak" aria-labelledby="h-jak">
+<!-- ================= Z ČEHO SE PLATÍ ================= -->
+<section class="section" id="jak" aria-labelledby="h-jak" style="border-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Jak to funguje</p><h2 id="h-jak">Cesta peněz od vás zpět k vám</h2></div>
-      <p class="lead">Kupujete dluhopis, nikoli byt ani podíl na firmě. Půjčujete Domece peníze a ona se podle podmínek zavazuje platit úrok a po čtyřech letech vrátit jistinu.</p>
+      <div><p class="eyebrow">Z čeho se platí</p><h2 id="h-jak">Co musí Domeka vybrat, aby vám zaplatila</h2></div>
+      <p class="lead">Odpověď na nejdůležitější otázku začátečníka: odkud se vezmou peníze na úroky. Počítáme s plně upsanou emisí a modelovými čísly.</p>
     </div>
-    <ol class="steps">
-      <li><div><h3>Půjčíte peníze</h3><p>Koupíte dluhopis od 50 000 Kč. Peníze jdou emitentovi.</p></div></li>
-      <li><div><h3>Domeka koupí a opraví dům</h3><p>Starší bytový dům, který potřebuje rekonstrukci.</p></div></li>
-      <li><div><h3>Byty pronajímá</h3><p>Nájemné je hlavní zdroj příjmů, ze kterého má firma platit závazky.</p></div></li>
-      <li><div><h3>Platí úrok, po 4 letech vrací jistinu</h3><p>Pokud jí příjmy a zajištění stačí. Záruka to není.</p></div></li>
-    </ol>
-
-    <div class="calc" aria-labelledby="h-calc">
+    <div class="pay">
       <div>
-        <p class="eyebrow" id="h-calc">Ukázkový výpočet (model)</p>
-        <div class="big">900 Kč<small> čtvrtletně</small></div>
-        <p class="fine" style="margin-top:14px">z modelových 50 000 Kč při sazbě 7,2 % p. a., před zdaněním a jen tehdy, když emitent své závazky plní. Nejde o slib výplaty.</p>
+        <div class="stat"><div class="n">900 000 Kč<small>měsíčně</small></div><p><b>Úroky z 150 mil. Kč při sazbě 7,2 %</b> jsou 10,8 mil. Kč ročně. To musí firma vydělat ještě předtím, než zaplatí opravy, správu domů, pojištění a daně.</p></div>
+        <div class="stat"><div class="n">≈ 64 bytů<small>pronajatých</small></div><p>Při modelovém nájmu <b>14 000 Kč měsíčně</b> musí být pronajato asi 64 bytů, jen aby se zaplatily úroky. Ptejte se proto, kolik bytů firma opravdu vlastní a kolik jich má obsazených. V této ukázce to není známo.</p></div>
+      </div>
+      <ol class="flow">
+        <li><h3>Půjčíte peníze</h3><p>Koupíte dluhopis od 50 000 Kč. Peníze jdou emitentovi.</p></li>
+        <li><h3>Domeka koupí a opraví dům</h3><p>Starší činžák, který potřebuje novou střechu, rozvody nebo okna.</p></li>
+        <li><h3>Byty pronajímá</h3><p>Nájemné je hlavní příjem, ze kterého firma platí vám i další náklady.</p></li>
+        <li><h3>Platí úrok a po 4 letech vrací jistinu</h3><p>Pokud jí příjmy a zajištění stačí. Záruka to není.</p></li>
+      </ol>
+    </div>
+
+    <div class="you" aria-labelledby="h-you">
+      <div>
+        <p class="eyebrow" id="h-you">Váš příklad (model)</p>
+        <div class="big">900 Kč<small> čtvrtletně</small></div>
+        <p class="fine" style="margin-top:14px">z modelových 50 000 Kč při sazbě 7,2 % p. a., před zdaněním a jen když emitent své závazky plní. Nejde o slib výplaty.</p>
       </div>
       <ul>
-        <li><span>Ročně</span><span>3 600 Kč</span></li>
+        <li><span>Za rok</span><span>3 600 Kč</span></li>
         <li><span>Počet výplat za 4 roky</span><span>16</span></li>
-        <li><span>Úroky za 4 roky (model)</span><span>14 400 Kč</span></li>
-        <li><span>Jistina na konci</span><span>50 000 Kč, nezaručeno</span></li>
+        <li><span>Úroky za 4 roky</span><span>14 400 Kč</span></li>
+        <li><span>Jistina na konci</span><span>50 000 Kč, nezaručeno</span></li>
       </ul>
     </div>
 
     <div class="compare">
       <div><h3>Bankovní vklad</h3><p>Vklady v bance jsou pojištěny do zákonného limitu. Dluhopis takové pojištění nemá.</p></div>
-      <div><h3>Tento dluhopis</h3><p>Pojištěný není. Výplaty i jistina závisejí na hospodaření Domeky a na hodnotě zajištění. Proto nejde o náhradu spořicího účtu.</p></div>
+      <div><h3>Tento dluhopis</h3><p>Výplaty i jistina závisejí na hospodaření Domeky a na hodnotě zajištění. Spořicí účet nenahrazuje.</p></div>
     </div>
   </div>
 </section>
 
+<div class="cta-strip"><div class="wrap"><p>Než půjdete dál, zjistěte, na co se ptát před koupí firemního dluhopisu.</p><a class="btn" href="#pruvodce">Získat pět otázek <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a></div></div>
+
 <!-- ================= RIZIKA ================= -->
-<section class="section" id="rizika" aria-labelledby="h-rizika">
+<section class="section" id="rizika" aria-labelledby="h-rizika" style="border-top:0">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">Rizika</p><h2 id="h-rizika">Co se může pokazit</h2></div>
-      <p class="lead">Raději to řekneme dřív, než se rozhodnete. Zajištěný dluhopis neznamená dluhopis bez rizika.</p>
+      <p class="lead">Říkáme to dřív, než se rozhodnete. Zajištěný dluhopis neznamená dluhopis bez rizika.</p>
     </div>
     <ol class="risks">
-      <li><span class="n">01</span><h3>Emitent nemusí splatit</h3><p>Výplaty i jistina závisí na hospodaření Domeky. Nájemné může klesnout, opravy se prodražit a byty zůstat prázdné.</p></li>
-      <li><span class="n">02</span><h3>Zajištění není záruka</h3><p>Záleží na zástavním právu, hodnotě domů, pořadí věřitelů a na tom, zda lze zástavu v praxi uplatnit. V ukázce nemáme dokumenty, kvalitu zajištění tedy nelze ověřit.</p></li>
+      <li><span class="n">01</span><h3>Domeka nemusí splatit</h3><p>Nájemné může klesnout, opravy se prodražit a byty zůstat prázdné. Pak nebude z čeho platit úroky ani jistinu.</p></li>
+      <li><span class="n">02</span><h3>Zajištění není záruka</h3><p>Záleží na zástavním právu, hodnotě domů, pořadí věřitelů a na tom, jestli lze zástavu v praxi uplatnit. Dokumenty v ukázce nejsou, kvalitu zajištění tedy nelze ověřit.</p></li>
       <li><span class="n">03</span><h3>Peníze nemusí jít vybrat dřív</h3><p>Splatnost je čtyři roky. Prodej jinému investorovi nemusí být možný ani za dobrou cenu.</p></li>
       <li><span class="n">04</span><h3>Není to pojištěný vklad</h3><p>Dluhopis nechrání systém pojištění vkladů. Můžete přijít o část nebo celou investici.</p></li>
-      <li><span class="n">05</span><h3>Parametry jsou modelové</h3><p>Sazba, zajištění i emitent v této ukázce jsou fiktivní. Před skutečným rozhodnutím by bylo nutné přečíst emisní podmínky a související dokumenty.</p></li>
+      <li><span class="n">05</span><h3>Čísla jsou modelová</h3><p>Sazba, nájem 14 000 Kč, počet bytů i emitent jsou v této ukázce vymyšlené. Skutečné rozhodnutí by vycházelo z emisních podmínek.</p></li>
     </ol>
-    <p class="principle">Investujte jen peníze, které dokážete několik let postrádat a jejichž případnou ztrátu unesete.</p>
+    <p class="principle">Investujte jen peníze, které dokážete několik let postrádat a jejichž ztrátu unesete.</p>
   </div>
 </section>
 
-<!-- ================= LEAD MAGNET + FORMULÁŘ ================= -->
+<!-- ================= PRŮVODCE + FORMULÁŘ ================= -->
 <section class="section dark" id="pruvodce" aria-labelledby="h-mag" style="border-top:0">
   <div class="wrap magnet">
     <div>
       <p class="eyebrow">Průvodce zdarma · návrh</p>
-      <h2 id="h-mag" style="max-width:14ch">Pět otázek před nákupem firemního dluhopisu</h2>
-      <p class="lead" style="margin-top:20px">Jednostránkový kontrolní seznam pro člověka, který s dluhopisy začíná. Nechcete-li investovat, i tak vám pomůže ptát se správně.</p>
-      <ol class="qlist">
-        <li>Komu půjčuji peníze?</li>
-        <li>Z čeho emitent úroky a jistinu platí?</li>
-        <li>Co je skutečně zastaveno a v jakém pořadí?</li>
-        <li>Kdy mohu dostat peníze zpět?</li>
-        <li>Co se stane, když emitent přestane platit?</li>
-      </ol>
-      <p class="receive"><strong>Co byste dostali:</strong> kontrolní seznam, ukázkový výpočet výplat a otázky, které si připravit na rozhovor s poradcem.</p>
-      <p class="draft-note">Průvodce je v ukázce navržený, ke stažení zatím není.</p>
+      <h2 id="h-mag" style="max-width:15ch">Pět otázek před nákupem firemního dluhopisu</h2>
+      <p class="lead" style="margin-top:20px">Dvě strany A4, které si můžete vzít k rozhovoru s poradcem nebo do banky. U každé otázky je napsáno, kde odpověď hledat a co je varovný signál.</p>
+      <div class="sheet" aria-label="Náhled první strany průvodce">
+        <div class="st"><span>Pět otázek před nákupem</span><span>Strana 1</span></div>
+        <ol>
+          <li><b>Komu půjčuji?</b><span>Kolik let firma podniká a co říká poslední účetní závěrka.</span></li>
+          <li><b>Z čeho se platí úroky?</b><span>Kolik nemovitostí vlastní, kolik je obsazených a kolik nájmu ročně vybere.</span></li>
+          <li><b>Co je zastaveno a v jakém pořadí?</b><span>Které domy, kdo je ocenil a jestli už nejsou zastavené jinému věřiteli.</span></li>
+          <li><b>Kdy dostanu peníze zpět?</b><span>Splatnost, možnost předčasného odkupu a kde jde dluhopis prodat.</span></li>
+          <li><b>Co když Domeka nezaplatí?</b><span>Kdo hájí zájmy investorů a jak se zástava uplatňuje.</span></li>
+        </ol>
+        <div class="p2">Strana 2: výpočet výplat pro vaši částku a seznam dotazů na poradce.</div>
+      </div>
+      <p class="draft-note">Průvodce je v ukázce návrh, ke stažení zatím není.</p>
     </div>
 
     <div class="card" id="form-card">
-      <!-- Krok 1: kvalifikace -->
       <form id="step1" novalidate aria-labelledby="s1-title">
         <div class="stepper" aria-hidden="true"><span>Krok 1 ze 2</span><i class="on"></i><i></i></div>
         <h3 id="s1-title" tabindex="-1">Dvě krátké otázky, bez kontaktu</h3>
@@ -347,10 +392,10 @@ footer{padding:48px 0 32px;border-top:1px solid var(--line)}
           <legend>S jakou částkou přibližně počítáte?</legend>
           <div class="opts">
             <label class="opt"><input type="radio" name="amount" value="info"> Zatím zjišťuji</label>
-            <label class="opt"><input type="radio" name="amount" value="below"> Méně než 50 000 Kč</label>
-            <label class="opt"><input type="radio" name="amount" value="50"> 50 000–100 000 Kč</label>
-            <label class="opt"><input type="radio" name="amount" value="100"> 100 000–500 000 Kč</label>
-            <label class="opt"><input type="radio" name="amount" value="500"> Více než 500 000 Kč</label>
+            <label class="opt"><input type="radio" name="amount" value="below"> Méně než 50 000 Kč</label>
+            <label class="opt"><input type="radio" name="amount" value="50"> 50 000–100 000 Kč</label>
+            <label class="opt"><input type="radio" name="amount" value="100"> 100 000–500 000 Kč</label>
+            <label class="opt"><input type="radio" name="amount" value="500"> Více než 500 000 Kč</label>
           </div>
         </fieldset>
         <fieldset>
@@ -367,37 +412,31 @@ footer{padding:48px 0 32px;border-top:1px solid var(--line)}
           <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></button>
       </form>
 
-      <!-- Krok 2: výsledek + nepovinný kontakt -->
       <form id="step2" novalidate hidden aria-labelledby="s2-title">
         <div class="stepper" aria-hidden="true"><span>Krok 2 ze 2</span><i class="on"></i><i class="on"></i></div>
         <span class="result-kicker" id="kicker"></span>
         <h3 id="s2-title" tabindex="-1"></h3>
         <div id="s2-text"></div>
-
-        <p class="demo-box" id="demo-notice" style="margin:0 0 20px"><b>Ukázka:</b> nezadávejte skutečný e-mail ani telefon. Žádná data se neodesílají ani neukládají.</p>
-
+        <p class="demo-box" style="margin:0 0 20px"><b>Ukázka:</b> nezadávejte skutečný e-mail ani telefon. Žádná data se neodesílají ani neukládají.</p>
         <div class="field">
           <label class="l" for="email">E-mail pro zaslání průvodce (ukázka) <span style="font-weight:400;color:var(--muted)">nepovinné</span></label>
           <input id="email" name="email" type="email" inputmode="email" autocomplete="off" placeholder="napr@priklad.cz" aria-describedby="email-err">
           <p class="err" id="email-err" role="alert"></p>
         </div>
-
         <div id="advisor" hidden>
           <label class="check"><input type="checkbox" id="want-call"> <span>Chci, aby se mi ozval poradce. <span style="color:var(--muted)">(V ukázce se nic nevolá.)</span></span></label>
           <div class="field" id="phone-wrap" hidden>
             <label class="l" for="phone">Telefon <span style="font-weight:400;color:var(--muted)">nepovinné</span></label>
-            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="+420 000 000 000" aria-describedby="phone-err">
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="+420 000 000 000" aria-describedby="phone-err">
             <p class="err" id="phone-err" role="alert"></p>
           </div>
         </div>
-
         <div class="btn-row">
           <button class="btn" type="submit">Dokončit ukázku</button>
           <button class="btn ghost" type="button" id="back">Zpět k otázkám</button>
         </div>
       </form>
 
-      <!-- Hotovo -->
       <div id="done" hidden aria-live="polite">
         <div class="stepper" aria-hidden="true"><span>Hotovo</span><i class="on"></i><i class="on"></i></div>
         <h3 id="done-title" tabindex="-1">Ukázka dokončena</h3>
@@ -413,33 +452,30 @@ footer{padding:48px 0 32px;border-top:1px solid var(--line)}
 </section>
 
 <!-- ================= FAQ ================= -->
-<section class="section" id="faq" aria-labelledby="h-faq">
+<section class="section" id="faq" aria-labelledby="h-faq" style="border-top:0">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">Časté otázky</p><h2 id="h-faq">Než se rozhodnete</h2></div>
-      <p class="lead">Otázky, které si začátečník klade nejčastěji.</p>
+      <p class="lead">Otázky, které si před prvním dluhopisem klade skoro každý.</p>
     </div>
     <div class="faq">
-      <details><summary>Komu vlastně půjčuji peníze?</summary><p>Emitentovi, tedy společnosti Domeka. Nepůjčujete peníze bance ani státu. Proto je důležité vědět, jak hospodaří a z čeho bude platit. V této ukázce jsou údaje o společnosti fiktivní.</p></details>
-      <details><summary>Co je zástava a co mi dává?</summary><p>Zástava znamená, že věřitel má při neplacení právo uspokojit se z určité nemovitosti. Záleží ale na její hodnotě, na pořadí zástavních věřitelů a na tom, jak snadno ji lze prodat. Nezaručuje, že dostanete všechno zpět.</p></details>
-      <details><summary>Co se stane, když Domeka přestane platit?</summary><p>Postup by určovaly emisní podmínky a právní předpisy. Mohlo by dojít k prodlení s výplatami, k jednání o změně podmínek nebo k uplatnění zajištění. Hrozí, že dostanete méně, než jste vložili, nebo později.</p></details>
-      <details><summary>Mohu odejít dříve než za 4 roky?</summary><p>Počítejte s tím, že ne. Případný prodej jinému investorovi závisí na podmínkách emise a na tom, zda o dluhopis bude zájem.</p></details>
+      <details><summary>Komu půjčuji peníze?</summary><p>Společnosti Domeka, nikoli bance ani státu. Proto je důležité vědět, jak firma hospodaří a z čeho bude platit. V ukázce jsou údaje o firmě fiktivní.</p></details>
+      <details><summary>Co je zástava a co mi dává?</summary><p>Věřitel má při neplacení právo uspokojit se z určité nemovitosti. Záleží ale na její hodnotě, na pořadí zástavních věřitelů a na tom, jak snadno ji lze prodat. Nezaručuje, že dostanete všechno zpět.</p></details>
+      <details><summary>Co když Domeka přestane platit?</summary><p>Postup by určovaly emisní podmínky a zákon. Mohlo by dojít k prodlení s výplatami, k jednání o změně podmínek nebo k uplatnění zástavy. Hrozí, že dostanete méně, než jste vložili, nebo později.</p></details>
+      <details><summary>Mohu odejít dřív než za 4 roky?</summary><p>Počítejte s tím, že ne. Případný prodej jinému investorovi závisí na podmínkách emise a na zájmu dalších lidí.</p></details>
       <details><summary>Je to pojištěný vklad jako v bance?</summary><p>Není. Dluhopis nechrání systém pojištění vkladů a jeho nákup nelze srovnávat se spořicím účtem.</p></details>
-      <details><summary>Proč je uvedena sazba 7,2 % p. a.?</summary><p>Zadání sazbu neurčilo, proto ji tato ukázka doplnila jako modelový předpoklad, aby šlo předvést výpočet. Skutečnou sazbu by stanovily emisní podmínky.</p></details>
-      <details><summary>Musím při návštěvě stránky něco vyplňovat?</summary><p>Ne. Podmínky, rizika i otázky si přečtete bez zadání kontaktu. Dvě otázky v průvodci jsou volitelné, e-mail je až poslední a také nepovinný.</p></details>
+      <details><summary>Proč je uvedena sazba 7,2 % p. a.?</summary><p>Zadání sazbu neurčilo. Ukázka ji doplnila jako modelový předpoklad, aby šel předvést výpočet. Skutečnou sazbu by stanovily emisní podmínky.</p></details>
+      <details><summary>Musím při návštěvě něco vyplňovat?</summary><p>Ne. Podmínky, výpočet i rizika si přečtete bez zadání kontaktu. Dvě otázky v průvodci jsou volitelné a e-mail až poslední a také nepovinný.</p></details>
     </div>
   </div>
 </section>
 
-<!-- ================= ZÁVĚREČNÁ VÝZVA ================= -->
-<section class="section closing" aria-labelledby="h-close">
+<!-- ================= ZÁVĚR ================= -->
+<section class="section closing" aria-labelledby="h-close" style="border-top:0">
   <div class="wrap inner">
+    <div><p class="eyebrow">Další krok</p><h2 id="h-close">Nejdřív podmínky. Rozhodnutí může počkat.</h2></div>
     <div>
-      <p class="eyebrow">Další krok</p>
-      <h2 id="h-close">Nejdřív si přečtěte podmínky. Rozhodnutí může počkat.</h2>
-    </div>
-    <div>
-      <p class="lead">Nikam nespěcháme a nenabízíme časově omezené akce. Pokud vám téma dává smysl, začněte pěti otázkami.</p>
+      <p class="lead">Žádné odpočítávání ani časově omezené akce. Začněte pěti otázkami a vraťte se, až budete mít odpovědi.</p>
       <div class="hero-actions"><a class="btn" href="#pruvodce">Získat průvodce</a><a class="btn ghost" href="#rizika">Přečíst rizika</a></div>
     </div>
   </div>
@@ -450,11 +486,13 @@ footer{padding:48px 0 32px;border-top:1px solid var(--line)}
   <div class="wrap">
     <p class="mast" aria-hidden="true">DOMEKA</p>
     <div class="foot-grid">
-      <p><strong>Fiktivní projekt.</strong> Domeka, její dluhopis, sazba 7,2 % p. a. i ostatní parametry jsou modelové a vznikly pro výběrový úkol. Tato stránka není nabídkou cenných papírů, investičním doporučením ani prospektem. Neobsahuje schválení žádného regulátora.</p>
-      <p>Formulář je ukázka bez backendu: nic neodesílá, neukládá a neposílá žádné materiály. Pro ostrý provoz by bylo nutné doplnit emisní podmínky, právní posouzení, informace o zpracování osobních údajů a funkční doručování.</p>
+      <p><strong>Fiktivní projekt.</strong> Domeka, její dluhopis, sazba 7,2 % p. a., nájem 14 000 Kč a ostatní parametry jsou modelové a vznikly pro výběrový úkol. Stránka není nabídkou cenných papírů, investičním doporučením ani prospektem a neobsahuje schválení žádného regulátora.</p>
+      <p>Formulář je ukázka bez backendu: nic neodesílá ani neukládá. Fotografie jsou ilustrační, vytvořené umělou inteligencí (Gamma), a nezobrazují nemovitosti společnosti Domeka. Pro ostrý provoz chybí emisní podmínky, právní posouzení a informace o zpracování osobních údajů.</p>
     </div>
   </div>
 </footer>
+
+<div class="dock" id="dock"><a class="btn" href="#pruvodce">Získat pět otázek před nákupem</a></div>
 
 <script>
 (function(){
@@ -469,16 +507,16 @@ footer{padding:48px 0 32px;border-top:1px solid var(--line)}
   }
   var copy={
     qualified:{kicker:'Možný zájem o konzultaci',title:'Vaše odpovědi odpovídají modelové investici',
-      text:'<p>Počítáte s částkou od 50 000 Kč a v blízké době. V ostré verzi by dávalo smysl projít podmínky s poradcem. Je to jen vaše volba a nic z toho nezakládá nárok na investici.</p>',
-      crm:'Kvalifikovaný kontakt: dobrovolně uvedl investiční kapacitu od 50 000 Kč a blízký termín. Další krok: nabídka konzultace, vždy s ověřením vhodnosti.'},
+      text:'<p>Počítáte s částkou od 50 000 Kč a v blízké době. V ostré verzi by dávalo smysl projít podmínky s poradcem. Je to jen vaše volba a nic z toho nezakládá nárok na investici.</p>',
+      crm:'Kvalifikovaný kontakt: dobrovolně uvedl investiční kapacitu od 50 000 Kč a blízký termín. Další krok: nabídka konzultace, vždy s ověřením vhodnosti.'},
     nurture:{kicker:'Vzdělávací kontakt',title:'Dobře, nemusíte spěchat',
       text:'<p>Částka by modelové minimum splňovala, ale rozhodnutí je zatím daleko. Průvodce vám pomůže připravit se. Nebudeme vás tlačit k rozhovoru s poradcem.</p>',
-      crm:'Vzdělávací kontakt: kapacita od 50 000 Kč, termín vzdálený nebo nejistý. Další krok: pouze informační obsah, bez aktivního obchodního kontaktu.'},
-    below:{kicker:'Pod modelovým minimem',title:'Modelové minimum je 50 000 Kč',
+      crm:'Vzdělávací kontakt: kapacita od 50 000 Kč, termín vzdálený nebo nejistý. Další krok: pouze informační obsah, bez aktivního obchodního kontaktu.'},
+    below:{kicker:'Pod modelovým minimem',title:'Modelové minimum je 50 000 Kč',
       text:'<p>S nižší částkou by se do této emise nešlo zapojit. To není chyba. Průvodce můžete využít jako obecnou pomůcku, jak se ptát na firemní dluhopisy. Poradce vám nenabízíme.</p>',
       crm:'Vzdělávací kontakt pod minimem: nepočítá se mezi kvalifikované investory. Další krok: žádný obchodní kontakt.'},
     info:{kicker:'Sbíráte informace',title:'Skvělé, začněte u základů',
-      text:'<p>Zatím se jen rozhlížíte, a to je rozumný začátek. Přečtěte si podmínky a rizika výše. Průvodce vám dá otázky, na které se vyplatí znát odpověď, než vůbec začnete uvažovat o částce.</p>',
+      text:'<p>Zatím se jen rozhlížíte, a to je rozumný začátek. Přečtěte si výpočet a rizika výše. Průvodce vám dá otázky, na které se vyplatí znát odpověď, než vůbec začnete uvažovat o částce.</p>',
       crm:'Informační kontakt: částka nespecifikována. Další krok: pouze informační obsah, bez aktivního obchodního kontaktu.'}
   };
 
@@ -514,7 +552,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--line)}
       $('#email-err').textContent='E-mail nemá správný tvar, například jmeno@domena.cz. Pole můžete nechat prázdné.';
       em.setAttribute('aria-invalid','true');em.focus();ok=false;}
     if(ok&&!$('#phone-wrap').hidden&&ph.value.trim()&&!/^\+?[0-9 ]{9,16}$/.test(ph.value.trim())){
-      $('#phone-err').textContent='Telefon zadejte jako číslice, například +420 000 000 000, nebo pole nechte prázdné.';
+      $('#phone-err').textContent='Telefon zadejte jako číslice, například +420 000 000 000, nebo pole nechte prázdné.';
       ph.setAttribute('aria-invalid','true');ph.focus();ok=false;}
     if(!ok)return;
     var extra=[];
@@ -524,6 +562,15 @@ footer{padding:48px 0 32px;border-top:1px solid var(--line)}
     em.value='';ph.value='';
     show(done);
   });
+
+  /* Mobilní lišta: ukáže se po odrolování hera, schová se u formuláře */
+  var dock=$('#dock'),hero=$('#top'),form=$('#pruvodce');
+  if('IntersectionObserver' in window){
+    var vis={hero:true,form:false};
+    var upd=function(){dock.classList.toggle('on',!vis.hero&&!vis.form)};
+    new IntersectionObserver(function(e){vis.hero=e[0].isIntersecting;upd()}).observe(hero);
+    new IntersectionObserver(function(e){vis.form=e[0].isIntersecting;upd()},{threshold:.05}).observe(form);
+  }
 })();
 </script>
 </body>

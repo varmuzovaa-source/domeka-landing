@@ -15,7 +15,7 @@ Legenda: [x] ověřeno, [~] ověřeno částečně, [ ] neověřeno.
 
 ## Frontend / přístupnost
 - [x] Žádné horizontální přetečení: 320, 375, 390, 768, 1024, 1440 px (měřeno `scrollWidth`).
-- [x] Screenshoty 320, 375, 390, 768, 1024, 1440 v `screenshots/`.
+- [x] Screenshoty 320, 375, 390, 768, 1024, 1440 v `screenshots/` (po redesignu s fotografiemi).
 - [x] Větvení formuláře: 9 kombinací odpovědí, prázdné odeslání, špatný e-mail, špatný telefon, dokončení (automatizovaný test v prohlížeči).
 - [x] Kontrasty spočítány (AA, viz `DESIGN_DECISIONS.md`).
 - [x] Popisky polí, `fieldset/legend`, `role=alert`, focus se přesouvá na nadpis dalšího kroku.
@@ -23,7 +23,7 @@ Legenda: [x] ověřeno, [~] ověřeno částečně, [ ] neověřeno.
 - [~] `prefers-reduced-motion`: plynulé rolování se zapíná jen bez omezení pohybu, jiné animace nejsou. Nezkoušeno s přepnutým systémovým nastavením.
 - [ ] Čtečka obrazovky (VoiceOver) netestována.
 - [ ] Safari/Firefox netestovány (testováno Chromium a headless Chrome). Používá se `:has()`, bez něj zůstává základní styl radií.
-- [ ] Fotografie je placeholder, licencovaný snímek chybí.
+- [~] Fotografie jsou AI ilustrace (Gamma), v patičce označené, bez popisků pod obrázky. Licencované snímky chybí.
 
 ## Odevzdání
 - [x] Veřejný GitHub repozitář: https://github.com/varmuzovaa-source/domeka-landing

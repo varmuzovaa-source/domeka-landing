@@ -6,7 +6,7 @@ Datum: 24. 11. 2026. Fiktivní klient, fiktivní dluhopis.
 
 | # | Oblast | Problém | Řešení |
 |---|---|---|---|
-| 1 | Vizuál | Hlavní obraz byl CSS pseudoilustrace domu s gradienty, působila jako šablona. | Schematický výkres fasády (`assets/hero-placeholder.svg`), jasně označený jako placeholder. Slot je připravený na licencovanou fotografii. |
+| 1 | Vizuál | Hlavní obraz byl CSS pseudoilustrace domu s gradienty, působila jako šablona. | Celoplošná fotografie opravené činžovní fasády (AI ilustrace, označená v patičce), druhá fotografie dvorku před opravou a interiér po opravě. Bez popisků pod obrázky. |
 | 2 | Vizuál | Plovoucí karta přes obraz, stíny, fixní odznak, zelenobéžová paleta s limetkou. | Plochý povrch, čáry místo stínů, jedna CTA barva (ocean `#123D44`). |
 | 3 | Mobil / UX | Hero na 375 px nedával dohromady produkt, minimum, dobu a další krok. | H1, 4 podmínky ve 2×2 mřížce a CTA jsou v prvním viewportu. |
 | 4 | Konverze | Kvalifikační formulář byl jeden blok s povinným e-mailem a bez větvení. | Dvoukrokový funnel. Dvě otázky bez kontaktu, potom čtyři různé výsledky a nepovinný kontakt. |
@@ -49,3 +49,8 @@ Výzkum 23. 11. je v `DESIGN_REFERENCE_LOCK.md`. Dne 24. 11. jsem znovu ověřil
 ## 5. Placeholder fotografie: art direction
 
 Do `assets/` patří licencovaná fotografie staršího městského činžovního domu (3–5 podlaží), frontální nebo mírně šikmý pohled, přirozené denní světlo, bez lidí a značek, poměr 4:5 desktop / 4:3 mobil. Titulek musí zůstat: „Ilustrační fotografie. Nejde o nemovitost společnosti Domeka.“ Fotografii nevydávat za majetek emitenta.
+
+
+## 6. Redesign 24. 11. (odpoledne)
+
+Původní verze s výkresem působila slabě. Změny: celoplošný hero s fotografií a směrovým stínováním (text vlevo), velká typografie, čísla v „ledgeru“ místo karet, sekce „Z čeho se platí“ s konkrétním výpočtem (úroky z 150 mil. Kč = 900 000 Kč měsíčně = ≈ 64 pronajatých bytů při modelovém nájmu 14 000 Kč), náhled první strany průvodce, mezi-CTA po výpočtu a mobilní lišta s odkazem na průvodce (skrývá se u formuláře). Texty jsou konkrétní a vycházejí z čísel, ne z obecných slibů. Taste skill: bez popisků pod obrázky, jedna sekce = jedna myšlenka, stejné okraje, hover odezva tlačítek.

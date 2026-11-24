@@ -4,7 +4,7 @@
 
 Fiktivní klient a fiktivní dluhopis, vytvořeno pro praktický úkol (Junior AI Developer). Statický web v češtině: HTML, CSS a trocha JavaScriptu, bez knihoven, bez backendu, bez externích požadavků.
 
-- Vstup: `index.html`, obraz `assets/hero-placeholder.svg`
+- Vstup: `index.html`, fotografie v `assets/` (hero, interiér, dvorek)
 - Rozhodnutí: `DESIGN_DECISIONS.md`, `DESIGN_REFERENCE_LOCK.md`
 - Funnel a hypotézy: `CRO_FUNNEL_SPEC.md` a sekce níže
 - QA: `QA_RELEASE_CHECKLIST.md`, `screenshots/`
@@ -41,7 +41,8 @@ Doplněno a **fiktivní**:
 - sazba **7,2 % p. a.** (modelový předpoklad, na 50 000 Kč to je 3 600 Kč ročně, 900 Kč čtvrtletně, 14 400 Kč za 4 roky před zdaněním; není to slib výplaty),
 - jméno emitenta Domeka a popis podnikání,
 - lead magnet a kvalifikační otázky,
-- hero vizuál (schematický výkres, placeholder za fotografii).
+- modelový nájem 14 000 Kč a z něj spočtených ≈ 64 pronajatých bytů (kolik bytů musí být pronajato, aby se zaplatily úroky z 150 mil. Kč),
+- fotografie: tři ilustrační snímky vytvořené umělou inteligencí (Gamma). Nezobrazují nemovitosti Domeky, což říká patička. Před ostrým spuštěním je nahradit licencovanými fotografiemi.
 
 Žádné reference, ocenění, počty investorů, loga regulátorů ani pojišťoven.
 
@@ -53,7 +54,7 @@ Doplněno a **fiktivní**:
 Metriky: qualified lead rate, cost per qualified lead, contact-to-investor rate, cost per funded investor.
 
 ## Co před ostrým spuštěním chybí
-Emisní podmínky, prospekt nebo výjimka a povinná sdělení, skutečná sazba a zajištění, údaje o emitentovi a dokumenty, licencovaná fotografie, informace o zpracování osobních údajů a právní základ, funkční doručení průvodce, evidence souhlasů, CRM a právní kontrola.
+Emisní podmínky, prospekt nebo výjimka a povinná sdělení, skutečná sazba a zajištění, údaje o emitentovi a dokumenty, licencované fotografie místo AI ilustrací, informace o zpracování osobních údajů a právní základ, funkční doručení průvodce, evidence souhlasů, CRM a právní kontrola.
 
 ## Spuštění
 Otevřete `index.html`, nebo `python3 -m http.server`. Nasazení: libovolný statický hosting, například Vercel (bez build příkazu, kořen projektu).
