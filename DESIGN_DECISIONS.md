@@ -6,7 +6,7 @@ Datum: 24. 11. 2026. Fiktivní klient, fiktivní dluhopis.
 
 | # | Oblast | Problém | Řešení |
 |---|---|---|---|
-| 1 | Vizuál | Hlavní obraz byl CSS pseudoilustrace domu s gradienty, působila jako šablona. | Celoplošná fotografie opravené bytový fasády (AI ilustrace, označená v patičce), druhá fotografie nádvoří před opravou. Bez popisků pod obrázky. |
+| 1 | Vizuál | Hlavní obraz byl CSS pseudoilustrace domu s gradienty, působila jako šablona. | Celoplošná fotografie opravené bytové fasády (AI ilustrace, označená v patičce), druhá fotografie nádvoří před opravou. Bez popisků pod obrázky. |
 | 2 | Vizuál | Plovoucí karta přes obraz, stíny, fixní odznak, zelenobéžová paleta s limetkou. | Plochý povrch, čáry místo stínů, jedna CTA barva (ocean `#123D44`). |
 | 3 | Mobil / UX | Úvodní část na 375 px nedával dohromady produkt, minimum, dobu a další krok. | H1, 4 podmínky ve 2×2 mřížce a CTA jsou v prvním viewportu. |
 | 4 | Konverze | Kvalifikační formulář byl jeden blok s povinným e-mailem a bez větvení. | Dvoukrokový funnel. Dvě otázky bez kontaktu, potom čtyři různé výsledky a nepovinný kontakt. |
@@ -48,7 +48,7 @@ Výzkum 23. 11. je v `DESIGN_REFERENCE_LOCK.md`. Dne 24. 11. jsem znovu ověřil
 
 ## 5. Placeholder fotografie: art direction
 
-Do `assets/` patří licencovaná fotografie staršího městského bytovýho domu (3–5 podlaží), frontální nebo mírně šikmý pohled, přirozené denní světlo, bez lidí a značek, poměr 4:5 desktop / 4:3 mobil. Titulek musí zůstat: „Ilustrační fotografie. Nejde o nemovitost společnosti Domeka.“ Fotografii nevydávat za majetek emitenta.
+Do `assets/` patří licencovaná fotografie staršího městského bytového domu (3–5 podlaží), frontální nebo mírně šikmý pohled, přirozené denní světlo, bez lidí a značek, poměr 4:5 desktop / 4:3 mobil. Titulek musí zůstat: „Ilustrační fotografie. Nejde o nemovitost společnosti Domeka.“ Fotografii nevydávat za majetek emitenta.
 
 
 ## 6. Redesign 24. 11. (odpoledne)
@@ -58,3 +58,8 @@ Původní verze s výkresem působila slabě. Změny: celoplošná úvodní čá
 ## 7. Úprava po zpětné vazbě
 
 Fotografie interiéru byla vyřazena, protože do příběhu nezapadala. Sekce „Co kupujete“ je nově text a ledger, doplněný srovnáním „Co dostanete / Co přebíráte vy“. Texty jsou přepsané copywriterským tónem: konkrétní čísla, přímé oslovení a poctivé vyvážení výhod a rizik.
+
+## Revize 24. 11. 2026 — Codex
+Mobil: produkt → vysvětlení → podmínky → riziko → hlavní akce → kalkulačka. Zajištěný je dluhopis, nikoli úrok. Kontrastní překrytí fotografie posíleno; fokus v bílých kartách je tmavý. Rozsahy částek nemají společné hranice. Texty odstranily nedoložené přísliby odeslání a telefonátu. Pohyb: 180 ms odezva výsledků kalkulačky a tlačítek, bez parallaxu a bez skrývání obsahu. Při prefers-reduced-motion se vypíná i programové plynulé posouvání.
+
+Finální lead magnet: hotové PDF až po e-mailu, nebo telefonu při nabídce konzultace. Veřejný zůstává náhled. Dřívější popis nepovinného kontaktu je historický a byl po pokynu Andrey nahrazen touto cestou.

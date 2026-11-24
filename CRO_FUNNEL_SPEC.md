@@ -1,3 +1,5 @@
+> Current decision, 24 Nov 2026: Andrea wants a lead magnet exchanged for a contact. Show value first, ask amount and timing, then require an email or, for qualified consultation requests, a valid phone instead. No PDF link before this UI step. This remains a clearly labelled demo without data transmission. Older design examples below are historical and are superseded by this decision.
+
 # DOMEKA — CRO funnel specification (handoff for Claude Code)
 
 This supplements `CLAUDE_MASTER_PROMPT.md`. Do not treat hypotheses as measured findings.
@@ -20,10 +22,10 @@ Landing facts immediately readable:
 
 **Step 0, no gate:** Learn 3 key terms and 2 material risks, an illustration of how payments *would* occur assuming the issuer performs. Clarify this is not an insured bank deposit. No fake property photos presented as issuer-owned.
 
-**Step 1, lead-magnet proposition:** `5 otázek, které si položit před nákupem firemního dluhopisu`. Concrete preview: (1) komu půjčuji, (2) z čeho emitent splácí, (3) co je skutečně zastaveno a v jakém pořadí, (4) kdy mohu dostat peníze zpět, (5) co se stane při nesplácení. Explain what the user receives: short educational checklist, sample cashflow chart, call preparation questions. **It is a proposed resource for the hiring test, not a real downloadable asset.**
+**Step 1, lead-magnet proposition:** `5 otázek, které si položit před nákupem firemního dluhopisu`. Concrete preview: (1) komu půjčuji, (2) z čeho emitent splácí, (3) co je skutečně zastaveno a v jakém pořadí, (4) kdy mohu dostat peníze zpět, (5) co se stane při nesplácení. Explain what the user receives: short educational checklist, sample cashflow chart, call preparation questions. **The resource is now an actual two-page downloadable PDF, unlocked in the UI after a valid contact. The demo does not store or transmit data.**
 
 **Step 2, two low-friction questions before email:**
-Q1 `S jakou částkou přibližně počítáte?` values `Zatím zjišťuji` / `Méně než 50 000 Kč` / `50–100 000 Kč` / `100–500 000 Kč` / `Více než 500 000 Kč`. Avoid default selection.
+Q1 `S jakou částkou přibližně počítáte?` values `Zatím zjišťuji` / `Méně než 50 000 Kč` / `50 000–99 999 Kč` / `100 000–499 999 Kč` / `500 000 Kč a více`. Avoid default selection.
 Q2 `Kdy o investici případně uvažujete?` values `Jen sbírám informace` / `V příštích 3 měsících` / `Později` / `Nevím`.
 
 **Step 3, proportional details:** Label `E-mail pro zaslání průvodce (ukázka)`; optional first name, optional phone with checkbox `Chci, aby se mi ozval poradce` (do not imply call automatically occurs, since demo has no backend). The form remains demo-only and shows a no-transmission confirmation such as `Ukázka dokončena. V této verzi se údaje nikam neodesílají a průvodce se automaticky neposílá.` Do not harvest real personal data in public demo; ideally avoid asking for a real full email at all or explicitly mark demo.
@@ -34,7 +36,7 @@ Q2 `Kdy o investici případně uvažujete?` values `Jen sbírám informace` / `
 - Q1 <50k or unsure: educational lead only, **never** counted as funded-capable lead. Offer no-pressure explanation and exit.
 
 ### Form friction trade-off
-Question-first flow filters at source but may lose some educational leads. Email-first grows total contacts but creates high advisor workload. Choose **light qualification before optional contact** because the client values funded investors, not CPL. Hypothesis only; validate with A/B tests.
+Question-first flow filters at source but may lose some educational leads. Email-first grows total contacts but creates high advisor workload. Choose **light qualification before contact required to unlock the guide** because the client values funded investors, not CPL. Hypothesis only; validate with A/B tests.
 
 ## Page architecture and on-mobile priority
 1. compact model disclaimer (sticky badge is optional if accessible)

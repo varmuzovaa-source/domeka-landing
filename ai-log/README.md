@@ -18,7 +18,10 @@ Navrhnout a implementovat českou mobilní investiční landing page pro fiktivn
 
 Redesign, cestu zájemce (funnel), dokumentaci i nasazení provedl Claude Code (desktopová aplikace, model Claude Sonnet 5.5). Původní první verzi vytvořil ChatGPT, jak je popsáno výše.
 
-- **Export:** `claude-code-export.txt`, kompletní export relace v textové podobě jako příkaz `/export`.
+- **Export:** `claude-code-export.txt`, upravený textový přepis relace; nejde o doslovný výstup příkazu `/export`.
 - **Jak vznikl:** z oficiálního exportu relace (`transcript.jsonl`) ho převedl skript. Příkaz `/export` samotný nelze z okna aplikace spustit automaticky, proto je tento soubor jeho ekvivalentem, nikoli doslovným výstupem.
 - **Co bylo upraveno:** vypuštěny skryté systémové instrukce, zkráceny dlouhé výstupy nástrojů, e-mailové adresy nahrazeny `<e-mail>` a výsledky čtení Gmailu vypuštěny, protože obsahovaly soukromé e-maily třetích osob. Zadání, odpovědi a pořadí kroků zůstaly zachovány.
 - **Doslovný `/export`:** lze doplnit spuštěním `/export` v okně relace a uložením vedle tohoto souboru.
+
+## Následná revize v Codexu
+Po práci v Claude Code proběhla jazyková, marketingová a technická revize v Codexu. Historický claude-code-export.txt zůstává beze změny a tuto následnou práci nezachycuje. Rozsah změn a aktuální ověření popisují DESIGN_DECISIONS.md a QA_RELEASE_CHECKLIST.md.

@@ -25,7 +25,7 @@
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-padding-top:12px}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
-body{margin:0;background:var(--canvas);color:var(--ink);font:400 17px/1.55 var(--font);overflow-x:hidden}
+body{margin:0;background:var(--canvas);color:var(--ink);font:400 17px/1.55 var(--font)}
 @media (min-width:768px){body{font-size:18px}}
 img{display:block;max-width:100%}
 a{color:var(--ocean);text-underline-offset:3px}
@@ -34,16 +34,17 @@ h1,h2,h3{font-weight:500;letter-spacing:-.035em;margin:0;line-height:1.05}
 h2{font-size:clamp(2rem,6vw,3.6rem);max-width:17ch}
 h3{font-size:1.2rem;letter-spacing:-.015em;line-height:1.25}
 .wrap{width:min(var(--max),100% - 2*var(--gutter));margin-inline:auto}
-.eyebrow{font-size:.8rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
+.eyebrow{font-size:1rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:0 0 16px}
 .lead{font-size:1.12rem;color:var(--muted);max-width:58ch}
 .section{padding-block:var(--sp);border-top:1px solid var(--line)}
 :focus-visible{outline:3px solid var(--ocean);outline-offset:3px;border-radius:4px}
 .dark :focus-visible,.hero :focus-visible{outline-color:#fff}
+.card :focus-visible,.calc :focus-visible{outline-color:var(--ocean)}
 .skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--ink);padding:10px 14px;z-index:50}
 .skip:focus{left:8px}
 
 /* ---------- Upozornění ---------- */
-.notice-bar{background:var(--ink);color:#fff;font-size:.82rem;line-height:1.4;padding:9px 0}
+.notice-bar{background:var(--ink);color:#fff;font-size:1rem;line-height:1.4;padding:9px 0}
 .notice-bar strong{font-weight:700;color:var(--signal)}
 
 /* ---------- Tlačítka ---------- */
@@ -53,7 +54,7 @@ h3{font-size:1.2rem;letter-spacing:-.015em;line-height:1.25}
 .btn svg{width:18px;height:14px;flex:none}
 .btn.ghost{background:transparent;color:var(--ocean);border-color:var(--line-strong)}
 .btn.ghost:hover{background:var(--tint);border-color:var(--ocean)}
-.btn.small{min-height:44px;padding:9px 20px;font-size:.92rem}
+.btn.small{min-height:44px;padding:9px 20px;font-size:1rem}
 .btn.block{width:100%}
 .btn.light{background:#fff;color:var(--ocean);border-color:#fff}
 .btn.light:hover{background:var(--signal);border-color:var(--signal)}
@@ -63,15 +64,15 @@ h3{font-size:1.2rem;letter-spacing:-.015em;line-height:1.25}
 /* ---------- Hero ---------- */
 .hero{position:relative;color:#fff;background:var(--ocean);display:flex;flex-direction:column;min-height:calc(100svh - 56px);isolation:isolate}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:38% 50%;z-index:-2}
-.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,26,30,.5) 0%,rgba(6,26,30,.45) 30%,rgba(6,26,30,.9) 100%)}
+.hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,26,30,.78) 0%,rgba(6,26,30,.74) 30%,rgba(6,26,30,.9) 100%)}
 @media (min-width:860px){.hero:after{background:linear-gradient(90deg,rgba(6,26,30,.86) 0%,rgba(6,26,30,.7) 40%,rgba(6,26,30,.12) 78%),linear-gradient(180deg,rgba(6,26,30,.35) 0%,rgba(6,26,30,0) 22%,rgba(6,26,30,.55) 100%)}}
 .top{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
 .brand{font-weight:700;letter-spacing:.26em;font-size:1.05rem;color:#fff;text-decoration:none}
 nav.main{display:flex;align-items:center;gap:28px}
-nav.main a.link{display:none;color:#fff;text-decoration:none;font-size:.95rem}
+nav.main a.link{display:none;color:#fff;text-decoration:none;font-size:1rem}
 nav.main a.link:hover{text-decoration:underline}
 @media (min-width:860px){nav.main a.link{display:inline}}
-.hero-body{margin-top:auto;padding:36px 0 32px}
+.hero-body{margin-top:auto;padding:24px 0 32px}
 .hero .eyebrow{color:var(--signal)}
 .hero h1{font-size:clamp(2.2rem,8.6vw,5rem);max-width:19ch;line-height:1.02}
 .hero .sub{font-size:clamp(1.05rem,3.9vw,1.4rem);line-height:1.4;max-width:46ch;margin:18px 0 24px;color:#EAF3F1}
@@ -80,11 +81,34 @@ nav.main a.link:hover{text-decoration:underline}
 .facts li{padding:12px 12px 12px 0;border-bottom:1px solid rgba(255,255,255,.22);display:flex;flex-direction:column}
 .facts li:nth-child(even){padding-left:14px;border-left:1px solid rgba(255,255,255,.22)}
 .facts b{font-size:1.4rem;font-weight:500;letter-spacing:-.03em;line-height:1.15}
-.facts span{font-size:.8rem;color:#D3E4E1;line-height:1.3;margin-top:2px}
+.facts span{font-size:1rem;color:#D3E4E1;line-height:1.3;margin-top:2px}
 .facts .m{color:#FFD890;font-weight:600}
 .hero-actions{display:flex;flex-direction:column;gap:12px}
-.hero .risk{font-size:.86rem;color:#D3E4E1;margin:18px 0 0;max-width:58ch}
+.hero .risk{font-size:1rem;color:#D3E4E1;margin:18px 0 0;max-width:58ch}
 .hero .risk b{color:#fff}
+.hero .risk{margin:0 0 20px}
+.hero .hero-actions{margin:0 0 20px}
+.hero .eyebrow{font-size:1rem;letter-spacing:.03em}
+.site-foot h2,.stepper,.result-kicker,.sheet .st,.ledger dt{font-size:1rem}
+.hero h1{max-width:20ch}
+.calc-l{flex-wrap:wrap}
+.calc-res div{flex-wrap:wrap}
+.calc-res dd{margin-left:auto}
+.stat .n small{font-size:1rem;display:block;margin:8px 0 0}
+.dock{visibility:hidden}
+.dock.on{visibility:visible}
+:target{scroll-margin-bottom:100px}
+@media (prefers-reduced-motion:no-preference){
+ .btn{transition:background-color .18s,border-color .18s,transform .18s}
+ .btn:hover{transform:translateY(-2px)}
+ .btn:active{transform:translateY(0)}
+ .btn svg{transition:transform .18s}
+ .btn:hover svg{transform:translateX(3px)}
+ .calc-res dd{animation:amount-feedback .25s ease-out}
+ @keyframes amount-feedback{from{transform:translateY(3px)}to{transform:translateY(0)}}
+ .opt{transition:background-color .18s,border-color .18s}
+}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media (min-width:560px){.hero-actions{flex-direction:row;flex-wrap:wrap}}
 @media (min-width:700px){.facts{grid-template-columns:repeat(4,1fr);max-width:900px}.facts li,.facts li:nth-child(even){padding:16px 18px 0 0;border-bottom:0;border-left:0}.facts li:nth-child(n+2){padding-left:20px;border-left:1px solid rgba(255,255,255,.28)}.hero-body{padding-bottom:52px}}
 
@@ -101,12 +125,12 @@ nav.main a.link:hover{text-decoration:underline}
 @media (min-width:640px){.gt{grid-template-columns:1fr 1fr}.gt>div:first-child{padding-right:24px;border-right:1px solid var(--line)}.gt>div+div{padding-left:24px}}
 .ledger{margin:30px 0 0;border-top:1px solid var(--ink)}
 .ledger .row{display:grid;gap:3px;padding:16px 0;border-bottom:1px solid var(--line)}
-.ledger dt{font-size:.88rem;color:var(--muted)}
+.ledger dt{font-size:1rem;color:var(--muted)}
 .ledger dd{margin:0;font-size:1.08rem}
 .ledger dd strong{font-weight:600}
 @media (min-width:640px){.ledger .row{grid-template-columns:200px 1fr;gap:24px;padding:18px 0}}
-.tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--warn);background:#FFF1D6;border-radius:4px;padding:2px 7px;margin-left:8px;vertical-align:2px}
-.fine{font-size:.9rem;color:var(--muted);max-width:70ch;margin-top:16px}
+.tag{display:inline-block;font-size:1rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--warn);background:#FFF1D6;border-radius:4px;padding:2px 7px;margin-left:8px;vertical-align:2px}
+.fine{font-size:1rem;color:var(--muted);max-width:70ch;margin-top:16px}
 
 /* ---------- Z čeho se platí ---------- */
 .pay{display:grid;gap:40px}
@@ -118,9 +142,9 @@ nav.main a.link:hover{text-decoration:underline}
 .stat p b{color:var(--ink);font-weight:600}
 .flow{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink);counter-reset:s}
 .flow li{display:grid;grid-template-columns:40px 1fr;gap:4px 10px;padding:16px 0;border-bottom:1px solid var(--line);counter-increment:s}
-.flow li:before{content:counter(s,decimal-leading-zero);font-size:.85rem;font-weight:600;color:var(--muted);padding-top:3px}
+.flow li:before{content:counter(s,decimal-leading-zero);font-size:1rem;font-weight:600;color:var(--muted);padding-top:3px}
 .flow h3{font-size:1.08rem}
-.flow p{margin:2px 0 0;color:var(--muted);font-size:.98rem;grid-column:2}
+.flow p{margin:2px 0 0;color:var(--muted);font-size:1rem;grid-column:2}
 .you{margin-top:52px;display:grid;gap:26px;background:var(--support);border-radius:var(--radius);padding:30px var(--gutter)}
 .you .big{font-size:clamp(2.6rem,10vw,4.8rem);font-weight:300;letter-spacing:-.045em;line-height:1}
 .you .big small{font-size:.34em;color:var(--muted);letter-spacing:0;font-weight:400}
@@ -131,13 +155,13 @@ nav.main a.link:hover{text-decoration:underline}
 .compare{margin-top:48px;display:grid;border-top:1px solid var(--ink)}
 .compare>div{padding:18px 0;border-bottom:1px solid var(--line)}
 .compare h3{font-size:1rem;margin-bottom:6px}
-.compare p{margin:0;color:var(--muted);font-size:.98rem}
+.compare p{margin:0;color:var(--muted);font-size:1rem}
 @media (min-width:768px){.compare{grid-template-columns:1fr 1fr}.compare>div:first-child{padding-right:32px;border-right:1px solid var(--line)}.compare>div+div{padding-left:32px}}
 
 /* ---------- Před a po ---------- */
 .band{position:relative;min-height:46svh;display:flex;align-items:flex-end;color:#fff;isolation:isolate;background:#2a2118}
 .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
-.band:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.05) 25%,rgba(10,16,18,.82) 100%)}
+.band:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,16,18,.72) 0%,rgba(10,16,18,.88) 100%)}
 .band .wrap{padding:44px 0}
 .band h2{color:#fff;max-width:20ch}
 .band p{max-width:52ch;color:#E6EEEC;margin:18px 0 0}
@@ -148,7 +172,7 @@ nav.main a.link:hover{text-decoration:underline}
 .sec-head p{margin:0}
 .risks{list-style:none;padding:0;margin:0;border-top:1px solid var(--ink)}
 .risks li{display:grid;gap:6px;padding:22px 0;border-bottom:1px solid var(--line)}
-.risks .n{font-size:.9rem;font-weight:600;color:var(--muted)}
+.risks .n{font-size:1rem;font-weight:600;color:var(--muted)}
 .risks h3{font-size:1.35rem;letter-spacing:-.025em}
 .risks p{margin:0;color:var(--muted);max-width:56ch}
 @media (min-width:768px){.risks li{grid-template-columns:72px 4fr 5fr;gap:32px;padding:30px 0}}
@@ -162,20 +186,20 @@ nav.main a.link:hover{text-decoration:underline}
 .magnet{display:grid;gap:44px}
 @media (min-width:992px){.magnet{grid-template-columns:6fr 5fr;gap:80px;align-items:start}}
 .sheet{margin-top:34px;background:#fff;color:var(--ink);border-radius:6px;padding:26px 24px 20px}
-.sheet .st{display:flex;justify-content:space-between;gap:12px;font-size:.74rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding-bottom:10px}
+.sheet .st{display:flex;justify-content:space-between;gap:12px;font-size:1rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--ink);padding-bottom:10px}
 .sheet ol{list-style:none;margin:0;padding:0;counter-reset:q}
 .sheet li{counter-increment:q;display:grid;grid-template-columns:30px 1fr;gap:2px 8px;padding:12px 0;border-bottom:1px solid var(--line)}
 .sheet li:before{content:counter(q);font-weight:700;color:var(--ocean);grid-row:span 2}
 .sheet li b{font-weight:600;font-size:1.02rem;letter-spacing:-.01em}
-.sheet li span{color:var(--muted);font-size:.9rem;line-height:1.4}
-.sheet .p2{padding-top:14px;font-size:.88rem;color:var(--muted)}
-.draft-note{display:inline-block;margin-top:18px;font-size:.82rem;border:1px solid rgba(255,255,255,.4);border-radius:4px;padding:6px 10px;color:#fff}
+.sheet li span{color:var(--muted);font-size:1rem;line-height:1.4}
+.sheet .p2{padding-top:14px;font-size:1rem;color:var(--muted)}
+.draft-note{display:inline-block;margin-top:18px;font-size:1rem;border:1px solid rgba(255,255,255,.4);border-radius:4px;padding:6px 10px;color:#fff}
 .card{background:#fff;color:var(--ink);border-radius:var(--radius);padding:26px var(--gutter) 30px}
 @media (min-width:768px){.card{padding:38px 42px 42px}}
 @media (min-width:992px){.card{position:sticky;top:20px}}
 .card h3{color:var(--ink);font-size:1.5rem;letter-spacing:-.025em;margin-bottom:10px}
 .card p{color:var(--muted)}
-.stepper{display:flex;gap:8px;align-items:center;font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:14px}
+.stepper{display:flex;gap:8px;align-items:center;font-size:1rem;font-weight:600;color:var(--muted);margin-bottom:14px}
 .stepper i{flex:1;height:4px;border-radius:2px;background:var(--line);max-width:90px}
 .stepper i.on{background:var(--ocean)}
 fieldset{border:0;margin:0 0 24px;padding:0;min-width:0}
@@ -190,10 +214,10 @@ legend{font-size:1.05rem;font-weight:600;padding:0;margin-bottom:10px;color:var(
 .field label.l{display:block;font-weight:600;margin-bottom:6px;color:var(--ink)}
 input[type=email],input[type=tel]{width:100%;min-height:54px;padding:12px 14px;border:1px solid var(--line-strong);border-radius:var(--radius);font:inherit;color:var(--ink);background:#fff}
 input[type=email]:focus-visible,input[type=tel]:focus-visible{outline:3px solid var(--ocean);outline-offset:2px}
-.err{color:#9A1B1B;font-size:.92rem;font-weight:600;margin:10px 0 0}
+.err{color:#9A1B1B;font-size:1rem;font-weight:600;margin:10px 0 0}
 .err:empty{display:none}
 input[aria-invalid=true]{border-color:#9A1B1B;border-width:2px}
-.result-kicker{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:4px;padding:4px 8px;background:var(--tint);color:var(--ocean);margin-bottom:12px}
+.result-kicker{display:inline-block;font-size:1rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:4px;padding:4px 8px;background:var(--tint);color:var(--ocean);margin-bottom:12px}
 .result-kicker.edu{background:#F1F1EA;color:#4A4A38}
 .btn-row{display:flex;flex-direction:column;gap:10px;margin-top:8px}
 @media (min-width:560px){.btn-row{flex-direction:row;flex-wrap:wrap}}
@@ -233,10 +257,10 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
 .site-foot a:hover{border-bottom-color:#fff}
 .sf-grid{display:grid;gap:36px;grid-template-columns:1fr;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.2)}
 .sf-logo{font-weight:700;letter-spacing:.2em;font-size:1.4rem;color:#fff;margin:0 0 14px}
-.sf-brand p{margin:0;max-width:34ch;font-size:.98rem;line-height:1.55}
-.site-foot h2{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--signal);margin:0 0 14px;font-weight:700}
-.site-foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:.98rem}
-.sf-legal{padding-top:28px;display:grid;gap:12px;font-size:.84rem;line-height:1.6;color:rgba(255,255,255,.72)}
+.sf-brand p{margin:0;max-width:34ch;font-size:1rem;line-height:1.55}
+.site-foot h2{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--signal);margin:0 0 14px;font-weight:700}
+.site-foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:1rem}
+.sf-legal{padding-top:28px;display:grid;gap:12px;font-size:1rem;line-height:1.6;color:rgba(255,255,255,.72)}
 .sf-legal p{margin:0;max-width:96ch}
 .sf-legal strong{color:#fff}
 .sf-copy{margin-top:6px!important;color:rgba(255,255,255,.6)}
@@ -246,16 +270,16 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
 .hero-body>*{grid-column:1}
 .calc{background:#fff;color:var(--ink);border-radius:var(--radius);padding:24px 22px 26px;margin:6px 0 26px;box-shadow:0 18px 50px rgba(0,0,0,.28)}
 .calc h2{font-size:1.35rem;letter-spacing:-.02em;margin:0 0 16px;color:var(--ink)}
-.calc-l{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.95rem;color:var(--muted);margin-bottom:10px}
+.calc-l{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:1rem;color:var(--muted);margin-bottom:10px}
 .calc-l output{font-size:1.45rem;font-weight:600;color:var(--ink);letter-spacing:-.02em}
 .calc input[type=range]{width:100%;height:32px;margin:0;accent-color:var(--ocean);cursor:pointer}
-.calc-range{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin:2px 0 18px}
+.calc-range{display:flex;justify-content:space-between;font-size:1rem;color:var(--muted);margin:2px 0 18px}
 .calc-res{margin:0 0 12px;border-top:1px solid var(--line)}
 .calc-res div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
-.calc-res dt{color:var(--muted);font-size:.95rem}
+.calc-res dt{color:var(--muted);font-size:1rem}
 .calc-res dd{margin:0;font-weight:700;font-size:1.2rem;color:var(--ink);letter-spacing:-.02em}
 .calc-res div:first-child dd{font-size:1.6rem;color:var(--ocean)}
-.calc-fine{font-size:.8rem;color:var(--muted);margin:0 0 18px;line-height:1.45}
+.calc-fine{font-size:1rem;color:var(--muted);margin:0 0 18px;line-height:1.45}
 .calc .btn{width:100%}
 @media (min-width:980px){.hero-body{grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);align-items:end}
 .hero-body>.calc{grid-column:2;grid-row:1/span 6;align-self:center;margin:0}
@@ -263,12 +287,12 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
 .trust{background:var(--tint);padding:34px 0 36px}
 .tstats{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 12px}
 .tstats b{display:block;font-size:clamp(1.6rem,6vw,2.4rem);font-weight:600;letter-spacing:-.03em;color:var(--ocean);line-height:1.1}
-.tstats span{font-size:.9rem;color:var(--muted);line-height:1.35}
-.tpoints{list-style:none;margin:0;padding:18px 0 0;border-top:1px solid var(--line-strong);display:grid;gap:12px;font-size:.98rem;color:var(--ink)}
+.tstats span{font-size:1rem;color:var(--muted);line-height:1.35}
+.tpoints{list-style:none;margin:0;padding:18px 0 0;border-top:1px solid var(--line-strong);display:grid;gap:12px;font-size:1rem;color:var(--ink)}
 .tpoints b{font-weight:700}
-.calc-offer{margin:14px 0 0;font-size:.85rem;color:var(--muted);line-height:1.45}
+.calc-offer{margin:14px 0 0;font-size:1rem;color:var(--muted);line-height:1.45}
 @media (min-width:760px){.tstats{grid-template-columns:repeat(4,1fr)}.tpoints{grid-template-columns:repeat(3,1fr);gap:28px}}
-.fine,.calc-fine,.calc-range,.calc-offer,.facts span,.hero .risk,.sf-legal,.sf-legal p,.stepper span,.sheet li span,.draft-note,.err,.tstats span,.sheet .p2{font-size:max(.9rem,14px)}
+.fine,.calc-fine,.calc-range,.calc-offer,.facts span,.hero .risk,.sf-legal,.sf-legal p,.stepper span,.sheet li span,.draft-note,.err,.tstats span,.sheet .p2{font-size:1rem}
 .site-foot ul a{display:inline-flex;align-items:center;min-height:44px}
 .site-foot ul{gap:0}
 .brand{display:inline-flex;align-items:center;min-height:44px}
@@ -279,9 +303,10 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
 <a class="skip" href="#obsah">Přeskočit na obsah</a>
 
 <main id="obsah">
+<noscript><div class="wrap"><p>Pro kalkulačku a otázky je potřeba JavaScript. Pro získání průvodce zapněte JavaScript a vyplňte formulář. Náhled otázek si můžete přečíst níže.</p></div></noscript>
 <!-- ================= HERO ================= -->
 <section class="hero" id="top" aria-labelledby="h1">
-  <img class="hero-img" src="assets/hero-1400.jpg" srcset="assets/hero-900.jpg 900w, assets/hero-1400.jpg 1400w, assets/hero.jpg 1920w" sizes="100vw" width="1920" height="1072" fetchpriority="high" alt="Opravená fasáda bytového domu z konce 19. století v ulici se stromy, v zlatém světle">
+  <img class="hero-img" src="assets/hero-1400.jpg" srcset="assets/hero-900.jpg 900w, assets/hero-1400.jpg 1400w, assets/hero.jpg 1920w" sizes="100vw" width="1920" height="1072" fetchpriority="high" alt="Opravená fasáda bytového domu z konce 19. století v ulici se stromy, ve zlatém světle">
   <div class="wrap">
     <div class="top">
       <a class="brand" href="#top" aria-label="DOMEKA, začátek stránky">DOMEKA</a>
@@ -290,47 +315,47 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   </div>
   <div class="wrap hero-body">
     <p class="eyebrow">Dluhopis Domeka · upisování do 31. 3. 2027</p>
-    <h1 id="h1">Pevný úrok 7,2 % ročně, zajištěný bytovými domy</h1>
-    <p class="sub">Půjčíte peníze firmě, která od roku 2012 opravuje a pronajímá starší bytové domy. <b>Čtyři roky vám každé čtvrtletí vyplatí úrok</b>: z 50 000 Kč je to <b>900 Kč</b>. Na konci vám vrátí celou částku, pokud své závazky splní.</p>
-    <div class="hero-actions"><a class="btn light" href="#pruvodce">Získat průvodce zdarma <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a></div>
-    <aside class="calc" aria-labelledby="calc-t">
-      <h2 id="calc-t">Kolik vám dluhopis vyplatí</h2>
-      <label class="calc-l" for="amt">Kolik chcete půjčit: <output id="amt-out" for="amt">100 000 Kč</output></label>
-      <input type="range" id="amt" min="50000" max="1000000" step="10000" value="100000" aria-describedby="amt-hint">
-      <div class="calc-range" id="amt-hint"><span>50 000 Kč</span><span>1 000 000 Kč</span></div>
-      <dl class="calc-res">
-        <div><dt>Každé čtvrtletí</dt><dd id="r-q">1 800 Kč</dd></div>
-        <div><dt>Za rok</dt><dd id="r-y">7 200 Kč</dd></div>
-        <div><dt>Za 4 roky (16 výplat)</dt><dd id="r-t">28 800 Kč</dd></div>
-      </dl>
-      <p class="calc-fine">Při sazbě 7,2 % p. a., před zdaněním a jen tehdy, když firma své závazky plní.</p>
-      <button class="btn block" type="button" id="calc-go">Probrat podmínky a získat průvodce
-        <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></button>
-      <p class="calc-offer"><b>Zdarma:</b> průvodce „Pět otázek před nákupem“ (PDF, 2 strany) ke stažení hned po dvou otázkách.</p>
-    </aside>
+    <h1 id="h1">Dluhopis zajištěný domy. Úrok 7,2 % ročně.</h1>
+    <p class="sub">Půjčujete Domece na nákup a opravy bytových domů. <b>Od 50 000 Kč na 4 roky, úrok každé tři měsíce.</b> Výplata úroků i vrácení peněz závisejí na tom, zda firma splní své závazky.</p>
     <ul class="facts" aria-label="Základní podmínky emise">
       <li><b>50 000 Kč</b><span>minimální investice</span></li>
       <li><b>4 roky</b><span>splatnost</span></li>
       <li><b>4× ročně</b><span>výplata úroku</span></li>
       <li><b>7,2 % p. a.</b><span>pevný úrok ročně</span></li>
     </ul>
-    <p class="risk"><b>Dluhopis není bankovní vklad.</b> Hrozí, že přijdete o část investice, nebo dokonce o celou. Zajištění toto riziko snižuje, ale neodstraňuje.</p>
+    <p class="risk"><b>Dluhopis není bankovní vklad.</b> Můžete přijít o část nebo celou investici. Ani zajištění nezaručuje vrácení peněz.</p>
+    <div class="hero-actions"><a class="btn light" href="#pruvodce">Získat průvodce zdarma <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a></div>
+    <aside class="calc" aria-labelledby="calc-t">
+      <h2 id="calc-t">Spočítejte si úroky</h2>
+      <label class="calc-l" for="amt">Výše investice: <output id="amt-out" for="amt">100 000 Kč</output></label>
+      <input type="range" id="amt" min="50000" max="1000000" step="10000" value="100000" aria-describedby="amt-hint">
+      <div class="calc-range" id="amt-hint"><span>50 000 Kč</span><span>1 000 000 Kč</span></div>
+      <dl class="calc-res">
+        <div><dt>Každé čtvrtletí</dt><dd id="r-q">1 800 Kč</dd></div>
+        <div><dt>Za rok</dt><dd id="r-y">7 200 Kč</dd></div>
+        <div><dt>Úroky za 4 roky</dt><dd id="r-t">28 800 Kč</dd></div>
+      </dl>
+      <p class="calc-fine">Výpočet při sazbě 7,2 % ročně, bez reinvestování a před zdaněním. Jde pouze o úroky, bez vrácené investice. Výplata není zaručena.</p>
+      <button class="btn block" type="button" id="calc-go">Získat průvodce zdarma
+        <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></button>
+      <p class="calc-offer"><b>Zdarma:</b> průvodce „Pět otázek před nákupem“ (PDF, 2 strany) získáte po dvou otázkách a zadání kontaktu.</p>
+    </aside>
   </div>
 </section>
 
 <section class="trust" aria-labelledby="h-trust">
   <div class="wrap">
-    <p class="eyebrow" id="h-trust">Kdo vám peníze půjčuje</p>
+    <p class="eyebrow" id="h-trust">Komu půjčujete peníze</p>
     <ul class="tstats">
-      <li><b>od 2012</b><span>firma na trhu s bytovými domy</span></li>
+      <li><b>Od roku 2012</b><span>obnovujeme bytové domy</span></li>
       <li><b>46</b><span>opravených domů</span></li>
       <li><b>≈ 520</b><span>pronajatých bytů</span></li>
       <li><b>97 %</b><span>obsazenost bytů</span></li>
     </ul>
     <ul class="tpoints">
       <li><b>Zástava nemovitostí.</b> Dluhopis je zajištěn zástavním právem k domům firmy.</li>
-      <li><b>Nezávislé ocenění.</b> Hodnotu zajištěných domů stanovuje soudní znalec.</li>
-      <li><b>Správce zajištění.</b> Zástavu spravuje nezávislá osoba v zájmu investorů.</li>
+      <li><b>Nezávislé ocenění.</b> Hodnotu domů sloužících jako zástava stanovuje soudní znalec.</li>
+      <li><b>Správce zajištění.</b> Práva investorů ze zajištění uplatňuje nezávislý správce.</li>
     </ul>
   </div>
 </section>
@@ -340,18 +365,18 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   <div class="wrap split">
     <div class="head">
       <p class="eyebrow">Co kupujete</p>
-      <h2 id="h-podm">Jednoduchá půjčka, jasné podmínky</h2>
-      <p class="lead">Kupujete dluhopis, tedy půjčujete peníze firmě Domeka. Nekupujete byt ani podíl ve firmě. Za půjčku dostanete pevný úrok každé čtvrtletí a na konci čtvrtého roku vám má firma vrátit celou částku.</p>
+      <h2 id="h-podm">Jak dluhopis funguje</h2>
+      <p class="lead">Koupí dluhopisu půjčujete peníze firmě Domeka. Nekupujete byt ani podíl ve firmě. Domeka se zavazuje vyplácet úrok každé tři měsíce a po čtyřech letech vrátit půjčenou částku, tedy jistinu. Pokud své závazky nesplní, můžete o peníze přijít.</p>
     </div>
     <div>
       <dl class="ledger" style="margin-top:0">
-        <div class="row"><dt>Emitent</dt><dd>Domeka</dd></div>
+        <div class="row"><dt>Vydavatel dluhopisu</dt><dd>Domeka</dd></div>
         <div class="row"><dt>Cíl emise</dt><dd><strong>150 mil. Kč</strong></dd></div>
         <div class="row"><dt>Minimální investice</dt><dd><strong>50 000 Kč</strong></dd></div>
         <div class="row"><dt>Splatnost</dt><dd><strong>4 roky</strong>, jistina se vrací na konci</dd></div>
-        <div class="row"><dt>Úrok</dt><dd><strong>pevný, čtvrtletně</strong>, 7,2 % p. a.</dd></div>
-        <div class="row"><dt>Zajištění</dt><dd>Nemovitostmi firmy. Konkrétní domy a pořadí zástavy jsou uvedeny v emisních podmínkách.</dd></div>
-        <div class="row"><dt>Prodej před splatností</dt><dd>Odkup není zaručen. Nepočítejte s tím, že půjde snadno.</dd></div>
+        <div class="row"><dt>Úrok</dt><dd><strong>7,2 % ročně</strong>, výplata každé tři měsíce</dd></div>
+        <div class="row"><dt>Zajištění</dt><dd>Zástavním právem k domům firmy. Před investicí si vyžádejte seznam zastavených domů, jejich ocenění a pořadí věřitelů. Tyto dokumenty zde zatím nejsou k dispozici.</dd></div>
+        <div class="row"><dt>Prodej před splatností</dt><dd>Možnost předčasného odkupu zde není doložena. Prodej jinému investorovi závisí na podmínkách emise a na tom, zda najdete kupce.</dd></div>
       </dl>
       <p class="fine">Sazba je po celou dobu splatnosti pevná. Výplata úroků ani vrácení jistiny však nejsou zaručeny.</p>
     </div>
@@ -363,7 +388,7 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   <img src="assets/courtyard.jpg" srcset="assets/courtyard-900.jpg 900w, assets/courtyard.jpg 1600w" sizes="100vw" width="1600" height="893" loading="lazy" decoding="async" alt="Nádvoří starého bytového domu s lešením, oprýskanou omítkou a stohy řeziva">
   <div class="wrap">
     <p class="eyebrow" style="color:var(--signal)">Kam peníze jdou</p>
-    <h2 id="h-band">Z vašich peněz se stávají opravené domy</h2>
+    <h2 id="h-band">Peníze na nákup a opravy domů</h2>
     <p>Domeka kupuje starší bytové domy, opravuje je a byty pronajímá. Z emise firma platí nákup domů a stavební práce, například střechy, rozvody a okna. Nájemné z opravených bytů je zdroj, ze kterého pak platí úroky.</p>
   </div>
 </section>
@@ -373,43 +398,43 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">Z čeho se platí</p><h2 id="h-jak">Odkud se berou peníze na vaše úroky</h2></div>
-      <p class="lead">Na tuto otázku se ptá každý začátečník. Odpovídáme výpočtem, ne slibem. Počítáme s plně upsanou emisí.</p>
+      <p class="lead">Základem je nájemné z bytů. Následující příklad počítá s emisí v plné výši 150 milionů Kč a nájemným 14 000 Kč za byt měsíčně.</p>
     </div>
     <div class="pay">
       <div>
-        <div class="stat"><div class="n">900 000 Kč<small>měsíčně</small></div><p><b>Tolik by plně upsaná emise stála na úrocích.</b> Při sazbě 7,2 % je to 10,8 mil. Kč ročně, které musí firma vydělat ještě před opravami, správou domů a daněmi.</p></div>
-        <div class="stat"><div class="n">≈ 64 bytů<small>pronajatých</small></div><p>Při nájmu <b>14 000 Kč měsíčně</b> stačí na úroky přibližně 64 bytů. Domeka jich pronajímá asi 520, úroky by tvořily zhruba osminu nájemného, ještě před náklady na provoz.</p></div>
+        <div class="stat"><div class="n">900 000 Kč<small>měsíčně</small></div><p><b>To je průměrný měsíční náklad na úroky.</b> Za rok činí 10,8 milionu Kč. Firma navíc potřebuje peníze na opravy, správu domů, daně a nakonec také na splacení jistiny. Investorům se úrok vyplácí čtvrtletně.</p></div>
+        <div class="stat"><div class="n">65 bytů<small>pronajatých</small></div><p>Hrubé nájemné z <b>65 plně pronajatých bytů po 14 000 Kč měsíčně</b> by pokrylo samotné úroky. Nezahrnuje však provozní náklady. Při přibližně 520 pronajatých bytech odpovídají úroky asi osmině hrubého nájemného. Tento poměr sám o sobě nedokládá schopnost firmy splácet.</p></div>
       </div>
       <ol class="flow">
         <li><h3>Půjčíte firmě peníze</h3><p>Koupíte dluhopis od 50 000 Kč.</p></li>
         <li><h3>Domeka koupí a opraví dům</h3><p>Starý bytový dům dostane novou střechu, rozvody a okna.</p></li>
         <li><h3>Opravené byty pronajme</h3><p>Nájemné je hlavní příjem, ze kterého firma platí úroky i provoz domů.</p></li>
-        <li><h3>Vyplácí úrok, po 4 letech vrací peníze</h3><p>Pokud jí příjmy a zajištění stačí. Záruka to není.</p></li>
+        <li><h3>Úrok čtvrtletně, jistina po 4 letech</h3><p>Takový je závazek firmy. Jeho splnění závisí na jejím hospodaření; výplaty nejsou zaručeny.</p></li>
       </ol>
     </div>
 
     <div class="compare">
       <div><h3>Proč to není spořicí účet</h3><p>Vklady v bance jsou pojištěny do zákonného limitu. Dluhopis takové pojištění nemá.</p></div>
-      <div><h3>Za co dluhopis stojí</h3><p>Za vyšší úrok platíte vyšším rizikem. Výplaty i jistina závisejí na hospodaření Domeky a na hodnotě zajištění.</p></div>
+      <div><h3>Pevná sazba neznamená jistou výplatu</h3><p>Sazba určuje výši úroku. Nezaručuje však, že ho firma zaplatí ani že vrátí celou investici. Hodnota zástavy může být při prodeji nižší, než se očekávalo.</p></div>
     </div>
   </div>
 </section>
 
-<div class="cta-strip"><div class="wrap"><p>Než se rozhodnete, vezměte si pět otázek, které si před firemním dluhopisem klade každý zkušený investor.</p><a class="btn" href="#pruvodce">Získat pět otázek <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a></div></div>
+<div class="cta-strip"><div class="wrap"><p>Než investujete, ověřte si, komu půjčujete, z čeho firma splácí a co se stane při neplacení. Pomůže vám náš průvodce.</p><a class="btn" href="#pruvodce">Získat pět otázek <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a></div></div>
 
 <!-- ================= RIZIKA ================= -->
 <section class="section" id="rizika" aria-labelledby="h-rizika" style="border-top:0">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">Rizika</p><h2 id="h-rizika">Co se může pokazit</h2></div>
-      <p class="lead">Kdo o rizicích mluví dopředu, zaslouží si větší důvěru. Zajištěný dluhopis neznamená dluhopis bez rizika.</p>
+      <p class="lead">Zajištění neodstraňuje riziko ztráty. Před rozhodnutím zvažte, zda můžete peníze čtyři roky postrádat a zda unesete jejich případnou ztrátu.</p>
     </div>
     <ol class="risks">
-      <li><span class="n">01</span><h3>Domeka nemusí splatit</h3><p>Nájemné může klesnout nebo se opravy prodražit. Pak nebude z čeho platit úroky ani jistinu.</p></li>
-      <li><span class="n">02</span><h3>Zajištění není záruka</h3><p>Záleží na hodnotě domů, pořadí věřitelů a na tom, zda lze zástavu v praxi uplatnit.</p></li>
-      <li><span class="n">03</span><h3>Peníze nelze vybrat dříve</h3><p>Dluhopis se splácí po čtyřech letech. Prodej jinému investorovi nemusí být možný.</p></li>
-      <li><span class="n">04</span><h3>Není to pojištěný vklad</h3><p>Dluhopis nechrání systém pojištění vkladů. Můžete přijít o část investice, nebo o celou.</p></li>
-      <li><span class="n">05</span><h3>Čísla jsou výpočet, ne slib</h3><p>Skutečný výnos závisí na hospodaření firmy a na emisních podmínkách.</p></li>
+      <li><span class="n">01</span><h3>Firma nemusí splnit své závazky</h3><p>Nájemné může klesnout nebo se opravy prodražit. Pak nebude z čeho platit úroky ani jistinu.</p></li>
+      <li><span class="n">02</span><h3>Zajištění není záruka</h3><p>Při neplacení lze za podmínek zajištění uplatnit nárok na výtěžek z prodeje zastavených domů. Záleží na jejich hodnotě, pořadí věřitelů a možnosti zástavu vymoci. Získaná částka nemusí pokrýt celou investici.</p></li>
+      <li><span class="n">03</span><h3>Předčasné vrácení není zaručeno</h3><p>Dluhopis se splácí po čtyřech letech. Prodej jinému investorovi nemusí být možný.</p></li>
+      <li><span class="n">04</span><h3>Není to pojištěný vklad</h3><p>Dluhopis nechrání systém pojištění vkladů. Můžete přijít o část nebo celou investici.</p></li>
+      <li><span class="n">05</span><h3>Výpočet není zárukou výnosu</h3><p>Výpočty uvádějí hrubé úroky při plnění závazků firmy. Nezohledňují zdanění ani případné poplatky. Konkrétní pravidla určí emisní podmínky.</p></li>
     </ol>
     <p class="principle">Investujte jen peníze, které dokážete několik let postrádat a jejichž ztrátu unesete.</p>
   </div>
@@ -421,35 +446,35 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
     <div>
       <p class="eyebrow">Průvodce zdarma · PDF, 2 strany</p>
       <h2 id="h-mag" style="max-width:15ch">Pět otázek před nákupem firemního dluhopisu</h2>
-      <p class="lead" style="margin-top:20px">Dvě strany A4 pro člověka, který dluhopis ještě nikdy nekoupil. U každé otázky najdete, kde hledat odpověď a co je varovný signál.</p>
+      <p class="lead" style="margin-top:20px">Dvě strany A4 pro člověka, který dluhopis ještě nikdy nekoupil. U každé otázky najdete, kde hledat odpověď a na co si dát pozor.</p>
       <div class="sheet" aria-label="Náhled první strany průvodce">
         <div class="st"><span>Pět otázek před nákupem</span><span>Strana 1</span></div>
         <ol>
           <li><b>Komu půjčuji?</b><span>Kolik let firma podniká a co říká poslední účetní závěrka.</span></li>
-          <li><b>Z čeho se platí úroky?</b><span>Kolik nemovitostí vlastní, kolik je obsazených a kolik nájmu ročně vybere.</span></li>
-          <li><b>Co je zastaveno a v jakém pořadí?</b><span>Které domy, kdo je ocenil a jestli už nejsou zastavené jinému věřiteli.</span></li>
+          <li><b>Z čeho se platí úroky?</b><span>Kolik nemovitostí firma vlastní, jaká je obsazenost a kolik ročně vybere na nájemném.</span></li>
+          <li><b>Co je zastaveno a v jakém pořadí?</b><span>Které domy slouží jako zástava, kdo je ocenil a kdo má přednostní nárok na výtěžek.</span></li>
           <li><b>Kdy dostanu peníze zpět?</b><span>Splatnost, možnost předčasného odkupu a kde lze dluhopis prodat.</span></li>
           <li><b>Co když Domeka nezaplatí?</b><span>Kdo hájí zájmy investorů a jak se zástava uplatňuje.</span></li>
         </ol>
-        <div class="p2">Strana 2: výpočet výplat pro vaši částku a seznam dotazů na poradce.</div>
+        <div class="p2">Strana 2: tabulka úroků pro čtyři výše investice a deset otázek pro poradce.</div>
       </div>
-      <p class="draft-note">Stáhnete ho hned po dvou otázkách. E-mail nepotřebujete.</p>
+      <p class="draft-note">Průvodce získáte za e-mail. Nejdřív dvě otázky, abychom vám nabídli odpovídající další krok.</p>
     </div>
 
     <div class="card" id="form-card">
-      <form id="step1" novalidate aria-labelledby="s1-title">
+      <form id="step1" hidden novalidate aria-labelledby="s1-title">
         <div class="stepper" aria-hidden="true"><span>Krok 1 ze 2</span><i class="on"></i><i></i></div>
-        <h3 id="s1-title" tabindex="-1">Dvě otázky a víte, co dál</h3>
-        <p>Zabere to půl minuty. E-mail ani telefon teď nechceme.</p>
+        <h3 id="s1-title" tabindex="-1">Nejdřív dvě krátké otázky</h3>
+        <p>Podle částky a termínu vám nabídneme další postup. Ve druhém kroku si vyžádáte průvodce za e-mail; při zájmu o konzultaci můžete místo něj uvést telefon.</p>
 
         <fieldset>
           <legend>S jakou částkou přibližně počítáte?</legend>
           <div class="opts">
             <label class="opt"><input type="radio" name="amount" value="info"> Zatím zjišťuji</label>
             <label class="opt"><input type="radio" name="amount" value="below"> Méně než 50 000 Kč</label>
-            <label class="opt"><input type="radio" name="amount" value="50"> 50 000–100 000 Kč</label>
-            <label class="opt"><input type="radio" name="amount" value="100"> 100 000–500 000 Kč</label>
-            <label class="opt"><input type="radio" name="amount" value="500"> Více než 500 000 Kč</label>
+            <label class="opt"><input type="radio" name="amount" value="50"> 50 000–99 999 Kč</label>
+            <label class="opt"><input type="radio" name="amount" value="100"> 100 000–499 999 Kč</label>
+            <label class="opt"><input type="radio" name="amount" value="500"> 500 000 Kč a více</label>
           </div>
         </fieldset>
         <fieldset>
@@ -471,29 +496,30 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
         <span class="result-kicker" id="kicker"></span>
         <h3 id="s2-title" tabindex="-1"></h3>
         <div id="s2-text"></div>
-        <p style="margin:0 0 20px"><a class="btn" href="assets/Domeka-Pet-otazek-pred-nakupem-dluhopisu.pdf" download>Stáhnout průvodce (PDF)</a></p>
+        <p class="fine">Průvodce obsahuje pět kontrolních otázek, přehled úroků pro čtyři výše investice a deset dotazů pro poradce. Zpřístupníme ho po vyplnění kontaktu.</p>
+        <p class="fine" id="form-note"><strong>Formulář není připojený k odesílání.</strong> Pro vyzkoušení použijte jmeno@example.com. Formulář nic neodesílá ani neukládá; skutečné kontakty nezadávejte.</p>
         <div class="field">
-          <label class="l" for="email">E-mail, na který průvodce pošleme také <span style="font-weight:400;color:var(--muted)">nepovinné</span></label>
-          <input id="email" name="email" type="email" inputmode="email" autocomplete="off" placeholder="napr@priklad.cz" aria-describedby="email-err">
+          <label class="l" for="email">E-mail pro zaslání průvodce</label>
+          <input id="email" name="email" type="email" required inputmode="email" autocomplete="off" placeholder="jmeno@example.com" aria-describedby="form-note email-err">
           <p class="err" id="email-err" role="alert"></p>
         </div>
         <div id="advisor" hidden>
-          <label class="check"><input type="checkbox" id="want-call"> <span>Chci, aby se mi ozval poradce.</span></label>
+          <label class="check"><input type="checkbox" id="want-call" aria-controls="phone-wrap" aria-expanded="false"> <span>Místo e-mailu chci uvést telefon a probrat podmínky s poradcem.</span></label>
           <div class="field" id="phone-wrap" hidden>
-            <label class="l" for="phone">Telefon <span style="font-weight:400;color:var(--muted)">nepovinné</span></label>
-            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="+420 000 000 000" aria-describedby="phone-err">
+            <label class="l" for="phone">Telefon pro domluvený hovor</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="off" placeholder="+420 000 000 000" aria-describedby="form-note phone-err">
             <p class="err" id="phone-err" role="alert"></p>
           </div>
         </div>
         <div class="btn-row">
-          <button class="btn" type="submit">Dokončit</button>
+          <button class="btn" type="submit">Získat průvodce</button>
           <button class="btn ghost" type="button" id="back">Zpět k otázkám</button>
         </div>
       </form>
 
       <div id="done" hidden aria-live="polite">
         <div class="stepper" aria-hidden="true"><span>Hotovo</span><i class="on"></i><i class="on"></i></div>
-        <h3 id="done-title" tabindex="-1">Děkujeme</h3>
+        <h3 id="done-title" tabindex="-1">Průvodce je připraven ke stažení</h3>
         <div id="crm"></div>
         <p style="margin-top:16px"><a class="btn" href="assets/Domeka-Pet-otazek-pred-nakupem-dluhopisu.pdf" download>Stáhnout průvodce (PDF)</a></p>
         <div class="btn-row" style="margin-top:18px">
@@ -510,13 +536,15 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">Časté otázky</p><h2 id="h-faq">Než se rozhodnete</h2></div>
-      <p class="lead">Čtyři otázky, které si před prvním dluhopisem klade téměř každý.</p>
+      <p class="lead">Odpovědi k výplatám, zajištění a dalšímu postupu.</p>
     </div>
     <div class="faq">
       <details><summary>Co když Domeka přestane platit?</summary><p>Postup by určovaly emisní podmínky a zákon. Mohlo by dojít k prodlení s výplatami, k jednání o změně podmínek nebo k uplatnění zástavy. Hrozí, že dostanete méně, než jste vložili, nebo později.</p></details>
-      <details><summary>Mohu odejít dříve než po 4 letech?</summary><p>Počítejte s tím, že to nelze. Případný prodej jinému investorovi závisí na podmínkách emise a na zájmu dalších lidí.</p></details>
+      <details><summary>Mohu získat peníze zpět před uplynutím 4 let?</summary><p>S penězi počítejte až při splatnosti. Možnost předčasného odkupu zde není doložena. Prodej jinému investorovi nemusí být možný nebo může znamenat ztrátu.</p></details>
       <details><summary>Je to pojištěný vklad jako v bance?</summary><p>Není. Dluhopis nechrání systém pojištění vkladů a jeho nákup nelze srovnávat se spořicím účtem.</p></details>
-      <details><summary>Je sazba 7,2 % p. a. jistá?</summary><p>Sazba je pevná a určuje výši úroku, po dobu splatnosti se nemění. Nejistá je jen to, zda firma úroky i jistinu skutečně zaplatí. To závisí na jejím hospodaření a na zajištění.</p></details>
+      <details><summary>Co znamená pevná sazba 7,2 % ročně?</summary><p>Sazba se po dobu čtyř let nemění. Z 50 000 Kč odpovídá úroku 900 Kč za čtvrtletí, 3 600 Kč za rok a 14 400 Kč za čtyři roky, před zdaněním. Pevná sazba však nezaručuje výplatu. Ta závisí na schopnosti firmy splnit závazky.</p></details>
+      <details><summary>Kdy dostanu úroky a kdy původní investici?</summary><p>Úroky se mají vyplácet každé tři měsíce. Půjčená částka, tedy jistina, je splatná po čtyřech letech. Konkrétní data výplat a splatnosti zde zatím nejsou uvedena; před investicí si je ověřte v emisních podmínkách.</p></details>
+      <details><summary>Zavazuje mě průvodce nebo konzultace k investici?</summary><p>Ne. Zadání kontaktu, stažení průvodce ani případná konzultace nejsou objednávkou dluhopisu. V tomto návrhu se kontakty neodesílají a žádný poradce vám na základě formuláře nezavolá.</p></details>
     </div>
   </div>
 </section>
@@ -526,7 +554,7 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   <div class="wrap inner">
     <div><p class="eyebrow">Další krok</p><h2 id="h-close">Nejprve pochopit. Potom se rozhodnout.</h2></div>
     <div>
-      <p class="lead">Nikdo vás nehoní: žádné odpočítávání ani poslední volná místa. Začněte pěti otázkami a vraťte se, až budete mít odpovědi.</p>
+      <p class="lead">Projděte si pět otázek v průvodci. Než se rozhodnete, vyžádejte si emisní podmínky, podklady k hospodaření firmy a dokumenty k zajištění. Stažení průvodce vás k investici nezavazuje.</p>
       <div class="hero-actions"><a class="btn" href="#pruvodce">Získat průvodce</a><a class="btn ghost" href="#rizika">Přečíst rizika</a></div>
     </div>
   </div>
@@ -543,13 +571,13 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
       <nav aria-label="Informace v patičce"><h2>Informace</h2>
         <ul><li><a href="#podminky">Podmínky dluhopisu</a></li><li><a href="#jak">Z čeho se platí úroky</a></li><li><a href="#rizika">Rizika</a></li><li><a href="#faq">Časté otázky</a></li></ul></nav>
       <nav aria-label="Průvodce v patičce"><h2>Průvodce zdarma</h2>
-        <ul><li><a href="#pruvodce">Pět otázek před nákupem</a></li><li><a href="assets/Domeka-Pet-otazek-pred-nakupem-dluhopisu.pdf" download>Stáhnout PDF</a></li></ul></nav>
+        <ul><li><a href="#pruvodce">Pět otázek před nákupem</a></li></ul></nav>
       <div><h2>Kontakt</h2>
         <ul><li><a href="mailto:investori@domeka.cz">investori@domeka.cz</a></li><li>Praha 8 – Karlín</li><li>Po–Pá 9:00–17:00</li></ul></div>
     </div>
     <div class="sf-legal">
       <p><strong>Upozornění.</strong> Investice do dluhopisů je spojena s rizikem, včetně možné ztráty části nebo celé investované částky. Úrok ani vrácení jistiny nejsou zaručeny. Stránka je informativní, není investičním doporučením ani prospektem; rozhodující jsou emisní podmínky. Uvedené výpočty jsou ilustrativní a nejsou slibem výnosu.</p>
-      <p>Fotografie jsou ilustrační. Údaje z formuláře slouží jen k zaslání průvodce a případnému kontaktu poradce.</p>
+      <p>Domeka i údaje o firmě a emisi jsou fiktivní a slouží pro výběrový úkol. Fotografie vytvořené umělou inteligencí nezobrazují skutečné nemovitosti Domeky. Formulář nic neodesílá ani neukládá; PDF se v ukázce zpřístupní po vyplnění kontaktu. Skutečná investice prostřednictvím této stránky není možná.</p>
       <p class="sf-copy">© 2026 Domeka. Všechna práva vyhrazena.</p>
     </div>
   </div>
@@ -562,6 +590,7 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   var $=function(s,r){return (r||document).querySelector(s)};
   var s1=$('#step1'),s2=$('#step2'),done=$('#done');
   var state={seg:null};
+  s1.hidden=false;
 
   function classify(a,t){
     if(a==='below')return 'below';
@@ -569,14 +598,14 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
     return t==='soon'?'qualified':'nurture';
   }
   var copy={
-    qualified:{kicker:'Možný zájem o konzultaci',title:'Máte předpoklady pro rozhovor s poradcem',
-      text:'<p>Počítáte s částkou od 50 000 Kč a v blízké době. Poradce by s vámi prošel podmínky, zajištění i rizika a odpověděl na otázky z průvodce. K ničemu vás to nezavazuje a rozhodnutí zůstává na vás.</p>'},
-    nurture:{kicker:'Vzdělávací kontakt',title:'Správně, nespěchejte',
-      text:'<p>Částka by na minimum stačila, ale rozhodujete se dlouhodobě. Pošleme jen průvodce, bez telefonátů. Až budete chtít jít dál, poradce vám pomůže.</p>'},
-    below:{kicker:'Pod minimem emise',title:'Do této emise by to zatím nestačilo',
-      text:'<p>Minimum je 50 000 Kč. Průvodce vám i tak pomůže u jakéhokoli firemního dluhopisu. Poradce vám nenabízíme, ať neztrácíte čas.</p>'},
-    info:{kicker:'Sbíráte informace',title:'Dobrý začátek',
-      text:'<p>Kdo se nejprve ptá, rozhoduje se klidněji. Projděte si výpočet a rizika výše a pět otázek z průvodce si ponechte na dobu, kdy budete rozhodovat o částce.</p>'}
+    qualified:{kicker:'Možný zájem o konzultaci',title:'Chcete probrat podmínky s poradcem?',
+      text:'<p>Počítáte s investicí od 50 000 Kč v příštích třech měsících. Získejte průvodce e-mailem, nebo zvolte telefon a požádejte o nezávaznou konzultaci.</p>'},
+    nurture:{kicker:'Rozhodnutí později',title:'Začněte průvodcem',
+      text:'<p>Uvedená částka splňuje minimum této emise. Protože termín zatím nemáte stanovený nebo uvažujete o pozdější investici, projděte si nejprve průvodce. Průvodce získáte za e-mail, bez nabídky telefonické konzultace.</p>'},
+    below:{kicker:'Pod minimem emise',title:'Minimální investice je 50 000 Kč',
+      text:'<p>Uvedená částka je pod minimem této emise. Průvodce vám přesto nabídneme za e-mail, bez nabídky telefonické konzultace. Nenavyšujte investici jen kvůli dosažení minima.</p>'},
+    info:{kicker:'Sbíráte informace',title:'Seznamte se s dluhopisy',
+      text:'<p>Částku zatím nemusíte znát. Průvodce vám pomůže zjistit, na co se ptát před nákupem firemního dluhopisu. Průvodce získáte zdarma za e-mail, bez nabídky telefonické konzultace.</p>'}
   };
 
   function show(el){[s1,s2,done].forEach(function(x){x.hidden=(x!==el)});var h=el.querySelector('h3');if(h){h.focus({preventScroll:true})}
@@ -585,19 +614,20 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   s1.addEventListener('submit',function(e){
     e.preventDefault();
     var a=s1.elements.amount.value,t=s1.elements.timing.value,err=$('#s1-err');
-    if(!a||!t){err.textContent='Vyberte prosím odpověď na obě otázky. Žádná z nich není předem zaškrtnutá.';return}
+    if(!a||!t){err.textContent='Vyberte odpověď na obě otázky.';s1.querySelector('input[name="'+(!a?'amount':'timing')+'"]').focus();return}
     err.textContent='';
     state.seg=classify(a,t);var c=copy[state.seg];
     var k=$('#kicker');k.textContent=c.kicker;k.className='result-kicker'+(state.seg==='qualified'?'':' edu');
     $('#s2-title').textContent=c.title;$('#s2-text').innerHTML=c.text;
     $('#advisor').hidden=(state.seg!=='qualified');
-    $('#want-call').checked=false;$('#phone-wrap').hidden=true;
+    $('#want-call').checked=false;$('#phone-wrap').hidden=true;$('#phone').required=false;$('#email').required=true;
     $('#email').value='';$('#phone').value='';
     ['#email-err','#phone-err'].forEach(function(s){$(s).textContent=''});
+    $('#email').removeAttribute('aria-invalid');$('#phone').removeAttribute('aria-invalid');$('#want-call').setAttribute('aria-expanded','false');
     show(s2);
   });
 
-  $('#want-call').addEventListener('change',function(){$('#phone-wrap').hidden=!this.checked});
+  $('#want-call').addEventListener('change',function(){$('#phone-wrap').hidden=!this.checked;this.setAttribute('aria-expanded',String(this.checked));$('#phone').required=this.checked;$('#email').required=!this.checked;if(this.checked)$('#phone').focus();else{$('#phone').value='';$('#phone').removeAttribute('aria-invalid');$('#phone-err').textContent=''}});
   $('#back').addEventListener('click',function(){show(s1)});
   $('#restart').addEventListener('click',function(){s1.reset();$('#s1-err').textContent='';show(s1)});
 
@@ -607,18 +637,16 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
     var em=$('#email'),ph=$('#phone'),ok=true;
     em.removeAttribute('aria-invalid');ph.removeAttribute('aria-invalid');
     $('#email-err').textContent='';$('#phone-err').textContent='';
-    if(em.value.trim()&&!emailRe.test(em.value.trim())){
-      $('#email-err').textContent='E-mail nemá správný tvar, například jmeno@domena.cz. Pole můžete nechat prázdné.';
+    var wantsCall=state.seg==='qualified'&&$('#want-call').checked;
+    if((!wantsCall&&!em.value.trim())||(em.value.trim()&&!emailRe.test(em.value.trim()))){
+      $('#email-err').textContent='Vyplňte platný e-mail, například jmeno@example.com. U nabídky konzultace můžete místo e-mailu zvolit kontakt telefonem.';
       em.setAttribute('aria-invalid','true');em.focus();ok=false;}
-    if(ok&&!$('#phone-wrap').hidden&&ph.value.trim()&&!/^\+?[0-9 ]{9,16}$/.test(ph.value.trim())){
-      $('#phone-err').textContent='Telefon zadejte jako číslice, například +420 000 000 000, nebo pole nechte prázdné.';
+    var phoneDigits=ph.value.replace(/[\s()-]/g,'');
+    if(ok&&!$('#phone-wrap').hidden&&!/^(?:\+420|\+421)?[1-9][0-9]{8}$/.test(phoneDigits)){
+      $('#phone-err').textContent='Pro hovor vyplňte devítimístné číslo, případně s předvolbou +420 nebo +421. Pokud hovor nechcete, zrušte zaškrtnutí výše.';
       ph.setAttribute('aria-invalid','true');ph.focus();ok=false;}
     if(!ok)return;
-    var em_=em.value.trim(),call=(state.seg==='qualified'&&$('#want-call').checked);
-    var msg=call?'Poradce vám zavolá do dvou pracovních dnů a probere s vámi podmínky, zajištění i rizika. K ničemu vás to nezavazuje.':'Průvodce si můžete stáhnout níže.';
-    if(em_)msg+=' Pošleme ho také na váš e-mail.';
-    if(state.seg==='qualified'&&!call)msg+=' Až budete chtít podmínky probrat s poradcem, vraťte se k formuláři.';
-    $('#crm').innerHTML='<p>'+msg+'</p>';
+    $('#crm').textContent='Kontakt prošel kontrolou a průvodce si můžete stáhnout níže. Jde o ukázku bez odesílání: údaje nebyly uloženy a e-mail ani telefonát neobdržíte.';
     em.value='';ph.value='';
     show(done);
   });
@@ -629,12 +657,12 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
     var r=$('#amt'),o=$('#amt-out');if(!r)return;
     var f=function(n){return n.toLocaleString('cs-CZ').replace(/\s/g,'\u00a0')+'\u00a0Kč'};
     var upd=function(){var a=+r.value;o.textContent=f(a);
-      $('#r-q').textContent=f(Math.round(a*0.072/4));$('#r-y').textContent=f(Math.round(a*0.072));$('#r-t').textContent=f(Math.round(a*0.072*4));};
-    r.addEventListener('input',upd);upd();
+      $('#r-q').textContent=f(Math.round(a*0.072/4));$('#r-y').textContent=f(Math.round(a*0.072));$('#r-t').textContent=f(Math.round(a*0.072*4));r.setAttribute('aria-valuetext',f(a)+', úrok '+f(Math.round(a*0.072/4))+' za čtvrtletí před zdaněním');};
+    r.addEventListener('input',function(){upd();if(!matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.calc-res dd').forEach(function(el){el.animate([{transform:'translateY(3px)',opacity:.65},{transform:'translateY(0)',opacity:1}],{duration:180,easing:'ease-out'});})}});upd();
     $('#calc-go').addEventListener('click',function(){
-      var a=+r.value,v=a<=100000?'50':(a<=500000?'100':'500');
+      var a=+r.value,v=a<100000?'50':(a<500000?'100':'500');
       var el=s1.querySelector('input[name=amount][value="'+v+'"]');if(el)el.checked=true;
-      show(s1);$('#pruvodce').scrollIntoView({behavior:'smooth',block:'start'});
+      show(s1);$('#pruvodce').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});
     });
   })();
 
