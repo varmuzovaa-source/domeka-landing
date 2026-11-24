@@ -67,4 +67,4 @@ Emisní podmínky, prospekt nebo výjimka a povinná sdělení, skutečná sazba
 Otevřete `index.html`, nebo `python3 -m http.server`. Nasazení: libovolný statický hosting, například Vercel (bez build příkazu, kořen projektu).
 
 ## AI log
-Viz `ai-log/README.md`. První verzi vytvořil ChatGPT, redesign a nasazení provedl Claude Code. V `ai-log/` je přepis relace Claude Code vytvořený z exportu relace (ne doslovný výstup příkazu `/export`, výsledky čtení Gmailu jsou vypuštěny, protože obsahovaly soukromé e-maily třetích osob). Původní poznámka o ChatGPT je zachovaná.
+Viz `ai-log/README.md`. První verzi vytvořil ChatGPT, redesign a nasazení provedl Claude Code. V `ai-log/claude-code-export.txt` je export relace Claude Code ve tvaru příkazu `/export` (vznikl z oficiálního exportu relace, výsledky čtení Gmailu jsou vypuštěny, protože obsahovaly soukromé e-maily třetích osob). Původní poznámka o ChatGPT je zachovaná.

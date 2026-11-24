@@ -29,5 +29,5 @@ Legenda: [x] ověřeno, [~] ověřeno částečně, [ ] neověřeno.
 ## Odevzdání
 - [x] Veřejný GitHub repozitář: https://github.com/varmuzovaa-source/domeka-landing
 - [x] Vercel: https://domeka-landing.vercel.app (HTTP 200 bez přihlášení, ověřeno curl a v prohlížeči na 375 px)
-- [~] `ai-log/`: přepis relace Claude Code vygenerovaný z exportu relace (ne doslovný `/export`, Gmail výsledky vypuštěny, viz `ai-log/README.md`).
+- [~] `ai-log/`: `claude-code-export.txt`, export relace ve tvaru příkazu `/export` (Gmail výsledky vypuštěny, viz `ai-log/README.md`).
 - [ ] E-mail zadavateli připraven a schválen. Nic nebylo odesláno.

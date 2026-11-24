@@ -16,9 +16,9 @@ Navrhnout a implementovat českou mobilní investiční landing page pro fiktivn
 
 ## Aktualizace 24. 11. 2026: redesign v Claude Code
 
-Redesign, funnel, dokumentaci i nasazení provedl Claude Code (desktopová aplikace, model Claude Sonnet 5.5). Původní první verzi vytvořil ChatGPT, jak je popsáno výše.
+Redesign, cestu zájemce (funnel), dokumentaci i nasazení provedl Claude Code (desktopová aplikace, model Claude Sonnet 5.5). Původní první verzi vytvořil ChatGPT, jak je popsáno výše.
 
-- **Soubor:** `claude-code-session-2026-11-24.md`
-- **Co to je:** čitelný přepis relace vygenerovaný skriptem z oficiálního exportu relace (`transcript.jsonl`). **Není to doslovný výstup příkazu `/export`**, protože slash příkaz lze spustit jen v interaktivním okně relace.
-- **Co bylo upraveno:** vypuštěny skryté systémové instrukce, zkráceny dlouhé výstupy nástrojů, e-mailové adresy nahrazeny `<e-mail>` a výsledky čtení Gmailu vypuštěny, protože obsahovaly soukromé e-maily třetích osob. Text zadání, odpovědi a pořadí kroků zůstaly zachovány.
-- **Doslovný `/export`:** pokud ho zadavatel vyžaduje přesně, lze ho doplnit spuštěním `/export` v této relaci a uložením vedle tohoto souboru.
+- **Export:** `claude-code-export.txt`, kompletní export relace v textové podobě jako příkaz `/export`.
+- **Jak vznikl:** z oficiálního exportu relace (`transcript.jsonl`) ho převedl skript. Příkaz `/export` samotný nelze z okna aplikace spustit automaticky, proto je tento soubor jeho ekvivalentem, nikoli doslovným výstupem.
+- **Co bylo upraveno:** vypuštěny skryté systémové instrukce, zkráceny dlouhé výstupy nástrojů, e-mailové adresy nahrazeny `<e-mail>` a výsledky čtení Gmailu vypuštěny, protože obsahovaly soukromé e-maily třetích osob. Zadání, odpovědi a pořadí kroků zůstaly zachovány.
+- **Doslovný `/export`:** lze doplnit spuštěním `/export` v okně relace a uložením vedle tohoto souboru.
