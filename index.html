@@ -83,12 +83,15 @@ nav.main a.link:hover{text-decoration:underline}
 
 /* ---------- Co kupujete ---------- */
 .split{display:grid;gap:36px}
-@media (min-width:992px){.split{grid-template-columns:5fr 7fr;gap:80px;align-items:stretch}}
-.photo{margin:0;border-radius:var(--radius);overflow:hidden;background:var(--support);min-height:320px}
-.photo img{width:100%;height:100%;object-fit:cover}
-.photo.tall{aspect-ratio:4/5}
-@media (min-width:992px){.photo.tall{aspect-ratio:auto;height:100%;min-height:560px}}
+@media (min-width:992px){.split{grid-template-columns:5fr 7fr;gap:80px;align-items:start}}
 .head h2{margin-bottom:20px}
+.gt{display:grid;gap:0;margin-top:30px;border-top:1px solid var(--ink)}
+.gt>div{padding:18px 0;border-bottom:1px solid var(--line)}
+.gt h3{font-size:1rem;margin-bottom:8px}
+.gt ul{margin:0;padding:0;list-style:none;display:grid;gap:4px}
+.gt li{color:var(--muted);font-size:1rem;padding-left:18px;position:relative}
+.gt li:before{content:"";position:absolute;left:0;top:.62em;width:8px;height:2px;background:var(--ocean)}
+@media (min-width:640px){.gt{grid-template-columns:1fr 1fr}.gt>div:first-child{padding-right:24px;border-right:1px solid var(--line)}.gt>div+div{padding-left:24px}}
 .ledger{margin:30px 0 0;border-top:1px solid var(--ink)}
 .ledger .row{display:grid;gap:3px;padding:16px 0;border-bottom:1px solid var(--line)}
 .ledger dt{font-size:.88rem;color:var(--muted)}
@@ -252,7 +255,7 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
   <div class="wrap hero-body">
     <p class="eyebrow">Modelová emise · 150 mil. Kč</p>
     <h1 id="h1">Dluhopis na obnovu bytových domů</h1>
-    <p class="sub">Půjčíte Domece od <b>50 000 Kč na 4 roky</b>. Úrok dostanete čtvrtletně: při modelové sazbě 7,2 % je to <b>900 Kč z každých 50 000 Kč</b>, pokud firma plní své závazky.</p>
+    <p class="sub">Půjčujete firmě, která staré činžáky opravuje a pronajímá. <b>Čtyři roky dostáváte pevný úrok každé tři měsíce.</b> Při modelové sazbě 7,2 % je to <b>900 Kč čtvrtletně z každých 50 000 Kč</b>, pokud firma plní své závazky.</p>
     <ul class="facts" aria-label="Základní podmínky modelové emise">
       <li><b>50 000 Kč</b><span>minimální investice</span></li>
       <li><b>4 roky</b><span>splatnost</span></li>
@@ -271,12 +274,17 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
 <!-- ================= CO KUPUJETE ================= -->
 <section class="section" id="podminky" aria-labelledby="h-podm" style="border-top:0">
   <div class="wrap split">
-    <figure class="photo tall"><img src="assets/interior.jpg" width="640" height="893" loading="lazy" alt="Slunný obývací pokoj po rekonstrukci v činžovním domě, štuková římsa a dubová parketa"></figure>
     <div class="head">
       <p class="eyebrow">Co kupujete</p>
-      <h2 id="h-podm">Půjčku firmě, ne byt</h2>
-      <p class="lead">Dluhopis nedává podíl na firmě ani na domě. Dostanete úrok, a když vše dopadne dobře, na konci čtvrtého roku vám Domeka vrátí půjčených 50 000 Kč.</p>
-      <dl class="ledger">
+      <h2 id="h-podm">Jednoduchá půjčka, jasné podmínky</h2>
+      <p class="lead">Kupujete dluhopis: půjčujete peníze firmě Domeka. Nekupujete byt ani podíl ve firmě. Za půjčku dostáváte pevný úrok každé čtvrtletí a na konci čtvrtého roku má firma vrátit celou půjčenou částku.</p>
+      <div class="gt">
+        <div><h3>Co dostanete</h3><ul><li>Pevný úrok čtyřikrát ročně</li><li>Předem známý termín vrácení peněz</li><li>Zajištění nemovitostmi firmy</li></ul></div>
+        <div><h3>Co přebíráte vy</h3><ul><li>Riziko, že firma nezaplatí</li><li>Peníze vázané čtyři roky</li><li>Žádné pojištění jako u vkladu</li></ul></div>
+      </div>
+    </div>
+    <div>
+      <dl class="ledger" style="margin-top:0">
         <div class="row"><dt>Emitent</dt><dd>Domeka <span class="tag">fiktivní</span></dd></div>
         <div class="row"><dt>Cíl emise</dt><dd><strong>150 mil. Kč</strong></dd></div>
         <div class="row"><dt>Minimální investice</dt><dd><strong>50 000 Kč</strong></dd></div>
@@ -295,8 +303,8 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
   <img src="assets/courtyard.jpg" width="1600" height="893" loading="lazy" alt="Dvorek starého činžovního domu s lešením, oprýskanou omítkou a stohy řeziva">
   <div class="wrap">
     <p class="eyebrow" style="color:var(--signal)">Kam peníze jdou</p>
-    <h2 id="h-band">Do domů, které teprve potřebují opravu</h2>
-    <p>Domeka podle zadání nakupuje starší bytové domy, opravuje je a byty pronajímá. Z emise by financovala nákupy a stavební práce. Snímek ukazuje, jak taková oprava vypadá. Dům firmy to není.</p>
+    <h2 id="h-band">Z vašich peněz se stávají opravené domy</h2>
+    <p>Domeka kupuje starší činžáky, opravuje je a byty pronajímá. Z emise by platila nákupy a stavební práce: střechy, rozvody, okna. Nájemné z opravených bytů je zdroj, ze kterého firma platí úroky.</p>
   </div>
 </section>
 
@@ -304,25 +312,25 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
 <section class="section" id="jak" aria-labelledby="h-jak" style="border-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">Z čeho se platí</p><h2 id="h-jak">Co musí Domeka vybrat, aby vám zaplatila</h2></div>
-      <p class="lead">Odpověď na nejdůležitější otázku začátečníka: odkud se vezmou peníze na úroky. Počítáme s plně upsanou emisí a modelovými čísly.</p>
+      <div><p class="eyebrow">Z čeho se platí</p><h2 id="h-jak">Odkud se berou peníze na vaše úroky</h2></div>
+      <p class="lead">Nejčastější otázka začátečníka. Odpovídáme počtem, ne slibem. Počítáme s plně upsanou emisí a modelovými čísly.</p>
     </div>
     <div class="pay">
       <div>
-        <div class="stat"><div class="n">900 000 Kč<small>měsíčně</small></div><p><b>Úroky z 150 mil. Kč při sazbě 7,2 %</b> jsou 10,8 mil. Kč ročně. To musí firma vydělat ještě předtím, než zaplatí opravy, správu domů, pojištění a daně.</p></div>
-        <div class="stat"><div class="n">≈ 64 bytů<small>pronajatých</small></div><p>Při modelovém nájmu <b>14 000 Kč měsíčně</b> musí být pronajato asi 64 bytů, jen aby se zaplatily úroky. Ptejte se proto, kolik bytů firma opravdu vlastní a kolik jich má obsazených. V této ukázce to není známo.</p></div>
+        <div class="stat"><div class="n">900 000 Kč<small>měsíčně</small></div><p><b>Tolik by plně upsaná emise stála na úrocích.</b> Při sazbě 7,2 % je to 10,8 mil. Kč ročně. Tohle musí firma vydělat dřív, než zaplatí opravy, správu domů, pojištění a daně.</p></div>
+        <div class="stat"><div class="n">≈ 64 bytů<small>pronajatých</small></div><p>Při modelovém nájmu <b>14 000 Kč měsíčně</b> musí být pronajato asi 64 bytů, jen aby se pokryly úroky. Proto se vždy ptejte, kolik bytů firma vlastní a kolik z nich je obsazených. V této ukázce to není známo.</p></div>
       </div>
       <ol class="flow">
-        <li><h3>Půjčíte peníze</h3><p>Koupíte dluhopis od 50 000 Kč. Peníze jdou emitentovi.</p></li>
-        <li><h3>Domeka koupí a opraví dům</h3><p>Starší činžák, který potřebuje novou střechu, rozvody nebo okna.</p></li>
-        <li><h3>Byty pronajímá</h3><p>Nájemné je hlavní příjem, ze kterého firma platí vám i další náklady.</p></li>
-        <li><h3>Platí úrok a po 4 letech vrací jistinu</h3><p>Pokud jí příjmy a zajištění stačí. Záruka to není.</p></li>
+        <li><h3>Půjčíte firmě peníze</h3><p>Koupíte dluhopis od 50 000 Kč.</p></li>
+        <li><h3>Domeka koupí a opraví dům</h3><p>Starý činžák dostane novou střechu, rozvody a okna.</p></li>
+        <li><h3>Opravené byty pronajme</h3><p>Nájemné je hlavní příjem, ze kterého firma platí úroky i provoz domů.</p></li>
+        <li><h3>Vyplácí úrok, po 4 letech vrací peníze</h3><p>Pokud jí příjmy a zajištění stačí. Záruka to není.</p></li>
       </ol>
     </div>
 
     <div class="you" aria-labelledby="h-you">
       <div>
-        <p class="eyebrow" id="h-you">Váš příklad (model)</p>
+        <p class="eyebrow" id="h-you">Co by to znamenalo pro vás</p>
         <div class="big">900 Kč<small> čtvrtletně</small></div>
         <p class="fine" style="margin-top:14px">z modelových 50 000 Kč při sazbě 7,2 % p. a., před zdaněním a jen když emitent své závazky plní. Nejde o slib výplaty.</p>
       </div>
@@ -335,20 +343,20 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
     </div>
 
     <div class="compare">
-      <div><h3>Bankovní vklad</h3><p>Vklady v bance jsou pojištěny do zákonného limitu. Dluhopis takové pojištění nemá.</p></div>
-      <div><h3>Tento dluhopis</h3><p>Výplaty i jistina závisejí na hospodaření Domeky a na hodnotě zajištění. Spořicí účet nenahrazuje.</p></div>
+      <div><h3>Proč to není spořicí účet</h3><p>Vklady v bance jsou pojištěny do zákonného limitu. Dluhopis takové pojištění nemá.</p></div>
+      <div><h3>Za co dluhopis stojí</h3><p>Za vyšší úrok platíte vyšším rizikem. Výplaty i jistina závisejí na hospodaření Domeky a na hodnotě zajištění.</p></div>
     </div>
   </div>
 </section>
 
-<div class="cta-strip"><div class="wrap"><p>Než půjdete dál, zjistěte, na co se ptát před koupí firemního dluhopisu.</p><a class="btn" href="#pruvodce">Získat pět otázek <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a></div></div>
+<div class="cta-strip"><div class="wrap"><p>Než se rozhodnete, vezměte si pět otázek, které si před firemním dluhopisem klade každý zkušený investor.</p><a class="btn" href="#pruvodce">Získat pět otázek <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a></div></div>
 
 <!-- ================= RIZIKA ================= -->
 <section class="section" id="rizika" aria-labelledby="h-rizika" style="border-top:0">
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">Rizika</p><h2 id="h-rizika">Co se může pokazit</h2></div>
-      <p class="lead">Říkáme to dřív, než se rozhodnete. Zajištěný dluhopis neznamená dluhopis bez rizika.</p>
+      <p class="lead">Kdo o rizicích mluví dopředu, zaslouží si větší důvěru. Proto jsou tady, a ne v drobném písmu. Zajištěný dluhopis neznamená dluhopis bez rizika.</p>
     </div>
     <ol class="risks">
       <li><span class="n">01</span><h3>Domeka nemusí splatit</h3><p>Nájemné může klesnout, opravy se prodražit a byty zůstat prázdné. Pak nebude z čeho platit úroky ani jistinu.</p></li>
@@ -367,7 +375,7 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
     <div>
       <p class="eyebrow">Průvodce zdarma · návrh</p>
       <h2 id="h-mag" style="max-width:15ch">Pět otázek před nákupem firemního dluhopisu</h2>
-      <p class="lead" style="margin-top:20px">Dvě strany A4, které si můžete vzít k rozhovoru s poradcem nebo do banky. U každé otázky je napsáno, kde odpověď hledat a co je varovný signál.</p>
+      <p class="lead" style="margin-top:20px">Dvě strany A4 pro člověka, který dluhopis ještě nikdy nekoupil. U každé otázky je napsáno, kde odpověď hledat a co je varovný signál. Vezměte je s sebou k poradci, do banky nebo k dětem, které se v tom vyznají.</p>
       <div class="sheet" aria-label="Náhled první strany průvodce">
         <div class="st"><span>Pět otázek před nákupem</span><span>Strana 1</span></div>
         <ol>
@@ -385,8 +393,8 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
     <div class="card" id="form-card">
       <form id="step1" novalidate aria-labelledby="s1-title">
         <div class="stepper" aria-hidden="true"><span>Krok 1 ze 2</span><i class="on"></i><i></i></div>
-        <h3 id="s1-title" tabindex="-1">Dvě krátké otázky, bez kontaktu</h3>
-        <p>Podle odpovědí vám ukážeme, co dává smysl dál. E-mail nechceme.</p>
+        <h3 id="s1-title" tabindex="-1">Dvě otázky a víte, co dál</h3>
+        <p>Zabere to půl minuty. E-mail ani telefon teď nechceme.</p>
 
         <fieldset>
           <legend>S jakou částkou přibližně počítáte?</legend>
@@ -473,9 +481,9 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
 <!-- ================= ZÁVĚR ================= -->
 <section class="section closing" aria-labelledby="h-close" style="border-top:0">
   <div class="wrap inner">
-    <div><p class="eyebrow">Další krok</p><h2 id="h-close">Nejdřív podmínky. Rozhodnutí může počkat.</h2></div>
+    <div><p class="eyebrow">Další krok</p><h2 id="h-close">Nejdřív pochopit. Potom se rozhodnout.</h2></div>
     <div>
-      <p class="lead">Žádné odpočítávání ani časově omezené akce. Začněte pěti otázkami a vraťte se, až budete mít odpovědi.</p>
+      <p class="lead">Nikdo vás nehoní: žádné odpočítávání ani poslední volná místa. Začněte pěti otázkami a vraťte se, až budete mít odpovědi.</p>
       <div class="hero-actions"><a class="btn" href="#pruvodce">Získat průvodce</a><a class="btn ghost" href="#rizika">Přečíst rizika</a></div>
     </div>
   </div>
@@ -506,17 +514,17 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
     return t==='soon'?'qualified':'nurture';
   }
   var copy={
-    qualified:{kicker:'Možný zájem o konzultaci',title:'Vaše odpovědi odpovídají modelové investici',
-      text:'<p>Počítáte s částkou od 50 000 Kč a v blízké době. V ostré verzi by dávalo smysl projít podmínky s poradcem. Je to jen vaše volba a nic z toho nezakládá nárok na investici.</p>',
+    qualified:{kicker:'Možný zájem o konzultaci',title:'Máte předpoklady pro rozhovor s poradcem',
+      text:'<p>Počítáte s částkou od 50 000 Kč a v blízké době. Poradce by s vámi prošel podmínky, zajištění i rizika a odpověděl na otázky z průvodce. K ničemu vás to nezavazuje a rozhodnutí zůstává na vás.</p>',
       crm:'Kvalifikovaný kontakt: dobrovolně uvedl investiční kapacitu od 50 000 Kč a blízký termín. Další krok: nabídka konzultace, vždy s ověřením vhodnosti.'},
-    nurture:{kicker:'Vzdělávací kontakt',title:'Dobře, nemusíte spěchat',
-      text:'<p>Částka by modelové minimum splňovala, ale rozhodnutí je zatím daleko. Průvodce vám pomůže připravit se. Nebudeme vás tlačit k rozhovoru s poradcem.</p>',
+    nurture:{kicker:'Vzdělávací kontakt',title:'Správně, nespěchejte',
+      text:'<p>Částka by na minimum stačila, ale rozhodujete se dlouhodobě. V ostré verzi by přišel jen průvodce, bez telefonátů. Až budete chtít jít dál, poradce vám pomůže.</p>',
       crm:'Vzdělávací kontakt: kapacita od 50 000 Kč, termín vzdálený nebo nejistý. Další krok: pouze informační obsah, bez aktivního obchodního kontaktu.'},
-    below:{kicker:'Pod modelovým minimem',title:'Modelové minimum je 50 000 Kč',
-      text:'<p>S nižší částkou by se do této emise nešlo zapojit. To není chyba. Průvodce můžete využít jako obecnou pomůcku, jak se ptát na firemní dluhopisy. Poradce vám nenabízíme.</p>',
+    below:{kicker:'Pod modelovým minimem',title:'Do této emise by to zatím nestačilo',
+      text:'<p>Minimum je 50 000 Kč. Průvodce se vám i tak hodí u jakéhokoli firemního dluhopisu. Poradce vám nenabízíme, ať neztrácíte čas.</p>',
       crm:'Vzdělávací kontakt pod minimem: nepočítá se mezi kvalifikované investory. Další krok: žádný obchodní kontakt.'},
-    info:{kicker:'Sbíráte informace',title:'Skvělé, začněte u základů',
-      text:'<p>Zatím se jen rozhlížíte, a to je rozumný začátek. Přečtěte si výpočet a rizika výše. Průvodce vám dá otázky, na které se vyplatí znát odpověď, než vůbec začnete uvažovat o částce.</p>',
+    info:{kicker:'Sbíráte informace',title:'Dobrý začátek',
+      text:'<p>Kdo se nejdřív ptá, rozhoduje se klidněji. Projděte si výpočet a rizika výše a pět otázek z průvodce si nechte na chvíli, kdy budete řešit částku.</p>',
       crm:'Informační kontakt: částka nespecifikována. Další krok: pouze informační obsah, bez aktivního obchodního kontaktu.'}
   };
 

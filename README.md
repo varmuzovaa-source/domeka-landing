@@ -4,7 +4,7 @@
 
 Fiktivní klient a fiktivní dluhopis, vytvořeno pro praktický úkol (Junior AI Developer). Statický web v češtině: HTML, CSS a trocha JavaScriptu, bez knihoven, bez backendu, bez externích požadavků.
 
-- Vstup: `index.html`, fotografie v `assets/` (hero, interiér, dvorek)
+- Vstup: `index.html`, fotografie v `assets/` (hero a dvorek před opravou)
 - Rozhodnutí: `DESIGN_DECISIONS.md`, `DESIGN_REFERENCE_LOCK.md`
 - Funnel a hypotézy: `CRO_FUNNEL_SPEC.md` a sekce níže
 - QA: `QA_RELEASE_CHECKLIST.md`, `screenshots/`
@@ -42,7 +42,7 @@ Doplněno a **fiktivní**:
 - jméno emitenta Domeka a popis podnikání,
 - lead magnet a kvalifikační otázky,
 - modelový nájem 14 000 Kč a z něj spočtených ≈ 64 pronajatých bytů (kolik bytů musí být pronajato, aby se zaplatily úroky z 150 mil. Kč),
-- fotografie: tři ilustrační snímky vytvořené umělou inteligencí (Gamma). Nezobrazují nemovitosti Domeky, což říká patička. Před ostrým spuštěním je nahradit licencovanými fotografiemi.
+- fotografie: dva ilustrační snímky vytvořené umělou inteligencí (Gamma). Nezobrazují nemovitosti Domeky, což říká patička. Před ostrým spuštěním je nahradit licencovanými fotografiemi.
 
 Žádné reference, ocenění, počty investorů, loga regulátorů ani pojišťoven.
 
