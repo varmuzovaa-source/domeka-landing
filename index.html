@@ -221,13 +221,6 @@ input[aria-invalid=true]{border-color:#9A1B1B;border-width:2px}
 .closing .inner{display:grid;gap:28px}
 .closing h2{max-width:18ch}
 @media (min-width:992px){.closing .inner{grid-template-columns:7fr 5fr;align-items:end;gap:80px}}
-footer{padding:52px 0 40px;border-top:1px solid var(--line)}
-.mast{font-weight:600;letter-spacing:.04em;font-size:clamp(3.4rem,18vw,12rem);line-height:.9;color:var(--ink);margin:0 0 30px}
-.foot-grid{display:grid;gap:16px;font-size:.88rem;color:var(--muted)}
-.foot-grid p{margin:0;max-width:78ch}
-.foot-grid strong{color:var(--ink)}
-@media (min-width:768px){.foot-grid{grid-template-columns:1fr 1fr;gap:48px}}
-@media (max-width:859px){footer{padding-bottom:96px}}
 
 /* ---------- Mobilní lišta ---------- */
 .dock{position:fixed;left:0;right:0;bottom:0;z-index:40;background:#fff;border-top:1px solid var(--line);padding:10px var(--gutter) calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .25s}
@@ -235,6 +228,20 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
 .dock .btn{width:100%}
 @media (min-width:860px){.dock{display:none}}
 @media (prefers-reduced-motion:reduce){.dock{transition:none}}
+footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px 0 40px;margin-top:0}
+.site-foot a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.35);transition:border-color .2s}
+.site-foot a:hover{border-bottom-color:#fff}
+.sf-grid{display:grid;gap:36px;grid-template-columns:1fr;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.2)}
+.sf-logo{font-weight:700;letter-spacing:.2em;font-size:1.4rem;color:#fff;margin:0 0 14px}
+.sf-brand p{margin:0;max-width:34ch;font-size:.98rem;line-height:1.55}
+.site-foot h2{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--signal);margin:0 0 14px;font-weight:700}
+.site-foot ul{list-style:none;margin:0;padding:0;display:grid;gap:10px;font-size:.98rem}
+.sf-legal{padding-top:28px;display:grid;gap:12px;font-size:.84rem;line-height:1.6;color:rgba(255,255,255,.72)}
+.sf-legal p{margin:0;max-width:96ch}
+.sf-legal strong{color:#fff}
+.sf-copy{margin-top:6px!important;color:rgba(255,255,255,.6)}
+@media (min-width:860px){.sf-grid{grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px}}
+@media (max-width:859px){footer.site-foot{padding-bottom:104px}}
 </style>
 </head>
 <body>
@@ -256,21 +263,21 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
     </div>
   </div>
   <div class="wrap hero-body">
-    <p class="eyebrow">Emise dluhopisů · 150 mil. Kč</p>
-    <h1 id="h1">Dluhopis na obnovu bytových domů</h1>
-    <p class="sub">Půjčujete firmě, která starší bytové domy opravuje a pronajímá. <b>Čtyři roky dostáváte pevný úrok každé tři měsíce.</b> Při sazbě 7,2 % ročně je to <b>900 Kč čtvrtletně z každých 50 000 Kč</b>, pokud firma plní své závazky.</p>
+    <p class="eyebrow">Dluhopis Domeka · emise 150 mil. Kč</p>
+    <h1 id="h1">Dluhopis zajištěný bytovými domy</h1>
+    <p class="sub">Půjčíte peníze firmě, která opravuje a pronajímá starší bytové domy. <b>Čtyři roky vám každé čtvrtletí vyplatí pevný úrok</b>: při sazbě 7,2 % ročně je to <b>900 Kč z každých 50 000 Kč</b>. Na konci vám vrátí celou částku, pokud své závazky splní.</p>
     <ul class="facts" aria-label="Základní podmínky emise">
       <li><b>50 000 Kč</b><span>minimální investice</span></li>
       <li><b>4 roky</b><span>splatnost</span></li>
-      <li><b>4× ročně</b><span>výplata pevného úroku</span></li>
+      <li><b>4× ročně</b><span>výplata úroku</span></li>
       <li><b>7,2 % p. a.</b><span>pevný úrok ročně</span></li>
     </ul>
     <div class="hero-actions">
-      <a class="btn light" href="#pruvodce">Prohlédnout podmínky a získat průvodce
+      <a class="btn light" href="#pruvodce">Získat průvodce zdarma
         <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a>
       <a class="btn line-light" href="#jak">Jak dluhopis funguje</a>
     </div>
-    <p class="risk"><b>Dluhopis není bankovní vklad.</b> Můžete přijít o část nebo celou investici. Zajištění riziko neodstraňuje.</p>
+    <p class="risk"><b>Dluhopis není bankovní vklad.</b> Hrozí, že přijdete o část investice, nebo dokonce o celou. Zajištění toto riziko snižuje, ale neodstraňuje.</p>
   </div>
 </section>
 
@@ -280,10 +287,10 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
     <div class="head">
       <p class="eyebrow">Co kupujete</p>
       <h2 id="h-podm">Jednoduchá půjčka, jasné podmínky</h2>
-      <p class="lead">Kupujete dluhopis: půjčujete peníze firmě Domeka. Nekupujete byt ani podíl ve firmě. Za půjčku dostáváte pevný úrok každé čtvrtletí a na konci čtvrtého roku má firma vrátit celou půjčenou částku.</p>
+      <p class="lead">Kupujete dluhopis, tedy půjčujete peníze firmě Domeka. Nekupujete byt ani podíl ve firmě. Za půjčku dostanete pevný úrok každé čtvrtletí a na konci čtvrtého roku vám má firma vrátit celou částku.</p>
       <div class="gt">
         <div><h3>Co dostanete</h3><ul><li>Pevný úrok čtyřikrát ročně</li><li>Předem známý termín vrácení peněz</li><li>Zajištění nemovitostmi firmy</li></ul></div>
-        <div><h3>Co přebíráte vy</h3><ul><li>Riziko, že firma nezaplatí</li><li>Peníze vázané čtyři roky</li><li>Žádné pojištění jako u vkladu</li></ul></div>
+        <div><h3>Co riskujete vy</h3><ul><li>Riziko, že firma nezaplatí</li><li>Peníze vázané čtyři roky</li><li>Žádné pojištění jako u vkladu</li></ul></div>
       </div>
     </div>
     <div>
@@ -307,7 +314,7 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
   <div class="wrap">
     <p class="eyebrow" style="color:var(--signal)">Kam peníze jdou</p>
     <h2 id="h-band">Z vašich peněz se stávají opravené domy</h2>
-    <p>Domeka kupuje starší bytové domy, opravuje je a byty pronajímá. Z emise by platila nákupy a stavební práce: střechy, rozvody, okna. Nájemné z opravených bytů je zdroj, ze kterého firma platí úroky.</p>
+    <p>Domeka kupuje starší bytové domy, opravuje je a byty pronajímá. Z emise firma platí nákup domů a stavební práce, například střechy, rozvody a okna. Nájemné z opravených bytů je zdroj, ze kterého pak platí úroky.</p>
   </div>
 </section>
 
@@ -316,11 +323,11 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">Z čeho se platí</p><h2 id="h-jak">Odkud se berou peníze na vaše úroky</h2></div>
-      <p class="lead">Nejčastější otázka začátečníka. Odpovídáme počtem, ne slibem. Počítáme s plně upsanou emisí.</p>
+      <p class="lead">Na tuto otázku se ptá každý začátečník. Odpovídáme výpočtem, ne slibem. Počítáme s plně upsanou emisí.</p>
     </div>
     <div class="pay">
       <div>
-        <div class="stat"><div class="n">900 000 Kč<small>měsíčně</small></div><p><b>Tolik by plně upsaná emise stála na úrocích.</b> Při sazbě 7,2 % je to 10,8 mil. Kč ročně. To musí firma vydělat dříve, než zaplatí opravy, správu domů, pojištění a daně.</p></div>
+        <div class="stat"><div class="n">900 000 Kč<small>měsíčně</small></div><p><b>Tolik by plně upsaná emise stála na úrocích.</b> Při sazbě 7,2 % je to 10,8 mil. Kč ročně. Tyto peníze musí firma vydělat ještě před tím, než zaplatí opravy, správu domů, pojištění a daně.</p></div>
         <div class="stat"><div class="n">≈ 64 bytů<small>pronajatých</small></div><p>Při nájmu <b>14 000 Kč měsíčně</b> musí být pronajato přibližně 64 bytů, jen aby se pokryly úroky. Proto se vždy ptejte, kolik bytů firma vlastní a kolik z nich je obsazených.</p></div>
       </div>
       <ol class="flow">
@@ -493,12 +500,24 @@ footer{padding:52px 0 40px;border-top:1px solid var(--line)}
 </section>
 </main>
 
-<footer>
+<footer class="site-foot">
   <div class="wrap">
-    <p class="mast" aria-hidden="true">DOMEKA</p>
-    <div class="foot-grid">
+    <div class="sf-grid">
+      <div class="sf-brand">
+        <p class="sf-logo">DOMEKA</p>
+        <p>Vydáváme dluhopisy zajištěné bytovými domy. Starší domy kupujeme, opravujeme a pronajímáme.</p>
+      </div>
+      <nav aria-label="Informace v patičce"><h2>Informace</h2>
+        <ul><li><a href="#podminky">Podmínky dluhopisu</a></li><li><a href="#jak">Z čeho se platí úroky</a></li><li><a href="#rizika">Rizika</a></li><li><a href="#faq">Časté otázky</a></li></ul></nav>
+      <nav aria-label="Průvodce v patičce"><h2>Průvodce zdarma</h2>
+        <ul><li><a href="#pruvodce">Pět otázek před nákupem</a></li><li><a href="assets/Domeka-Pet-otazek-pred-nakupem-dluhopisu.pdf" download>Stáhnout PDF</a></li></ul></nav>
+      <div><h2>Kontakt</h2>
+        <ul><li><a href="mailto:investori@domeka.cz">investori@domeka.cz</a></li><li>Praha 8 – Karlín</li><li>Po–Pá 9:00–17:00</li></ul></div>
+    </div>
+    <div class="sf-legal">
       <p><strong>Upozornění.</strong> Investice do dluhopisů je spojena s rizikem, včetně možné ztráty části nebo celé investované částky. Úrok ani vrácení jistiny nejsou zaručeny. Stránka je informativní, není investičním doporučením ani prospektem; rozhodující jsou emisní podmínky. Uvedené výpočty jsou ilustrativní a nejsou slibem výnosu.</p>
       <p>Fotografie jsou ilustrační. Údaje z formuláře slouží jen k zaslání průvodce a případnému kontaktu poradce.</p>
+      <p class="sf-copy">© 2026 Domeka. Všechna práva vyhrazena.</p>
     </div>
   </div>
 </footer>
