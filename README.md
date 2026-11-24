@@ -4,7 +4,7 @@
 
 Fiktivní klient a fiktivní dluhopis, vytvořeno pro praktický úkol (Junior AI Developer). Statický web v češtině: HTML, CSS a trocha JavaScriptu, bez knihoven, bez backendu, bez externích požadavků.
 
-- Vstup: `index.html`, fotografie v `assets/` (hero a dvorek před opravou)
+- Vstup: `index.html`, fotografie v `assets/` (hero a nádvoří před opravou)
 - Rozhodnutí: `DESIGN_DECISIONS.md`, `DESIGN_REFERENCE_LOCK.md`
 - Funnel a hypotézy: `CRO_FUNNEL_SPEC.md` a sekce níže
 - QA: `QA_RELEASE_CHECKLIST.md`, `screenshots/`

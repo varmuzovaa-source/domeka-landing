@@ -6,7 +6,7 @@ Datum: 24. 11. 2026. Fiktivní klient, fiktivní dluhopis.
 
 | # | Oblast | Problém | Řešení |
 |---|---|---|---|
-| 1 | Vizuál | Hlavní obraz byl CSS pseudoilustrace domu s gradienty, působila jako šablona. | Celoplošná fotografie opravené činžovní fasády (AI ilustrace, označená v patičce), druhá fotografie dvorku před opravou. Bez popisků pod obrázky. |
+| 1 | Vizuál | Hlavní obraz byl CSS pseudoilustrace domu s gradienty, působila jako šablona. | Celoplošná fotografie opravené bytový fasády (AI ilustrace, označená v patičce), druhá fotografie nádvoří před opravou. Bez popisků pod obrázky. |
 | 2 | Vizuál | Plovoucí karta přes obraz, stíny, fixní odznak, zelenobéžová paleta s limetkou. | Plochý povrch, čáry místo stínů, jedna CTA barva (ocean `#123D44`). |
 | 3 | Mobil / UX | Hero na 375 px nedával dohromady produkt, minimum, dobu a další krok. | H1, 4 podmínky ve 2×2 mřížce a CTA jsou v prvním viewportu. |
 | 4 | Konverze | Kvalifikační formulář byl jeden blok s povinným e-mailem a bez větvení. | Dvoukrokový funnel. Dvě otázky bez kontaktu, potom čtyři různé výsledky a nepovinný kontakt. |
@@ -48,7 +48,7 @@ Výzkum 23. 11. je v `DESIGN_REFERENCE_LOCK.md`. Dne 24. 11. jsem znovu ověřil
 
 ## 5. Placeholder fotografie: art direction
 
-Do `assets/` patří licencovaná fotografie staršího městského činžovního domu (3–5 podlaží), frontální nebo mírně šikmý pohled, přirozené denní světlo, bez lidí a značek, poměr 4:5 desktop / 4:3 mobil. Titulek musí zůstat: „Ilustrační fotografie. Nejde o nemovitost společnosti Domeka.“ Fotografii nevydávat za majetek emitenta.
+Do `assets/` patří licencovaná fotografie staršího městského bytovýho domu (3–5 podlaží), frontální nebo mírně šikmý pohled, přirozené denní světlo, bez lidí a značek, poměr 4:5 desktop / 4:3 mobil. Titulek musí zůstat: „Ilustrační fotografie. Nejde o nemovitost společnosti Domeka.“ Fotografii nevydávat za majetek emitenta.
 
 
 ## 6. Redesign 24. 11. (odpoledne)
