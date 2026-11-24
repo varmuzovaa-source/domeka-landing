@@ -3256,3 +3256,523 @@ assets/courtyard.jpg 200
 Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
 ```
 </details>
+
+
+**Nástroj:** `mcp__ccd_session_mgmt__export_transcript`
+```json
+{"session_id": "self"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Exported this session's transcript "Domeka dluhopis — kompletní projekt" to /Users/andreavarmuzova/Downloads/session-export-1795511778391.zip (22 MB, 23224453 bytes). The zip holds the conversation transcript, its subagent transcripts and session metadata, not the app's logs; nothing was uploaded.
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "W=/Users/andreavarmuzova/AGENTURA/_export-work2; rm -rf $W; mkdir -p $W && unzip -q /Users/andreavarmuzova/Downloads/session-export-1795511778391.zip transcript.jsonl -d $W && cat > $W/render.py <<'EOF'\nimport json,re,sys\nsrc,out=sys.argv[1],sys.argv[2]\nMAIL=re.compile(r'[\\w.+-]+@[\\w-]+\\.[\\w.]+')\nSR=re.compile(r'',re.S)\nGM=('4802f963','plugin_small-business_gmail')\nnames={}; red=0\ndef clean(t):\n    t=SR.sub('',t); return MAIL.sub('<e-mail>',t).strip()\ndef trunc(t,n=1800):\n    return t if len(t)<=n else t[:n]+f'\\n… [zkráceno, původně {len(t)} znaků]'\no=['# Export relace Claude Code: Domeka landing page\\n',\n '> **Poznámka k původu.** Toto není doslovný výstup příkazu `/export`, ale čitelný přepis relace Claude Code (desktopová aplikace), vytvořený skriptem z oficiálního exportu relace (soubor `transcript.jsonl`). Skript vypustil neviditelné systémové instrukce, zkrátil dlouhé výstupy nástrojů a **nahradil výsledky čtení Gmailu** zástupným textem, protože obsahovaly soukromé e-maily třetích osob. E-mailové adresy jsou nahrazeny `<e-mail>`. Pořadí kroků, texty zadání a odpovědi jsou zachovány. Původní ChatGPT fáze projektu je popsána v `ai-log/README.md`.\\n']\nfor l in open(src,encoding='utf-8'):\n    r=json.loads(l)\n    t=r.get('type')\n    if t not in('user','assistant'):continue\n    c=r['message']['content']\n    if isinstance(c,str): c=[{'type':'text','text':c}]\n    for b in c:\n        bt=b.get('type')\n        if bt=='text':\n            t
+… [zkráceno, původně 3018 znaků]
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+redacted 2 160702
+2
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+## Claude
+
+Kontroluji, co zbylo v logu po vyčištění.
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "grep -n -i -E \"<třetí strana>|<třetí strana>|<třetí strana>|<třetí strana>|<třetí strana>|gmail\\.com\" /tmp/dk/session2.md | cut -c1-260", "description": "Show remaining sensitive matches"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+1962:  - Obsahuje výsledky mého prohledávání Gmailu, tedy úryvky cizích soukromých e-mailů (třetích osob). Veřejné zveřejnění by je vyneslo ven.
+2056:{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && grep -c -i \"gmail.com\" /tmp/dk/session.md; grep -n -i \"gmail.com\" /tmp/dk/session.md | head -3; cp /tmp/dk/session.md ai-log/claude-code-session-2026-11-24.md && cat >> ai-log/README.md
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && sed 's/ (třetích osob)/ (třetích osob)/' /tmp/dk/session2.md > ai-log/claude-code-session-2026-11-24.md && grep -c -i -E \"<třetí strana>|partners\" ai-log/claude-code-session-2026-11-24.md; python3 - <<'EOF'\np='/Users/andreavarmuzova/AGENTURA/domeka-email-navrh.md'\ns=open(p,encoding='utf-8').read()\ns=s.replace(\"Hero obrázek je zatím schematický placeholder místo licencované fotografie.\",\"Fotografie jsou ilustrační, vytvořené AI, a v patičce jsou tak označené. Před ostrou kampaní je nahradím licencovanými snímky.\")\ns=s.replace(\"(složka `ai-log/` obsahuje export konverzace s Claude Code)\",\"(složka `ai-log/` obsahuje přepis relace s Claude Code vytvořený z exportu relace, s vynechanými soukromými e-maily třetích osob)\")\nopen(p,'w',encoding='utf-8').write(s)\nEOF\ngit add -A && git commit -qm \"ai-log: aktualizovaný přepis relace\" && git push -q 2>&1 | tail -1; git log --oneline | head -2; rm -rf /Users/andreavarmuzova/AGENTURA/_export-work2; gh repo view varmuzovaa-source/domeka-landing --json visibility -q .visibility", "description": "Update ai-log, email draft, push; clean temp"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__resize_window`
+```json
+{"preset": "desktop"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+0
+6f918d8 ai-log: aktualizovaný přepis relace
+1fb6c0e Redesign: celoplošný hero s fotografií, výpočet z čeho se platí, náhled průvodce, mobilní lišta
+PUBLIC
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+Viewport emulation cleared; the tab is back to the pane's responsive size (desktop).
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+```
+</details>
+
+
+**Nástroj:** `mcp__ccd_turn__wrap_up`
+```json
+{"recap": "Web je přepracovaný, nasazený na https://domeka-landing.vercel.app a nahraný na GitHub. Má celoplošné fotografie, konkrétní texty s výpočtem a funnel s větvením. E-mail Matejovi je jen návrh a neodešel. Chybí doslovný `/export`.", "ask": "Mám připravit e-mail jako koncept v Gmailu?", "actions": [{"label": "Ano, koncept"}, {"label": "Zatím ne"}], "blocked": true}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Shown in the next-step box. Your closing message is your answer to the user: write it now, in full, as the last thing you say this turn. The box asks your question, so do not ask it again.
+```
+</details>
+
+
+## Claude
+
+Web jsem kompletně přepracoval a nasadil. Funnel (formulář s větvením) jsem automatickým testem prošel pro všech 9 kombinací odpovědí. Nic se neodesílá.
+
+**Co jsem změnil**
+- **Hero:** místo výkresu je celoplošná fotografie opravené činžovní fasády. Fotografie jsem vytvořil přes Gamma, protože Higgsfield a Canva jsou na tvých účtech bez kreditů a Adobe vyžaduje přihlášení. Interiér a dvorek před opravou jsou tři snímky na celé stránce.
+- **Texty:** žádné obecné fráze. Úvod říká „900 Kč z každých 50 000 Kč“ a sekce „Z čeho se platí“ počítá, že firma musí na úroky z 150 mil. Kč vydělat 900 000 Kč měsíčně. To odpovídá nájmu asi 64 bytů, při modelovém nájmu 14 000 Kč, který jsem si vymyslel a označil jako fiktivní.
+- **Funnel:**
+  - Hero vede k průvodci a po výpočtu je druhé tlačítko.
+  - Průvodce má náhled první strany s pěti otázkami.
+  - Dvě otázky před kontaktem rozdělí zájemce na čtyři skupiny a poradce se nabízí jen člověku s 50 000 Kč a víc v příštích 3 měsících.
+  - Na mobilu je po odrolování lišta s odkazem na průvodce, která zmizí u formuláře.
+- **Taste skill:** pod obrázky už nejsou popisky, sekce jsou jednoduché a tlačítka reagují na dotek.
+
+**Ověřeno:** žádné přetečení na 320, 375, 390, 768, 1024 a 1440 px. Živá URL vrací 200 a screenshoty jsou aktualizované v repozitáři.
+
+**Odkazy**
+- Stránka: https://domeka-landing.vercel.app
+- Repozitář: https://github.com/varmuzovaa-source/domeka-landing
+- Návrh e-mailu: `/Users/andreavarmuzova/AGENTURA/domeka-email-navrh.md`
+
+**Co ještě není ideální**
+- **`ai-log/`:** je to čitelný přepis relace, ne doslovný `/export`, a je napsaný jako přepis. Výsledky z tvého Gmailu jsem vynechal, protože obsahovaly cizí soukromé e-maily. Kdybys chtěla doslovný `/export`, napiš ho sama v okně této relace a já ho pak nahraju.
+- **Fotografie jsou AI:** v patičce je to řečeno. Před skutečnou kampaní by je měly nahradit licencované snímky.
+- **Neotestováno:** klávesnici celou stránkou, čtečku obrazovky, Safari a Firefox. Češtinu jsem kontroloval jen já.
+- **Formulář:** nic neukládá a ukazuje, jak by kontakt zařadil CRM. Zadání to dovoluje, ale pro skutečné spuštění reklamy by potřeboval backend a právní texty.
+
+
+## Uživatelka
+
+tato fotka je tam úplně mimo, tu klidně odstraň, texty piš jako copywriter seniorní, cílem je vysvětlit a dobře prodat
+
+
+## Uživatelka
+
+[Image: source: /private/tmp/claude-501/-Users-andreavarmuzova-AGENTURA-andrea-portfolio/e59aedb4-7db2-402e-814d-89725c3a1d1c/images/1.webp]
+
+
+## Claude
+
+Rozumím: interiér pryč a texty přepíšu prodejněji, ale pořád poctivě. Nejdřív přestavím sekci „Co kupujete“ bez fotografie.
+
+
+**Nástroj:** `mcp__ccd_turn__update_plan`
+```json
+{"items": [{"content": "Odstranit fotku interiéru", "status": "in_progress"}, {"content": "Přepsat texty copywriterskou rukou", "status": "pending"}, {"content": "Otestovat mobil a desktop", "status": "pending"}, {"content": "Nasadit a pushnout", "status": "pending"}], "scope": "continuation"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Plan shown (4 steps).
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && python3 - <<'EOF'\nimport re\nN=' '\ns=open('index.html',encoding='utf-8').read()\n\ndef sect(a,b,new):\n    global s\n    i=s.index(a); j=s.index(b); s=s[:i]+new+s[j:]\n\n# ---------- HERO ----------\ns=s.replace('<p class=\"sub\">Půjčíte Domece od <b>50 000 Kč na 4 roky</b>. Úrok dostanete čtvrtletně: při modelové sazbě 7,2 % je to <b>900 Kč z každých 50 000 Kč</b>, pokud firma plní své závazky.</p>'.replace(' ',N) if False else '', '')\ns=re.sub(r'<p class=\"sub\">.*?</p>','<p class=\"sub\">Půjčujete firmě, která staré činžáky opravuje a pronajímá. <b>Čtyři roky dostáváte pevný úrok každé tři měsíce.</b> Při modelové sazbě 7,2 % je to <b>900 Kč čtvrtletně z každých 50 000 Kč</b>, pokud firma plní své závazky.</p>',s,count=1,flags=re.S)\n\n# ---------- CO KUPUJETE ----------\nnew_podm='''<!-- ================= CO KUPUJETE ================= -->\n<section class=\"section\" id=\"podminky\" aria-labelledby=\"h-podm\" style=\"border-top:0\">\n  <div class=\"wrap split\">\n    <div class=\"head\">\n      <p class=\"eyebrow\">Co kupujete</p>\n      <h2 id=\"h-podm\">Jednoduchá půjčka, jasné podmínky</h2>\n      <p class=\"lead\">Kupujete dluhopis: půjčujete peníze firmě Domeka. Nekupujete byt ani podíl ve firmě. Za půjčku dostáváte pevný úrok každé čtvrtletí a na konci čtvrtého roku má firma vrátit celou půjčenou částku.</p>\n      <div class=\"gt\">\n        <div><h3>Co dostanete</h3><ul><li>Pevný úrok čtyřikrát ro
+… [zkráceno, původně 10264 znaků]
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+photo refs: 0 | .photo css: 0
+courtyard.jpg
+hero.jpg
+258:    <p class="sub">Půjčujete firmě, která staré činžáky opravuje a pronajímá. <b>Čtyři roky dostáváte pevný úrok každé tři měsíce.</b> Při modelové sazbě 7,2 % je to <b>900 Kč čtvrtletně z každých 50 000 Kč</b>, pokud firma plní své závazky.</p>
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && python3 - <<'EOF'\nimport re\ns=open('index.html',encoding='utf-8').read()\njs=re.search(r'<script>(.*?)</script>',s,re.S).group(1)\nopen('/tmp/dk/page.js','w').write(js)\ni=s.index('var copy={'); print(s[i:i+1900])\nEOF\nnode --check /tmp/dk/page.js && echo JS_OK; (python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/domeka-srv.log 2>&1 &); sleep 1; curl -s -o /dev/null -w \"%{http_code}\\n\" http://127.0.0.1:8765/index.html", "description": "Check JS copy block syntax and start server"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+var copy={
+    qualified:{kicker:'Možný zájem o konzultaci',title:'Máte předpoklady pro rozhovor s poradcem',
+      text:'<p>Počítáte s částkou od 50 000 Kč a v blízké době. Poradce by s vámi prošel podmínky, zajištění i rizika a odpověděl na otázky z průvodce. K ničemu vás to nezavazuje a rozhodnutí zůstává na vás.</p>',
+      crm:'Kvalifikovaný kontakt: dobrovolně uvedl investiční kapacitu od 50 000 Kč a blízký termín. Další krok: nabídka konzultace, vždy s ověřením vhodnosti.'},
+    nurture:{kicker:'Vzdělávací kontakt',title:'Správně, nespěchejte',
+      text:'<p>Částka by na minimum stačila, ale rozhodujete se dlouhodobě. Pošleme vám jen průvodce, bez telefonátů. Až budete připravena nebo připraven, poradce vám pomůže.</p>',
+      crm:'Vzdělávací kontakt: kapacita od 50 000 Kč, termín vzdálený nebo nejistý. Další krok: pouze informační obsah, bez aktivního obchodního kontaktu.'},
+    below:{kicker:'Pod modelovým minimem',title:'Do této emise by to zatím nestačilo',
+      text:'<p>Minimum je 50 000 Kč. Průvodce se vám i tak hodí u jakéhokoli firemního dluhopisu. Poradce vám nenabízíme, ať neztrácíte čas.</p>',
+      crm:'Vzdělávací kontakt pod minimem: nepočítá se mezi kvalifikované investory. Další krok: žádný obchodní kontakt.'},
+    info:{kicker:'Sbíráte informace',title:'Dobrý začátek',
+      text:'<p>Kdo se nejdřív ptá, rozhoduje se klidněji. Projděte si výpočet a rizika výše a pět otázek z průvodce si nechte na chvíli, kdy budete řešit částku.</p>',
+      crm:'Informační kontakt: částka nespecifikována. Další krok: pouze informační obsah, bez aktivního obchodního kontaktu.'}
+  };
+
+  function show(el){[s1,s2,done].forEach(function(x){x.hidden=(x!==el)});var h=el.querySelector('h3');if(h){h.focus({preventScroll:true})}
+    var c=$('#form-card');if(c&&c.getBoundin
+… [zkráceno, původně 1982 znaků]
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && python3 - <<'EOF'\ns=open('index.html',encoding='utf-8').read()\ns=s.replace(\"Pošleme vám jen průvodce, bez telefonátů. Až budete připravena nebo připraven, poradce vám pomůže.\",\"V ostré verzi by přišel jen průvodce, bez telefonátů. Až budete chtít jít dál, poradce vám pomůže.\")\nopen('index.html','w',encoding='utf-8').write(s)\nEOF\nC=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\"\ncat > /tmp/dk/h.html <<'EOF'\n<!doctype html><body style=\"margin:0\"><iframe id=f src=\"http://127.0.0.1:8765/index.html#podminky\" width=\"1440\" height=\"900\" style=\"border:0;display:block\"></iframe><script>document.getElementById('f').onload=function(){var d=this.contentDocument;d.documentElement.style.scrollBehavior='auto';d.defaultView.scrollTo(0,d.getElementById('podminky').offsetTop-10)}</script>\nEOF\n\"$C\" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=5000 --window-size=1440,900 --screenshot=/tmp/dk/podm.png file:///tmp/dk/h.html >/dev/null 2>&1; ls -la /tmp/dk/podm.png", "description": "Fix demo wording and capture the Conditions section", "timeout": 120000}
+```
+
+
+**Nástroj:** `Read`
+```json
+{"file_path": "/tmp/dk/podm.png"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+-rw-r--r--@ 1 andreavarmuzova  wheel  1389806 Nov 24 12:40 /tmp/dk/podm.png
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek]
+```
+</details>
+
+
+**Nástroj:** `mcp__Claude_Browser__resize_window`
+```json
+{"width": 1440, "height": 900}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+No preview is open. Use `preview_start` or `navigate` with {"url": "https://…"} to open a browser tab at a URL, or `preview_start` with {"name": "…"} to start a dev server from .claude/launch.json.
+```
+</details>
+
+
+**Nástroj:** `mcp__Claude_Browser__navigate`
+```json
+{"url": "http://127.0.0.1:8765/index.html"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__javascript_tool`
+```json
+{"action": "javascript_exec", "text": "document.documentElement.style.scrollBehavior='auto'; window.scrollTo(0,document.getElementById('podminky').getBoundingClientRect().top+scrollY-20); await new Promise(r=>setTimeout(r,600)); scrollY"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__computer`
+```json
+{"action": "screenshot", "scale": 0.7}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+{
+  "serverId": "preview-local_0f7acadf-7095-42ab-9151-364e9e044260",
+  "tabId": "seed",
+  "reused": false,
+  "type": "browser",
+  "navOk": true
+}
+Browser pane opened. Use serverId "preview-local_0f7acadf-7095-42ab-9151-364e9e044260" with read_page / computer / navigate.
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+2215
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek][Image: source: /Users/andreavarmuzova/.claude/projects/-Users-andreavarmuzova-AGENTURA-andrea-portfolio/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795520425478-fegie4.jpg]Screenshot size: 560x420 0.7-scale view; coordinate frame: 800x600.
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && python3 - <<'EOF'\nimport re\ns=open('index.html',encoding='utf-8').read()\ns=re.sub(r'<h3>Půjčíte peníze</h3><p>.*?</p>','<h3>Půjčíte firmě peníze</h3><p>Koupíte dluhopis od 50 000 Kč.</p>',s,count=1)\nopen('index.html','w',encoding='utf-8').write(s)\nfor k in ['Proč to není spořicí účet','Za co dluhopis stojí','Opravené byty pronajme','Z vašich peněz se stávají','Nejdřív pochopit','Dvě otázky a víte','Kdo o rizicích']:\n    print(k, k in s)\nEOF", "description": "Fix flow step 1 and verify copy replacements"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__javascript_tool`
+```json
+{"action": "javascript_exec", "text": "location.reload(); 1"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Proč to není spořicí účet True
+Za co dluhopis stojí True
+Opravené byty pronajme True
+Z vašich peněz se stávají True
+Nejdřív pochopit True
+Dvě otázky a víte True
+Kdo o rizicích True
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+1
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+```
+</details>
+
+
+**Nástroj:** `mcp__Claude_Browser__javascript_tool`
+```json
+{"action": "javascript_exec", "text": "await new Promise(r=>setTimeout(r,800)); document.documentElement.style.scrollBehavior='auto'; document.getElementById('podminky').scrollIntoView(); await new Promise(r=>setTimeout(r,500)); ({y:scrollY,w:innerWidth,h:innerHeight})"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__computer`
+```json
+{"action": "screenshot", "scale": 0.7}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+{
+  "h": 768,
+  "w": 1024,
+  "y": 768.5
+}
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek][Image: source: /Users/andreavarmuzova/.claude/projects/-Users-andreavarmuzova-AGENTURA-andrea-portfolio/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795520436040-fl723h.jpg]Screenshot size: 560x420 0.7-scale view; coordinate frame: 800x600.
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+```
+</details>
+
+
+## Claude
+
+Sekce vypadá čistě. Spouštím závěrečné testy, obnovím screenshoty a nasadím.
+
+
+**Nástroj:** `mcp__Claude_Browser__browser_batch`
+```json
+{"actions": [{"name": "resize_window", "input": {"width": 320, "height": 700}}, {"name": "javascript_tool", "input": {"action": "javascript_exec", "text": "({w:innerWidth,sw:document.documentElement.scrollWidth})"}}, {"name": "resize_window", "input": {"width": 375, "height": 812}}, {"name": "javascript_tool", "input": {"action": "javascript_exec", "text": "({w:innerWidth,sw:document.documentElement.scrollWidth})"}}, {"name": "resize_window", "input": {"width": 768, "height": 1024}}, {"name": "javascript_tool", "input": {"action": "javascript_exec", "text": "({w:innerWidth,sw:document.documentElement.scrollWidth})"}}, {"name": "resize_window", "input": {"width": 1440, "height": 900}}, {"name": "javascript_tool", "input": {"action": "javascript_exec", "text": "const out=[{w:innerWidth,sw:document.documentElement.scrollWidth}]; const s1=document.getElementById('step1'), s2=document.getElementById('step2');const sub=f=>f.dispatchEvent(new Event('submit',{cancelable:true,bubbles:true}));const pick=(n,v)=>{s1.querySelector(`input[name=\"${n}\"][value=\"${v}\"]`).checked=true};for(const [a,t] of [['50','soon'],['100','later'],['below','soon'],['info','info']]){s1.reset();s1.hidden=false;s2.hidden=true;document.getElementById('done').hidden=true;pick('amount',a);pick('timing',t);sub(s1);out.push(a+'/'+t+' → '+document.getElementById('s2-title').textContent+' | poradce:'+!document.getElementById('advisor').hidden)}out.push('res:'+performance.getEntriesByType('resource').map(r=>r.name
+… [zkráceno, původně 1538 znaků]
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[resize_window] Viewport set to 320x700 on this tab (scaled down to fit if larger than the pane). Reset it with preset "desktop" as soon as you finish testing; the desktop app also clears a size you set when your turn ends or the pane's width changes, so set it again if you still need it. If the user wants to keep a phone or tablet size after your turn, they can pick Mobile or Tablet in the pane's Viewport menu; a custom size you simply set again next turn.
+
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 320x700 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)[javascript_tool:javascript_exec] {
+  "sw": 320,
+  "w": 320
+}
+
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 320x700 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)[resize_window] Viewport set to 375x812 on this tab (scaled down to fit if larger than the pane). Reset it with preset "desktop" as soon as you finish testing; the desktop app also clears a size you set when your turn ends or the pane's width changes, so set it again if you still need it. If the user wants to keep a phone or tablet size after your turn, they can pick Mobile or Tablet in the pane's Viewport menu; a custom size you simply set again next turn.
+
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fik
+… [zkráceno, původně 5158 znaků]
+```
+</details>
+
+
+## Claude
+
+Vše projde. Obnovuji screenshoty, commit, deploy a push.
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && C=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\"; rm -f screenshots/*.png\nshot(){ cat > /tmp/dk/h.html <<EOF\n<!doctype html><body style=\"margin:0;background:#888\"><iframe src=\"http://127.0.0.1:8765/index.html\" width=\"$2\" height=\"$4\" style=\"border:0;display:block;background:#fff\"></iframe>\nEOF\n\"$C\" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=4000 --window-size=$2,$3 --screenshot=screenshots/$1.png file:///tmp/dk/h.html >/dev/null 2>&1; }\nshot mobile-320-first-screen 320 700 700; shot mobile-375-first-screen 375 812 812; shot mobile-390-first-screen 390 844 844; shot tablet-768-first-screen 768 1024 1024; shot desktop-1024-first-screen 1024 768 768; shot desktop-1440-first-screen 1440 900 900; shot mobile-375-full-page 375 8000 8000; shot desktop-1440-full-page 1440 6200 6200\nsed -i '' 's/fotografie v `assets\\/` (hero, interiér, dvorek)/fotografie v `assets\\/` (hero a dvorek před opravou)/; s/tři ilustrační snímky/dva ilustrační snímky/' README.md\nsed -i '' 's/druhá fotografie dvorku před opravou a interiér po opravě/druhá fotografie dvorku před opravou/' DESIGN_DECISIONS.md\nprintf '\\n## 7. Úprava po zpětné vazbě\\n\\nFotografie interiéru byla vyřazena, protože do příběhu nezapadala. Sekce „Co kupujete“ je nově text a ledger, doplněný srovnáním „Co dostanete / Co přebíráte vy“. Texty jsou přepsané copywriterským tónem: konkrétní čísla, přímé oslove
+… [zkráceno, původně 2203 znaků]
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__resize_window`
+```json
+{"preset": "desktop"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+"message": "Deployment domeka-landing-quu0370k6-varmuzovaa-gmailcoms-projects.vercel.app ready. Production URL: https://domeka-landing.vercel.app",
+ 200
+assets/hero.jpg 200
+assets/courtyard.jpg 200
+assets/interior.jpg 404
+1
+76b40dd Odstraněna fotka interiéru, přepsané texty, sekce Co kupujete bez fotografie
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+Viewport emulation cleared; the tab is back to the pane's responsive size (desktop).
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+```
+</details>
+
+
+**Nástroj:** `mcp__ccd_turn__wrap_up`
+```json
+{"recap": "Fotka interiéru je pryč a texty jsou přepsané prodejněji. Úprava je nasazená na https://domeka-landing.vercel.app a nahraná na GitHub. E-mail Matejovi jsem neposlal. Přepis relace v `ai-log/` nezahrnuje tuto poslední úpravu.", "ask": "Mám znovu vytvořit přepis relace do ai-log?", "actions": [{"label": "Ano, aktualizovat"}, {"label": "Zatím ne"}], "blocked": true}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Shown in the next-step box. Your closing message is your answer to the user: write it now, in full, as the last thing you say this turn. The box asks your question, so do not ask it again.
+```
+</details>
+
+
+## Claude
+
+Fotku interiéru jsem odstranil a texty přepsal. Změna je nasazená na https://domeka-landing.vercel.app (vrací 200) a nahraná na GitHub. Funnel jsem znovu otestoval, formulář nic neodesílá a žádná šířka (320 až 1440 px) nepřetéká.
+
+**Co se změnilo**
+- **Fotky:** zůstaly jen dvě: opravená fasáda v úvodu a dvorek před opravou. Soubor interiéru je smazaný i z GitHubu a z Vercelu.
+- **Sekce „Co kupujete“:** je teď čistě textová. Nad tabulkou podmínek stojí srovnání „Co dostanete“ a „Co přebíráte vy“, takže prodává výhody a hned říká cenu.
+- **Úvod:** „Půjčujete firmě, která staré činžáky opravuje a pronajímá. Čtyři roky dostáváte pevný úrok každé tři měsíce.“ Hned za tím je konkrétní příklad: 900 Kč čtvrtletně z každých 50 000 Kč.
+- **Další texty:**
+  - Sekce o placení úroků se ptá „Odkud se berou peníze na vaše úroky“.
+  - Sekce o rizicích říká, že kdo o rizicích mluví dopředu, zaslouží si větší důvěru.
+  - Průvodce se nabízí „k poradci, do banky nebo k dětem, které se v tom vyznají“.
+  - Čtyři výsledky formuláře mají nové nadpisy: „Máte předpoklady pro rozhovor s poradcem“, „Správně, nespěchejte“, „Do této emise by to zatím nestačilo“ a „Dobrý začátek“.
+- **Poctivost:** žádný text neslibuje výnos ani bezpečí.
+
+**K mailu a repozitáři:** v `ai-log/` není poslední úprava. Chceš-li přepis aktualizovat, stačí říct. Návrh e-mailu zůstává v `/Users/andreavarmuzova/AGENTURA/domeka-email-navrh.md`.
+
+
+## Uživatelka
+
+Ano, aktualizovat
