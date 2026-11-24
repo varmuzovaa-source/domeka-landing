@@ -242,6 +242,24 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
 .sf-copy{margin-top:6px!important;color:rgba(255,255,255,.6)}
 @media (min-width:860px){.sf-grid{grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px}}
 @media (max-width:859px){footer.site-foot{padding-bottom:104px}}
+.hero-body{display:grid;grid-template-columns:minmax(0,1fr);column-gap:56px}
+.hero-body>*{grid-column:1}
+.calc{background:#fff;color:var(--ink);border-radius:var(--radius);padding:24px 22px 26px;margin:6px 0 26px;box-shadow:0 18px 50px rgba(0,0,0,.28)}
+.calc h2{font-size:1.35rem;letter-spacing:-.02em;margin:0 0 16px;color:var(--ink)}
+.calc-l{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.95rem;color:var(--muted);margin-bottom:10px}
+.calc-l output{font-size:1.45rem;font-weight:600;color:var(--ink);letter-spacing:-.02em}
+.calc input[type=range]{width:100%;height:32px;margin:0;accent-color:var(--ocean);cursor:pointer}
+.calc-range{display:flex;justify-content:space-between;font-size:.78rem;color:var(--muted);margin:2px 0 18px}
+.calc-res{margin:0 0 12px;border-top:1px solid var(--line)}
+.calc-res div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
+.calc-res dt{color:var(--muted);font-size:.95rem}
+.calc-res dd{margin:0;font-weight:700;font-size:1.2rem;color:var(--ink);letter-spacing:-.02em}
+.calc-res div:first-child dd{font-size:1.6rem;color:var(--ocean)}
+.calc-fine{font-size:.8rem;color:var(--muted);margin:0 0 18px;line-height:1.45}
+.calc .btn{width:100%}
+@media (min-width:980px){.hero-body{grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);align-items:end}
+.hero-body>.calc{grid-column:2;grid-row:1/span 6;align-self:center;margin:0}
+.hero-body>.hero-actions{display:none}}
 </style>
 </head>
 <body>
@@ -254,29 +272,34 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   <div class="wrap">
     <div class="top">
       <a class="brand" href="#top" aria-label="DOMEKA, začátek stránky">DOMEKA</a>
-      <nav class="main" aria-label="Hlavní navigace">
-        <a class="link" href="#podminky">Podmínky</a>
-        <a class="link" href="#jak">Z čeho se platí</a>
-        <a class="link" href="#rizika">Rizika</a>
-        <a class="btn light small" href="#pruvodce">Získat průvodce</a>
-      </nav>
+      <nav class="main" aria-label="Hlavní akce"><a class="btn light small" href="#pruvodce">Získat průvodce zdarma</a></nav>
     </div>
   </div>
   <div class="wrap hero-body">
     <p class="eyebrow">Dluhopis Domeka · emise 150 mil. Kč</p>
     <h1 id="h1">Dluhopis zajištěný bytovými domy</h1>
     <p class="sub">Půjčíte peníze firmě, která opravuje a pronajímá starší bytové domy. <b>Čtyři roky vám každé čtvrtletí vyplatí pevný úrok</b>: při sazbě 7,2 % ročně je to <b>900 Kč z každých 50 000 Kč</b>. Na konci vám vrátí celou částku, pokud své závazky splní.</p>
+    <div class="hero-actions"><a class="btn light" href="#pruvodce">Získat průvodce zdarma <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a></div>
+    <aside class="calc" aria-labelledby="calc-t">
+      <h2 id="calc-t">Kolik vám dluhopis vyplatí</h2>
+      <label class="calc-l" for="amt">Kolik chcete půjčit: <output id="amt-out" for="amt">100 000 Kč</output></label>
+      <input type="range" id="amt" min="50000" max="1000000" step="10000" value="100000" aria-describedby="amt-hint">
+      <div class="calc-range" id="amt-hint"><span>50 000 Kč</span><span>1 000 000 Kč</span></div>
+      <dl class="calc-res">
+        <div><dt>Každé čtvrtletí</dt><dd id="r-q">1 800 Kč</dd></div>
+        <div><dt>Za rok</dt><dd id="r-y">7 200 Kč</dd></div>
+        <div><dt>Za 4 roky (16 výplat)</dt><dd id="r-t">28 800 Kč</dd></div>
+      </dl>
+      <p class="calc-fine">Při sazbě 7,2 % p. a., před zdaněním a jen tehdy, když firma své závazky plní.</p>
+      <button class="btn block" type="button" id="calc-go">Probrat podmínky a získat průvodce
+        <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></button>
+    </aside>
     <ul class="facts" aria-label="Základní podmínky emise">
       <li><b>50 000 Kč</b><span>minimální investice</span></li>
       <li><b>4 roky</b><span>splatnost</span></li>
       <li><b>4× ročně</b><span>výplata úroku</span></li>
       <li><b>7,2 % p. a.</b><span>pevný úrok ročně</span></li>
     </ul>
-    <div class="hero-actions">
-      <a class="btn light" href="#pruvodce">Získat průvodce zdarma
-        <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a>
-      <a class="btn line-light" href="#jak">Jak dluhopis funguje</a>
-    </div>
     <p class="risk"><b>Dluhopis není bankovní vklad.</b> Hrozí, že přijdete o část investice, nebo dokonce o celou. Zajištění toto riziko snižuje, ale neodstraňuje.</p>
   </div>
 </section>
@@ -589,6 +612,21 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
     em.value='';ph.value='';
     show(done);
   });
+
+
+  /* Kalkulačka v úvodu: částka se přenese do prvního kroku formuláře */
+  (function(){
+    var r=$('#amt'),o=$('#amt-out');if(!r)return;
+    var f=function(n){return n.toLocaleString('cs-CZ').replace(/\s/g,'\u00a0')+'\u00a0Kč'};
+    var upd=function(){var a=+r.value;o.textContent=f(a);
+      $('#r-q').textContent=f(Math.round(a*0.072/4));$('#r-y').textContent=f(Math.round(a*0.072));$('#r-t').textContent=f(Math.round(a*0.072*4));};
+    r.addEventListener('input',upd);upd();
+    $('#calc-go').addEventListener('click',function(){
+      var a=+r.value,v=a<=100000?'50':(a<=500000?'100':'500');
+      var el=s1.querySelector('input[name=amount][value="'+v+'"]');if(el)el.checked=true;
+      show(s1);$('#pruvodce').scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  })();
 
   /* Mobilní lišta: ukáže se po odrolování hera, schová se u formuláře */
   var dock=$('#dock'),hero=$('#top'),form=$('#pruvodce');
