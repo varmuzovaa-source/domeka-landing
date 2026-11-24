@@ -49,6 +49,9 @@ Doplněno a **fiktivní**:
 - jméno emitenta Domeka a popis podnikání,
 - lead magnet a kvalifikační otázky,
 - modelový nájem 14 000 Kč a z něj spočtených ≈ 64 pronajatých bytů (kolik bytů musí být pronajato, aby se zaplatily úroky z 150 mil. Kč),
+- údaje o firmě: činnost od roku 2012, 46 opravených domů, ≈ 520 pronajatých bytů, obsazenost 97 %, zástava domů, ocenění soudním znalcem, nezávislý správce zajištění, upisování do 31. 3. 2027,
+- kontakt a adresa v patičce (`investori@domeka.cz`, Praha 8 – Karlín, Po–Pá 9–17),
+- kalkulačka výnosu v úvodu (sazba 7,2 % p. a.) a PDF průvodce,
 - fotografie: dva ilustrační snímky vytvořené umělou inteligencí. Nezobrazují nemovitosti Domeky, což říká patička. Před ostrým spuštěním je nahradit licencovanými fotografiemi.
 
 Žádné reference, ocenění, počty investorů, loga regulátorů ani pojišťoven.

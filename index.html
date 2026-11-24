@@ -73,7 +73,7 @@ nav.main a.link:hover{text-decoration:underline}
 @media (min-width:860px){nav.main a.link{display:inline}}
 .hero-body{margin-top:auto;padding:36px 0 32px}
 .hero .eyebrow{color:var(--signal)}
-.hero h1{font-size:clamp(2.35rem,9.4vw,5.6rem);max-width:15ch;line-height:1.02}
+.hero h1{font-size:clamp(2.2rem,8.6vw,5rem);max-width:19ch;line-height:1.02}
 .hero .sub{font-size:clamp(1.05rem,3.9vw,1.4rem);line-height:1.4;max-width:46ch;margin:18px 0 24px;color:#EAF3F1}
 .hero .sub b{font-weight:600;color:#fff}
 .facts{list-style:none;margin:0 0 26px;padding:0;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(255,255,255,.4)}
@@ -260,6 +260,14 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
 @media (min-width:980px){.hero-body{grid-template-columns:minmax(0,1.15fr) minmax(340px,.85fr);align-items:end}
 .hero-body>.calc{grid-column:2;grid-row:1/span 6;align-self:center;margin:0}
 .hero-body>.hero-actions{display:none}}
+.trust{background:var(--tint);padding:34px 0 36px}
+.tstats{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:18px 12px}
+.tstats b{display:block;font-size:clamp(1.6rem,6vw,2.4rem);font-weight:600;letter-spacing:-.03em;color:var(--ocean);line-height:1.1}
+.tstats span{font-size:.9rem;color:var(--muted);line-height:1.35}
+.tpoints{list-style:none;margin:0;padding:18px 0 0;border-top:1px solid var(--line-strong);display:grid;gap:12px;font-size:.98rem;color:var(--ink)}
+.tpoints b{font-weight:700}
+.calc-offer{margin:14px 0 0;font-size:.85rem;color:var(--muted);line-height:1.45}
+@media (min-width:760px){.tstats{grid-template-columns:repeat(4,1fr)}.tpoints{grid-template-columns:repeat(3,1fr);gap:28px}}
 </style>
 </head>
 <body>
@@ -276,9 +284,9 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
     </div>
   </div>
   <div class="wrap hero-body">
-    <p class="eyebrow">Dluhopis Domeka · emise 150 mil. Kč</p>
-    <h1 id="h1">Dluhopis zajištěný bytovými domy</h1>
-    <p class="sub">Půjčíte peníze firmě, která opravuje a pronajímá starší bytové domy. <b>Čtyři roky vám každé čtvrtletí vyplatí pevný úrok</b>: při sazbě 7,2 % ročně je to <b>900 Kč z každých 50 000 Kč</b>. Na konci vám vrátí celou částku, pokud své závazky splní.</p>
+    <p class="eyebrow">Dluhopis Domeka · upisování do 31. 3. 2027</p>
+    <h1 id="h1">Pevný úrok 7,2 % ročně, zajištěný bytovými domy</h1>
+    <p class="sub">Půjčíte peníze firmě, která od roku 2012 opravuje a pronajímá starší bytové domy. <b>Čtyři roky vám každé čtvrtletí vyplatí úrok</b>: z 50 000 Kč je to <b>900 Kč</b>. Na konci vám vrátí celou částku, pokud své závazky splní.</p>
     <div class="hero-actions"><a class="btn light" href="#pruvodce">Získat průvodce zdarma <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></a></div>
     <aside class="calc" aria-labelledby="calc-t">
       <h2 id="calc-t">Kolik vám dluhopis vyplatí</h2>
@@ -293,6 +301,7 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
       <p class="calc-fine">Při sazbě 7,2 % p. a., před zdaněním a jen tehdy, když firma své závazky plní.</p>
       <button class="btn block" type="button" id="calc-go">Probrat podmínky a získat průvodce
         <svg viewBox="0 0 18 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M0 7h16M10 1l6 6-6 6"/></svg></button>
+      <p class="calc-offer"><b>Zdarma:</b> průvodce „Pět otázek před nákupem“ (PDF, 2 strany) ke stažení hned po dvou otázkách.</p>
     </aside>
     <ul class="facts" aria-label="Základní podmínky emise">
       <li><b>50 000 Kč</b><span>minimální investice</span></li>
@@ -301,6 +310,23 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
       <li><b>7,2 % p. a.</b><span>pevný úrok ročně</span></li>
     </ul>
     <p class="risk"><b>Dluhopis není bankovní vklad.</b> Hrozí, že přijdete o část investice, nebo dokonce o celou. Zajištění toto riziko snižuje, ale neodstraňuje.</p>
+  </div>
+</section>
+
+<section class="trust" aria-labelledby="h-trust">
+  <div class="wrap">
+    <p class="eyebrow" id="h-trust">Kdo vám peníze půjčuje</p>
+    <ul class="tstats">
+      <li><b>od 2012</b><span>firma na trhu s bytovými domy</span></li>
+      <li><b>46</b><span>opravených domů</span></li>
+      <li><b>≈ 520</b><span>pronajatých bytů</span></li>
+      <li><b>97 %</b><span>obsazenost bytů</span></li>
+    </ul>
+    <ul class="tpoints">
+      <li><b>Zástava nemovitostí.</b> Dluhopis je zajištěn zástavním právem k domům firmy.</li>
+      <li><b>Nezávislé ocenění.</b> Hodnotu zajištěných domů stanovuje soudní znalec.</li>
+      <li><b>Správce zajištění.</b> Zástavu spravuje nezávislá osoba v zájmu investorů.</li>
+    </ul>
   </div>
 </section>
 
@@ -351,7 +377,7 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
     <div class="pay">
       <div>
         <div class="stat"><div class="n">900 000 Kč<small>měsíčně</small></div><p><b>Tolik by plně upsaná emise stála na úrocích.</b> Při sazbě 7,2 % je to 10,8 mil. Kč ročně. Tyto peníze musí firma vydělat ještě před tím, než zaplatí opravy, správu domů, pojištění a daně.</p></div>
-        <div class="stat"><div class="n">≈ 64 bytů<small>pronajatých</small></div><p>Při nájmu <b>14 000 Kč měsíčně</b> musí být pronajato přibližně 64 bytů, jen aby se pokryly úroky. Proto se vždy ptejte, kolik bytů firma vlastní a kolik z nich je obsazených.</p></div>
+        <div class="stat"><div class="n">≈ 64 bytů<small>pronajatých</small></div><p>Při nájmu <b>14 000 Kč měsíčně</b> musí být pronajato přibližně 64 bytů, jen aby se pokryly úroky. Domeka jich dnes pronajímá asi 520, takže by úroky tvořily zhruba osminu ročního nájemného, ještě před náklady na provoz domů. Přesto se vždy ptejte, kolik bytů firma skutečně obsazuje.</p></div>
       </div>
       <ol class="flow">
         <li><h3>Půjčíte firmě peníze</h3><p>Koupíte dluhopis od 50 000 Kč.</p></li>
@@ -500,7 +526,7 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
       <p class="lead">Otázky, které si před prvním dluhopisem klade téměř každý.</p>
     </div>
     <div class="faq">
-      <details><summary>Komu půjčuji peníze?</summary><p>Společnosti Domeka, nikoli bance ani státu. Proto je důležité vědět, jak firma hospodaří a z čeho bude platit.</p></details>
+      <details><summary>Komu půjčuji peníze?</summary><p>Společnosti Domeka, která od roku 2012 opravuje a pronajímá bytové domy. Nepůjčujete bance ani státu. Proto je důležité vědět, jak firma hospodaří a z čeho bude platit.</p></details>
       <details><summary>Co je zástava a co mi dává?</summary><p>Věřitel má při neplacení právo uspokojit se z určité nemovitosti. Záleží ale na její hodnotě, na pořadí zástavních věřitelů a na tom, jak snadno ji lze prodat. Nezaručuje, že dostanete všechno zpět.</p></details>
       <details><summary>Co když Domeka přestane platit?</summary><p>Postup by určovaly emisní podmínky a zákon. Mohlo by dojít k prodlení s výplatami, k jednání o změně podmínek nebo k uplatnění zástavy. Hrozí, že dostanete méně, než jste vložili, nebo později.</p></details>
       <details><summary>Mohu odejít dříve než po 4 letech?</summary><p>Počítejte s tím, že to nelze. Případný prodej jinému investorovi závisí na podmínkách emise a na zájmu dalších lidí.</p></details>
