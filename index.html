@@ -19,7 +19,7 @@
   --canvas:#fff; --support:#F3F5F4; --ink:#14232A; --muted:#4B5A60; --line:#DDE3E3; --line-strong:#B6C3C4;
   --ocean:#0E3138; --ocean-hover:#08242A; --signal:#BFE3DB; --tint:#E9F2F0; --warn:#7A4B00;
   --font:Inter,"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
-  --gutter:20px; --max:1240px; --radius:8px; --pill:999px; --sp:68px;
+  --gutter:20px; --max:1240px; --radius:8px; --pill:999px; --sp:48px;
 }
 @media (min-width:768px){:root{--gutter:36px;--sp:112px}}
 *{box-sizing:border-box}
@@ -135,7 +135,7 @@ nav.main a.link:hover{text-decoration:underline}
 @media (min-width:768px){.compare{grid-template-columns:1fr 1fr}.compare>div:first-child{padding-right:32px;border-right:1px solid var(--line)}.compare>div+div{padding-left:32px}}
 
 /* ---------- Před a po ---------- */
-.band{position:relative;min-height:62svh;display:flex;align-items:flex-end;color:#fff;isolation:isolate;background:#2a2118}
+.band{position:relative;min-height:46svh;display:flex;align-items:flex-end;color:#fff;isolation:isolate;background:#2a2118}
 .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
 .band:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.05) 25%,rgba(10,16,18,.82) 100%)}
 .band .wrap{padding:44px 0}
@@ -268,6 +268,11 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
 .tpoints b{font-weight:700}
 .calc-offer{margin:14px 0 0;font-size:.85rem;color:var(--muted);line-height:1.45}
 @media (min-width:760px){.tstats{grid-template-columns:repeat(4,1fr)}.tpoints{grid-template-columns:repeat(3,1fr);gap:28px}}
+.fine,.calc-fine,.calc-range,.calc-offer,.facts span,.hero .risk,.sf-legal,.sf-legal p,.stepper span,.sheet li span,.draft-note,.err,.tstats span,.sheet .p2{font-size:max(.9rem,14px)}
+.site-foot ul a{display:inline-flex;align-items:center;min-height:44px}
+.site-foot ul{gap:0}
+.brand{display:inline-flex;align-items:center;min-height:44px}
+.calc input[type=range]{height:44px}
 </style>
 </head>
 <body>
@@ -280,7 +285,7 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   <div class="wrap">
     <div class="top">
       <a class="brand" href="#top" aria-label="DOMEKA, začátek stránky">DOMEKA</a>
-      <nav class="main" aria-label="Hlavní akce"><a class="btn light small" href="#pruvodce">Získat průvodce zdarma</a></nav>
+      <nav class="main" aria-label="Hlavní akce"><a class="btn light small" href="#pruvodce">Průvodce zdarma</a></nav>
     </div>
   </div>
   <div class="wrap hero-body">
@@ -337,10 +342,6 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
       <p class="eyebrow">Co kupujete</p>
       <h2 id="h-podm">Jednoduchá půjčka, jasné podmínky</h2>
       <p class="lead">Kupujete dluhopis, tedy půjčujete peníze firmě Domeka. Nekupujete byt ani podíl ve firmě. Za půjčku dostanete pevný úrok každé čtvrtletí a na konci čtvrtého roku vám má firma vrátit celou částku.</p>
-      <div class="gt">
-        <div><h3>Co dostanete</h3><ul><li>Pevný úrok čtyřikrát ročně</li><li>Předem známý termín vrácení peněz</li><li>Zajištění nemovitostmi firmy</li></ul></div>
-        <div><h3>Co riskujete vy</h3><ul><li>Riziko, že firma nezaplatí</li><li>Peníze vázané čtyři roky</li><li>Žádné pojištění jako u vkladu</li></ul></div>
-      </div>
     </div>
     <div>
       <dl class="ledger" style="margin-top:0">
@@ -376,8 +377,8 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
     </div>
     <div class="pay">
       <div>
-        <div class="stat"><div class="n">900 000 Kč<small>měsíčně</small></div><p><b>Tolik by plně upsaná emise stála na úrocích.</b> Při sazbě 7,2 % je to 10,8 mil. Kč ročně. Tyto peníze musí firma vydělat ještě před tím, než zaplatí opravy, správu domů, pojištění a daně.</p></div>
-        <div class="stat"><div class="n">≈ 64 bytů<small>pronajatých</small></div><p>Při nájmu <b>14 000 Kč měsíčně</b> musí být pronajato přibližně 64 bytů, jen aby se pokryly úroky. Domeka jich dnes pronajímá asi 520, takže by úroky tvořily zhruba osminu ročního nájemného, ještě před náklady na provoz domů. Přesto se vždy ptejte, kolik bytů firma skutečně obsazuje.</p></div>
+        <div class="stat"><div class="n">900 000 Kč<small>měsíčně</small></div><p><b>Tolik by plně upsaná emise stála na úrocích.</b> Při sazbě 7,2 % je to 10,8 mil. Kč ročně, které musí firma vydělat ještě před opravami, správou domů a daněmi.</p></div>
+        <div class="stat"><div class="n">≈ 64 bytů<small>pronajatých</small></div><p>Při nájmu <b>14 000 Kč měsíčně</b> stačí na úroky přibližně 64 bytů. Domeka jich pronajímá asi 520, úroky by tvořily zhruba osminu nájemného, ještě před náklady na provoz.</p></div>
       </div>
       <ol class="flow">
         <li><h3>Půjčíte firmě peníze</h3><p>Koupíte dluhopis od 50 000 Kč.</p></li>
@@ -385,20 +386,6 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
         <li><h3>Opravené byty pronajme</h3><p>Nájemné je hlavní příjem, ze kterého firma platí úroky i provoz domů.</p></li>
         <li><h3>Vyplácí úrok, po 4 letech vrací peníze</h3><p>Pokud jí příjmy a zajištění stačí. Záruka to není.</p></li>
       </ol>
-    </div>
-
-    <div class="you" aria-labelledby="h-you">
-      <div>
-        <p class="eyebrow" id="h-you">Co by to znamenalo pro vás</p>
-        <div class="big">900 Kč<small> čtvrtletně</small></div>
-        <p class="fine" style="margin-top:14px">z 50 000 Kč při sazbě 7,2 % p. a., před zdaněním a jen když emitent své závazky plní. Nejde o slib výplaty.</p>
-      </div>
-      <ul>
-        <li><span>Za rok</span><span>3 600 Kč</span></li>
-        <li><span>Počet výplat za 4 roky</span><span>16</span></li>
-        <li><span>Úroky za 4 roky</span><span>14 400 Kč</span></li>
-        <li><span>Jistina na konci</span><span>50 000 Kč, nezaručeno</span></li>
-      </ul>
     </div>
 
     <div class="compare">
@@ -415,14 +402,14 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">Rizika</p><h2 id="h-rizika">Co se může pokazit</h2></div>
-      <p class="lead">Kdo o rizicích mluví dopředu, zaslouží si větší důvěru. Proto jsou uvedena zde, a ne v drobném písmu. Zajištěný dluhopis neznamená dluhopis bez rizika.</p>
+      <p class="lead">Kdo o rizicích mluví dopředu, zaslouží si větší důvěru. Zajištěný dluhopis neznamená dluhopis bez rizika.</p>
     </div>
     <ol class="risks">
-      <li><span class="n">01</span><h3>Domeka nemusí splatit</h3><p>Nájemné může klesnout, opravy se prodražit a byty zůstat prázdné. Pak nebude z čeho platit úroky ani jistinu.</p></li>
-      <li><span class="n">02</span><h3>Zajištění není záruka</h3><p>Záleží na zástavním právu, hodnotě domů, pořadí věřitelů a na tom, jestli lze zástavu v praxi uplatnit. Kvalitu zajištění si proto ověřte v emisních podmínkách ještě před nákupem.</p></li>
-      <li><span class="n">03</span><h3>Peníze nemusí jít vybrat dříve</h3><p>Dluhopis se splácí po čtyřech letech. Prodej jinému investorovi nemusí být možný ani za dobrou cenu.</p></li>
-      <li><span class="n">04</span><h3>Není to pojištěný vklad</h3><p>Dluhopis nechrání systém pojištění vkladů. Můžete přijít o část nebo celou investici.</p></li>
-      <li><span class="n">05</span><h3>Čísla jsou výpočet, ne slib</h3><p>Sazba, nájem 14 000 Kč a počet bytů slouží k výpočtu. Skutečný výnos závisí na hospodaření firmy a na emisních podmínkách.</p></li>
+      <li><span class="n">01</span><h3>Domeka nemusí splatit</h3><p>Nájemné může klesnout nebo se opravy prodražit. Pak nebude z čeho platit úroky ani jistinu.</p></li>
+      <li><span class="n">02</span><h3>Zajištění není záruka</h3><p>Záleží na hodnotě domů, pořadí věřitelů a na tom, zda lze zástavu v praxi uplatnit.</p></li>
+      <li><span class="n">03</span><h3>Peníze nelze vybrat dříve</h3><p>Dluhopis se splácí po čtyřech letech. Prodej jinému investorovi nemusí být možný.</p></li>
+      <li><span class="n">04</span><h3>Není to pojištěný vklad</h3><p>Dluhopis nechrání systém pojištění vkladů. Můžete přijít o část investice, nebo o celou.</p></li>
+      <li><span class="n">05</span><h3>Čísla jsou výpočet, ne slib</h3><p>Skutečný výnos závisí na hospodaření firmy a na emisních podmínkách.</p></li>
     </ol>
     <p class="principle">Investujte jen peníze, které dokážete několik let postrádat a jejichž ztrátu unesete.</p>
   </div>
@@ -434,7 +421,7 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
     <div>
       <p class="eyebrow">Průvodce zdarma · PDF, 2 strany</p>
       <h2 id="h-mag" style="max-width:15ch">Pět otázek před nákupem firemního dluhopisu</h2>
-      <p class="lead" style="margin-top:20px">Dvě strany A4 pro člověka, který dluhopis ještě nikdy nekoupil. U každé otázky je napsáno, kde odpověď hledat a co je varovný signál. Vezměte je s sebou k poradci, do banky nebo s někým blízkým, kdo se v penězích vyzná.</p>
+      <p class="lead" style="margin-top:20px">Dvě strany A4 pro člověka, který dluhopis ještě nikdy nekoupil. U každé otázky najdete, kde hledat odpověď a co je varovný signál.</p>
       <div class="sheet" aria-label="Náhled první strany průvodce">
         <div class="st"><span>Pět otázek před nákupem</span><span>Strana 1</span></div>
         <ol>
@@ -523,16 +510,13 @@ footer.site-foot{background:var(--ocean);color:rgba(255,255,255,.8);padding:64px
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">Časté otázky</p><h2 id="h-faq">Než se rozhodnete</h2></div>
-      <p class="lead">Otázky, které si před prvním dluhopisem klade téměř každý.</p>
+      <p class="lead">Čtyři otázky, které si před prvním dluhopisem klade téměř každý.</p>
     </div>
     <div class="faq">
-      <details><summary>Komu půjčuji peníze?</summary><p>Společnosti Domeka, která od roku 2012 opravuje a pronajímá bytové domy. Nepůjčujete bance ani státu. Proto je důležité vědět, jak firma hospodaří a z čeho bude platit.</p></details>
-      <details><summary>Co je zástava a co mi dává?</summary><p>Věřitel má při neplacení právo uspokojit se z určité nemovitosti. Záleží ale na její hodnotě, na pořadí zástavních věřitelů a na tom, jak snadno ji lze prodat. Nezaručuje, že dostanete všechno zpět.</p></details>
       <details><summary>Co když Domeka přestane platit?</summary><p>Postup by určovaly emisní podmínky a zákon. Mohlo by dojít k prodlení s výplatami, k jednání o změně podmínek nebo k uplatnění zástavy. Hrozí, že dostanete méně, než jste vložili, nebo později.</p></details>
       <details><summary>Mohu odejít dříve než po 4 letech?</summary><p>Počítejte s tím, že to nelze. Případný prodej jinému investorovi závisí na podmínkách emise a na zájmu dalších lidí.</p></details>
       <details><summary>Je to pojištěný vklad jako v bance?</summary><p>Není. Dluhopis nechrání systém pojištění vkladů a jeho nákup nelze srovnávat se spořicím účtem.</p></details>
       <details><summary>Je sazba 7,2 % p. a. jistá?</summary><p>Sazba je pevná a určuje výši úroku, po dobu splatnosti se nemění. Nejistá je jen to, zda firma úroky i jistinu skutečně zaplatí. To závisí na jejím hospodaření a na zajištění.</p></details>
-      <details><summary>Musím při návštěvě něco vyplňovat?</summary><p>Ne. Podmínky, výpočet i rizika si přečtete bez zadání kontaktu. Dvě otázky v průvodci jsou volitelné a e-mail až poslední a také nepovinný.</p></details>
     </div>
   </div>
 </section>
