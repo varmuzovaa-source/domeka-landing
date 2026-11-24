@@ -14,6 +14,7 @@ Legenda: [x] ověřeno, [~] ověřeno částečně, [ ] neověřeno.
 - [ ] Korektura češtiny rodilým mluvčím (provedena jen autorem).
 
 ## Frontend / přístupnost
+- [x] Lighthouse 12 na živé URL (mobil, 24. 11. 2026): výkon 99, přístupnost 100, doporučené postupy 100, SEO 100. LCP 2,0 s, CLS 0, TBT 0 ms.
 - [x] Žádné horizontální přetečení: 320, 375, 390, 768, 1024, 1440 px (měřeno `scrollWidth`).
 - [x] Screenshoty 320, 375, 390, 768, 1024, 1440 v `screenshots/` (po redesignu s fotografiemi).
 - [x] Větvení formuláře: 9 kombinací odpovědí, prázdné odeslání, špatný e-mail, špatný telefon, dokončení (automatizovaný test v prohlížeči).

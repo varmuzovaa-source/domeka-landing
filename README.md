@@ -10,6 +10,13 @@ Fiktivní klient a fiktivní dluhopis, vytvořeno pro praktický úkol (Junior A
 - QA: `QA_RELEASE_CHECKLIST.md`, `screenshots/`
 - AI log: `ai-log/README.md`
 
+## Shrnutí pro hodnotitele
+- **Lead magnet:** „Pět otázek před nákupem firemního dluhopisu“, dvě strany A4 s otázkami, kde hledat odpověď, ukázkovým výpočtem výplat a dotazy na poradce.
+- **Kdy žádám o kontakt:** až po vysvětlení produktu, výpočtu a rizik a po dvou krátkých otázkách (částka, horizont). E-mail i telefon jsou nepovinné.
+- **Co povede ke konverzi:** hero říká totéž co reklama (dluhopis, od 50 000 Kč, 4 roky, čtvrtletní úrok), ukazuje konkrétní výpočet a otevřeně mluví o rizicích.
+- **Jak magnet ovlivní kvalitu kontaktů:** dvě otázky před kontaktem oddělí lidi s 50 000 Kč a víc v blízké době od zvědavých. Poradce se nabízí jen první skupině.
+- **Naměřeno (Lighthouse, mobil, živá URL):** výkon 99, přístupnost 100, doporučené postupy 100, SEO 100.
+
 ## Cíl
 Ne maximum formulářů, ale co nejvíc lidí, kteří rozumějí podmínkám a rizikům a mohou skutečně investovat alespoň 50 000 Kč. Proto web nejdřív vysvětluje, až potom se ptá, a kontakt je nepovinný.
 
@@ -60,4 +67,4 @@ Emisní podmínky, prospekt nebo výjimka a povinná sdělení, skutečná sazba
 Otevřete `index.html`, nebo `python3 -m http.server`. Nasazení: libovolný statický hosting, například Vercel (bez build příkazu, kořen projektu).
 
 ## AI log
-Viz `ai-log/README.md`. První verzi vytvořil ChatGPT, redesign provedl Claude Code. Původní poznámka o ChatGPT je zachovaná. Export `/export` z Claude Code je třeba pořídit ručně a uložit do `ai-log/`.
+Viz `ai-log/README.md`. První verzi vytvořil ChatGPT, redesign a nasazení provedl Claude Code. V `ai-log/` je přepis relace Claude Code vytvořený z exportu relace (ne doslovný výstup příkazu `/export`, výsledky čtení Gmailu jsou vypuštěny, protože obsahovaly soukromé e-maily třetích osob). Původní poznámka o ChatGPT je zachovaná.
