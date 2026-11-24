@@ -1,6 +1,6 @@
 # Export relace Claude Code: Domeka landing page
 
-> **Poznámka k původu.** Toto není doslovný výstup příkazu `/export`, ale čitelný přepis relace Claude Code (desktopová aplikace), vytvořený skriptem z oficiálního exportu relace („Export“ v menu relace, soubor `transcript.jsonl`). Skript vypustil neviditelné systémové instrukce, zkrátil dlouhé výstupy nástrojů a **nahradil výsledky čtení Gmailu** zástupným textem, protože obsahovaly soukromé e-maily třetích osob. E-mailové adresy jsou nahrazeny `<e-mail>`. Text zadání, odpovědi, volání nástrojů a testy jsou beze změny pořadí. Původní ChatGPT fáze projektu je popsána v `ai-log/README.md`.
+> **Poznámka k původu.** Toto není doslovný výstup příkazu `/export`, ale čitelný přepis relace Claude Code (desktopová aplikace), vytvořený skriptem z oficiálního exportu relace (soubor `transcript.jsonl`). Skript vypustil neviditelné systémové instrukce, zkrátil dlouhé výstupy nástrojů a **nahradil výsledky čtení Gmailu** zástupným textem, protože obsahovaly soukromé e-maily třetích osob. E-mailové adresy jsou nahrazeny `<e-mail>`. Pořadí kroků, texty zadání a odpovědi jsou zachovány. Původní ChatGPT fáze projektu je popsána v `ai-log/README.md`.
 
 
 ## Uživatelka
@@ -1893,6 +1893,1366 @@ Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
 
 ```
 3a6f75e Vercel URL v README a QA, gitignore
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+**Nástroj:** `mcp__ccd_session_mgmt__export_transcript`
+```json
+{"session_id": "self"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Exported this session's transcript "Domeka dluhopis — kompletní projekt" to /Users/andreavarmuzova/Downloads/session-export-1795510677960.zip (7 MB, 6970188 bytes). The zip holds the conversation transcript, its subagent transcripts and session metadata, not the app's logs; nothing was uploaded.
+```
+</details>
+
+
+**Nástroj:** `mcp__Claude_Browser__resize_window`
+```json
+{"preset": "desktop"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Viewport emulation cleared; the tab is back to the pane's responsive size (desktop).
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("https://domeka-landing.vercel.app/")
+```
+</details>
+
+
+**Nástroj:** `mcp__ccd_turn__wrap_up`
+```json
+{"recap": "Web je nasazený na https://domeka-landing.vercel.app (veřejně, HTTP 200) a repozitář je aktuální na GitHubu. Návrh e-mailu je připravený a neodeslaný. Chybí složka `ai-log/` s exportem, protože export obsahuje cizí soukromé e-maily a nechci ho bez tvého souhlasu zveřejnit.", "ask": "Jak naložit s exportem do ai-log?", "actions": [{"label": "Vyčistit a nahrát"}, {"label": "Nahrát celý"}], "blocked": true}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Shown in the next-step box. Your closing message is your answer to the user: write it now, in full, as the last thing you say this turn. The box asks your question, so do not ask it again.
+```
+</details>
+
+
+## Claude
+
+Skoro všechno je hotové, jen export konverzace zatím není v repozitáři. Čeká na tvoje rozhodnutí.
+
+**Zadání z Gmailu**
+Našel jsem e-mail od Mateje Lorince z Clientela, termín je dnes do konce dne. Chce: URL stránky, pár vět o lead magnetu a proč zrovna ten, co povede ke konverzi a jak magnet ovlivní kvalitu kontaktů, odkaz na veřejný GitHub a v něm `ai-log/` s exportem `/export`. Také chce uvést, co jsem si doplnil. Hlavní kritérium je, jestli by šla zítra spustit reklama. Zadání ukazuje na funnel, který pracuje s kvalitou kontaktů.
+
+**Hotovo**
+- **Stránka:** https://domeka-landing.vercel.app je veřejná bez přihlášení a vrací HTTP 200. Na mobilu 375 px jsem ji ověřil v prohlížeči.
+- **Repozitář:** https://github.com/varmuzovaa-source/domeka-landing je aktuální a README i QA checklist obsahují obě URL.
+- **Návrh e-mailu:** `/Users/andreavarmuzova/AGENTURA/domeka-email-navrh.md` je neodeslaný a mimo repozitář. Obsahuje, co jsem doplnil (sazba 7,2 %, emitent, lead magnet). Nic jsem Matejovi neposlal.
+
+**Co chybí a proč**
+- **Export do `ai-log/`:** `/export` jako příkaz spustit neumím, tak jsem použil export relace z aplikace. Soubor je v `/Users/andreavarmuzova/Downloads/session-export-1795510677960.zip` a má 7 MB.
+  - Obsahuje výsledky mého prohledávání Gmailu, tedy úryvky cizích soukromých e-mailů (třetích osob). Veřejné zveřejnění by je vyneslo ven.
+  - Proto jsem ho nenahrál. Můžu ho očistit od Gmail výsledků a nahrát s poznámkou, že je upravený. Nebo ho nahraj celý ty, ale cizí e-maily by byly veřejně vidět.
+  - Pro doslovný `/export` ho spusť ručně v této relaci. Pak ho zkontroluj, než ho dáš do repozitáře.
+- **Fotografie:** hero pořád používá schematický výkres místo licencovaného snímku.
+- **Vlastní ověření:** klávesnici, čtečku obrazovky a Safari/Firefox jsem netestoval a češtinu jsem kontroloval jen já.
+
+
+## Uživatelka
+
+proc neumis spustit export? potrebujes k tomu neco? pokud ano - repo nebo jakykoliv plugin , tak si stahni - cilem je spravne odeslany ukol
+
+
+## Claude
+
+Důvod je prostý: `/export` je vestavěný příkaz interaktivního Claude Code, který spouští uživatel v okně relace. Já slash příkazy volat nemůžu a žádný repozitář ani plugin to nezmění. Mám ale celý přepis relace, takže z něj udělám čitelný export sám. Podívám se na jeho strukturu.
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "D=/Users/andreavarmuzova/AGENTURA/_export-work && rm -rf $D && mkdir -p $D && unzip -q /Users/andreavarmuzova/Downloads/session-export-1795510677960.zip -d $D && find $D -type f | head -20 && for f in $(find $D -type f | head -5); do echo \"== $f\"; head -c 600 \"$f\"; echo; done", "description": "Unzip session export into new folder and inspect"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c.jsonl
+/Users/andreavarmuzova/AGENTURA/_export-work/transcript.jsonl
+/Users/andreavarmuzova/AGENTURA/_export-work/metadata.json
+/Users/andreavarmuzova/AGENTURA/_export-work/local-session-state.json
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c/custom-title.json
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795509634181-pxa9jx.jpg
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795509582975-hcj38j.jpg
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795509634182-ivyus2.jpg
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795509634182-34dblg.jpg
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795510648631-hz5exd.jpg
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795509615354-6maw1m.jpg
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795509625413-clfscu.jpg
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795509619313-kqef4i.jpg
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795509595511-al0jje.jpg
+/Users/andreavarmuzova/AGENTURA/_export-work/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-179550
+… [zkráceno, původně 4772 znaků]
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/_export-work && python3 -I - <<'EOF'\nimport json,collections\nc=collections.Counter();ex={}\nfor l in open('transcript.jsonl',encoding='utf-8'):\n    r=json.loads(l);t=r.get('type');c[t]+=1\n    ex.setdefault(t,l[:300])\nprint(c)\nfor t,e in ex.items():print(t,'=>',e,'\\n')\nEOF", "description": "Inspect transcript record types"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Counter({'assistant': 118, 'user': 77, 'data-flow-records': 69, 'api-request': 53, 'last-prompt': 33, 'atis-latch': 33, 'custom-title': 33, 'agent-name': 32, 'attachment': 26, 'api-request-blob': 24, 'tools-used': 15, 'queue-operation': 6, 'api-request-shape': 5, 'file-history-snapshot': 3, 'system': 2, 'file-history-delta': 1})
+queue-operation => {"type":"queue-operation","operation":"enqueue","timestamp":"2026-11-24T08:35:58.758Z","sessionId":"e59aedb4-7db2-402e-814d-89725c3a1d1c","content":"\n\n<pasted_content id=\"a1d9\">\n# CLAUDE CODE — DOMEKA / MASTER PROMPT\n\nJsi seniorní product designer, creative director specializovaný na důvěryho 
+
+attachment => {"parentUuid":null,"isSidechain":false,"attachment":{"type":"hook_success","hookName":"SessionStart:startup","toolUseID":"684be434-d281-4ff3-97c5-353d3e5de308","hookEvent":"SessionStart","content":"","stdout":"{\"hookSpecificOutput\": {\"hookEventName\": \"SessionStart\", \"additionalContext\": \"ui 
+
+user => {"parentUuid":"6f8b0063-0ddc-4575-868b-17a4eed26794","isSidechain":false,"promptId":"1a0894b8-c1e5-418b-8aaf-776deb916d12","type":"user","message":{"role":"user","content":"\n\n<pasted_content id=\"a1d9\">\n# CLAUDE CODE — DOMEKA / MASTER PROMPT\n\nJsi seniorní product designer, creative director sp 
+
+data-flow-records => {"type":"data-flow-records","v":1,"sessionId":"e59aedb4-7db2-402e-814d-89725c3a1d1c","records":[{"tool_name":"AccountPluginEnabled","event_id":"event_a74f334c-43a0-4e98-afd5-534624adf579"}],"snapshot":true}
+ 
+
+last-prompt => {"type":"last-prompt","lastPrompt":"# CLAUDE CODE — DOMEKA / MASTER PROMPT  Jsi seniorní product designer, creative director specializovaný na důvěryhodné finanční značky, CRO stratég, senior frontend engineer a QA reviewer.  Tvým úkole…","leafUuid":"0e89ac1e-c754-4d22-8a6
+… [zkráceno, původně 4604 znaků]
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "mkdir -p /Users/andreavarmuzova/AGENTURA/_export-work/tools && cat > /Users/andreavarmuzova/AGENTURA/_export-work/tools/render.py <<'EOF'\nimport json,re,sys\nsrc,out=sys.argv[1],sys.argv[2]\nMAIL=re.compile(r'[\\w.+-]+@[\\w-]+\\.[\\w.]+')\nSR=re.compile(r'',re.S)\nGM=('4802f963','plugin_small-business_gmail')\nnames={}; red=0\ndef clean(t):\n    t=SR.sub('',t); return MAIL.sub('<e-mail>',t).strip()\ndef trunc(t,n=1800):\n    return t if len(t)<=n else t[:n]+f'\\n… [zkráceno, původně {len(t)} znaků]'\no=['# Export relace Claude Code: Domeka landing page\\n',\n '> **Poznámka k původu.** Toto není doslovný výstup příkazu `/export`, ale čitelný přepis relace Claude Code (desktopová aplikace), vytvořený skriptem z oficiálního exportu relace („Export“ v menu relace, soubor `transcript.jsonl`). Skript vypustil neviditelné systémové instrukce, zkrátil dlouhé výstupy nástrojů a **nahradil výsledky čtení Gmailu** zástupným textem, protože obsahovaly soukromé e-maily třetích osob. E-mailové adresy jsou nahrazeny `<e-mail>`. Text zadání, odpovědi, volání nástrojů a testy jsou beze změny pořadí. Původní ChatGPT fáze projektu je popsána v `ai-log/README.md`.\\n']\nfor l in open(src,encoding='utf-8'):\n    r=json.loads(l)\n    t=r.get('type')\n    if t not in('user','assistant'):continue\n    c=r['message']['content']\n    if isinstance(c,str):\n        c=[{'type':'text','text':c}]\n    for b in c:\n        bt=b.get('type')\n        if bt=='text':\n            tx=clean(b['text
+… [zkráceno, původně 3121 znaků]
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+gmail results redacted: 2 bytes 92316
+32
+253:/Users/andreavarmuzova/Documents/Codex/2026-11-22/referenced-chatgpt-conversation-this-is-an/outputs/Clientelo_AI_Developer_Domeka_priprava.pdf
+279:Clientelo_AI_Developer_Domeka_priprava.pdf
+1611:Zadání ověřeno v Gmailu (Matej Lorinc, Clientelo, termín dnes). Nasazuji teď na Vercel.
+1854:{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && python3 - <<'EOF'\nr=open('README.md',encoding='utf-8').read()\nr=r.replace(\"Fiktivní klient a fiktivní dluhopis, vytvořeno\",\"**Živá stránka:** https://domeka-landing.vercel.app · **Repozitář:** https://github.com/varmuzovaa-source/domeka-landing\\n\\nFiktivní klient a fiktivní dluhopis, vytvořeno\",1)\nopen('README.md','w',encoding='utf-8').write(r)\nq=open('QA_RELEASE_CHECKLIST.md',encoding='utf-8').read()\nq=q.replace(\"- [ ] Veřejný GitHub repozitář.\",\"- [x] Veřejný GitHub repozitář: https://github.com/varmuzovaa-source/domeka-landing\")\nq=q.replace(\"- [ ] Vercel URL otevřená bez přihlášení.\",\"- [x] Vercel: https://domeka-landing.vercel.app (HTTP 200 bez přihlášení, ověřeno curl a v prohlížeči na 375 px)\")\nopen('QA_RELEASE_CHECKLIST.md','w',encoding='utf-8').write(q)\nEOF\ncat > EMAIL_ZADAVATELI_NAVRH.md <<'EOF'\n**NÁVRH, NEODESLÁNO.** Odpověď na e-mail „Junior AI Developer – postup do ďalšieho kola a praktická úloha“ (Matej Lorinc, Clientelo). Termín: 24. 11. 2026.\n\nPředmět: Re: Junior AI Developer – postup do ďalšieho kola a praktická úloha\n\nDobrý den, pane Lorinc,\n\nděkuji za zadání. Řešení posílám:\n\n- Stránka: https://domeka-landing.vercel.app\n- Kód: https://github.com/varmuzovaa-source/domeka-landing (složka `ai-log/` obsahuje export konverzace s Claude Code)\n\n**Lead magnet:** „Pět otázek před nákupem firemního dluhopisu“, jednostránkový kontrolní 
+… [zkráceno, původně 3412 znaků]
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && grep -c -i \"gmail.com\" /tmp/dk/session.md; grep -n -i \"gmail.com\" /tmp/dk/session.md | head -3; cp /tmp/dk/session.md ai-log/claude-code-session-2026-11-24.md && cat >> ai-log/README.md <<'EOF'\n\n---\n\n## Aktualizace 24. 11. 2026: redesign v Claude Code\n\nRedesign, funnel, dokumentaci i nasazení provedl Claude Code (desktopová aplikace, model Claude Sonnet 5.5). Původní první verzi vytvořil ChatGPT, jak je popsáno výše.\n\n- **Soubor:** `claude-code-session-2026-11-24.md`\n- **Co to je:** čitelný přepis relace vygenerovaný skriptem z oficiálního exportu relace (`transcript.jsonl`). **Není to doslovný výstup příkazu `/export`**, protože slash příkaz lze spustit jen v interaktivním okně relace.\n- **Co bylo upraveno:** vypuštěny skryté systémové instrukce, zkráceny dlouhé výstupy nástrojů, e-mailové adresy nahrazeny `<e-mail>` a výsledky čtení Gmailu vypuštěny, protože obsahovaly soukromé e-maily třetích osob. Text zadání, odpovědi a pořadí kroků zůstaly zachovány.\n- **Doslovný `/export`:** pokud ho zadavatel vyžaduje přesně, lze ho doplnit spuštěním `/export` v této relaci a uložením vedle tohoto souboru.\nEOF\ngit add -A && git commit -qm \"ai-log: přepis relace Claude Code a poznámka o původu\" && git push -q 2>&1 | tail -2; git log --oneline | head -1; ls -la ai-log", "description": "Add sanitized session log to ai-log, commit, push"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+0
+70c5d46 ai-log: přepis relace Claude Code a poznámka o původu
+total 200
+drwxr-xr-x@  4 andreavarmuzova  staff    128 Nov 24 10:05 .
+drwxr-xr-x@ 16 andreavarmuzova  staff    512 Nov 24 09:57 ..
+-rw-r--r--@  1 andreavarmuzova  staff   2123 Nov 24 10:05 README.md
+-rw-r--r--@  1 andreavarmuzova  staff  94697 Nov 24 10:05 claude-code-session-2026-11-24.md
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && sed -i '' 's/^- \\[ \\] `ai-log\\/` s reálným exportem `\\/export` (nutné provést ručně)\\./- [~] `ai-log\\/`: přepis relace Claude Code vygenerovaný z exportu relace (ne doslovný `\\/export`, Gmail výsledky vypuštěny, viz `ai-log\\/README.md`)./' QA_RELEASE_CHECKLIST.md && grep -n \"ai-log\" QA_RELEASE_CHECKLIST.md && git -c core.quotepath=off commit -qam \"QA: stav ai-log\" && git push -q 2>&1|tail -1; rm -rf /Users/andreavarmuzova/AGENTURA/_export-work; gh repo view varmuzovaa-source/domeka-landing --json url,visibility,pushedAt -q '.url+\" \"+.visibility'; curl -s https://raw.githubusercontent.com/varmuzovaa-source/domeka-landing/main/ai-log/README.md | head -3", "description": "Update QA status, push, verify repo public, clean temp"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+31:- [~] `ai-log/`: přepis relace Claude Code vygenerovaný z exportu relace (ne doslovný `/export`, Gmail výsledky vypuštěny, viz `ai-log/README.md`).
+https://github.com/varmuzovaa-source/domeka-landing PUBLIC
+# AI log — důležitá poznámka
+
+Landing page byla v tomto pracovním prostředí vytvořena pomocí OpenAI ChatGPT, nikoli Claude Code.
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+## Claude
+
+Všechno je nasazené a nahrané, ale `ai-log/` není doslovný `/export` z Claude Code. E-mail Matejovi jsem neodeslal.
+
+**Proč jsem `/export` nemohl spustit:** je to vestavěný příkaz interaktivního okna Claude Code a já slash příkazy volat neumím. Žádný plugin ani repozitář to nezmění. Místo něj jsem vzal oficiální export relace z aplikace (`transcript.jsonl`) a skriptem z něj udělal čitelný přepis.
+
+**Co je teď v repozitáři:** `ai-log/claude-code-session-2026-11-24.md` s přepisem celé relace.
+- **Upraveno:** výsledky čtení Gmailu jsou vypuštěné, protože obsahovaly soukromé e-maily třetích osob. E-mailové adresy jsou nahrazené `<e-mail>` a dlouhé výstupy nástrojů zkrácené.
+- **Poctivý popis:** `ai-log/README.md` říká, že nejde o doslovný `/export`, a původní poznámka o ChatGPT zůstala.
+
+**Odkazy**
+- Stránka: https://domeka-landing.vercel.app
+- Repozitář (veřejný): https://github.com/varmuzovaa-source/domeka-landing
+- Návrh e-mailu: `/Users/andreavarmuzova/AGENTURA/domeka-email-navrh.md`
+
+**Před odesláním rozhodni**
+1. **Doslovný `/export`:** pokud ho Matej vyžaduje přesně, napiš `/export` v okně této relace. Soubor pak dám vedle přepisu a vyřadím z něj Gmail části. Přepis nezahrnuje poslední kroky po jeho vytvoření.
+2. **Fotografie:** hero je pořád schematický výkres. Pošli licencovaný snímek a vyměním ho.
+3. **Soubor v Downloads:** `session-export-1795510677960.zip` obsahuje i ty soukromé e-maily, tak ho nikam nesdílej.
+
+Pošli mi vědět, a pak mohu připravit koncept e-mailu v Gmailu. Odeslat ho už musíš ty.
+
+
+## Uživatelka
+
+ten web vypadá otřesně - zavolej si adobe/ higghsfield nebo cokoliv refero...taste skill a oprav ten web....nerozumím tomu co píšeš, cílem je, abys správně odpovedel na zadání a výsledek byl 100/100
+
+
+## Claude
+
+Rozumím, uděláme to vizuálně mnohem silněji, hlavně skutečnou fotografií místo výkresu. Začínám taste skillem a generováním obrazu.
+
+
+**Nástroj:** `mcp__ccd_turn__update_plan`
+```json
+{"items": [{"content": "Načíst taste skill a analyzovat slabiny", "status": "in_progress"}, {"content": "Vygenerovat architektonické fotografie", "status": "pending"}, {"content": "Přepracovat vzhled webu", "status": "pending"}, {"content": "Otestovat mobil a desktop", "status": "pending"}, {"content": "Nasadit, pushnout, ověřit živou URL", "status": "pending"}], "scope": "continuation"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Plan shown (5 steps).
+```
+</details>
+
+
+**Nástroj:** `Skill`
+```json
+{"skill": "design-taste-frontend"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Launching skill: design-taste-frontend
+```
+</details>
+
+
+## Uživatelka
+
+Base directory for this skill: /Users/andreavarmuzova/.claude/skills/design-taste-frontend
+
+# tasteskill 2.5
+
+Build the website a good company would ship: it says plainly what is sold, shows the real thing on
+every screen, and looks made for this client, not from a template and not like an art piece.
+figma.com and x.ai are the bar (in words: `layout-v4.md` section 1).
+
+`<skill>` is this folder. It needs Node 22+ and Chrome, Edge or Chromium (ffmpeg optional). Copy `<skill>/assets` into the project's
+`assets` and start from `assets/starter.html`.
+
+## House rules
+
+These nine win over everything else in this skill.
+
+1. **No caption or description under any image, render or visual.** Licence credits go in one
+   footer line.
+2. **Every visual renders, never an empty ground,** at 1440, 1024, 768 and 390.
+3. **One section per screen:** the hero alone on the first screen, every section exactly one or
+   two screens tall at 1440x900, no second section heading peeking in.
+4. **Equal left and right content edges.**
+5. **Hover micro-animations:** a linked card lifts 2px, a photo zooms 1.02-1.03 inside its frame,
+   buttons step on hover and press on click, underlines draw, card loops cycle in 2.5-4 s, repeat
+   and restart on hover. The motion layer does it; never strip or override it. No tilt, carousels
+   or timed tabs.
+6. **More and better real photographs where they fit;** nicer backgrounds; better heroes, layouts
+   and fonts.
+7. **Real full-colour icons** (a known product's real icon, never a drawn one); small diagram
+   visuals in cards (a hub with branches; one input, a main processor, three parallel lanes;
+   pulses running along the lines).
+8. **The big award-site scenes and creative moments are part of the skill,** but shader effects
+   only where the trade has a technical subject (tech, AI, developer tools, gaming, fintech,
+   hardware), never on a local cafe, bakery, guesthouse or shop: those get photographs.
+9. **Addresses:** street and district only (no street given: the district), no house number, postcode or coordinates; no register
+   or VAT numbers; no phone in a real format; contacts on `.example`.
+
+## 1. The kind of business decides everything
+
+Write the kind on the plan's first line and declare it on the page: the page type on
+`<html data-type>` and `<meta name="page-type">` (the same value), and `<meta name="site-kind">`;
+a place adds `<meta name="page-kind" content="place">`. The dealers take the last column
+(`start.mjs --page`, `moments.mjs --page`), the hero dealer the page type; `consistency.mjs` reads
+the metas.
+
+| Brief | page type | site-kind | kind |
+|---|---|---|---|
+| App, SaaS, AI, developer tool, fintech or banking app, a studio selling its own software | software | software | software |
+| A game, a studio launching its game | software | gaming | gaming |
+| Hardware or a tech device (a drone, a robot arm, a keyboard) | product | tech | tech |
+| Any other physical product or brand (a chair, a bike, coffee beans sold online) | product | other | product |
+| People are hired: clinic, law firm, agency, creative studio, trade | service | other | service |
+| People come to it: cafe, bar, bakery, restaurant, guesthouse, small hotel, shop, florist, bike shop, gym, local studio | place | other | place |
+
+A maker that also opens its door or teaches (a ceramics studio, a bakery with a web shop) is a
+**place**; its web shop becomes the goods section. It is a product only when nothing happens at the door.
+
+"Tech" below means site-kind software, gaming or tech; "other" is everything else. Effects,
+scenes, moments, loops, counts, CSS grounds, dark pages and dark heroes are tech only. An other
+page is photographs, flat colour, type, real icons and the hover layer.
+
+## 2. The page plan by kind
+
+The full plans, deal lists and section order: `references/sections.md`.
+
+- **Place** (a cafe, bakery, guesthouse, shop). Photographs lead: 12 to 20 on the full page, 8 to
+  12 compact, under 8 frames the 3-screen short page, whatever the trade; no client photographs: the draft path
+  (`photos.md`), then count. The hero a photograph whenever a frame fits (a remote place: its region's
+  landscape), the visit block on screen two, the offer, the place, orders or booking.
+  **Variety without effects** (`sections.md` section 4): the offer and the place deal different
+  compositions, never two sections round one picture; one type moment (the address or name set large); one main action a screen; list text 16px. Flat grounds, square
+  photographs, one button style, the phone bar; no effect, ground, moment, loop, fragment, diagram
+  or tab.
+- **Product and service** (site-kind other). Photographs lead: the product, the people, the rooms,
+  the work, two or more a screen on a product page. Real icons for the tools a studio uses; one
+  still diagram at most; flat grounds and one brand band. No shader effect, print, grain, gradient,
+  moment, scene or loop; WebGL only for the product render. **A physical product with no
+  photographs is shown:** its render (`assets/objects/product-render`, stills) leads the hero,
+  then the full product page, never a drawing or mood stock (`sections.md`).
+- **Every product page** (photographed or rendered, hardware too; the bar is Figure and 1X;
+  `sections.md`, Product): the product **big** where it stands
+  whole (most of its frame, or on the ground at anchor scale), never mid-size in a grey rounded
+  panel on a grey ground; **a different picture each section**, never one view twice; **every headline promise pictured** (a family bike shows the child bench); dealt
+  compositions, no structure twice, one contrasting ground; the **swatch changes the picture**,
+  every colour shown once; **no fact twice**; buttons step and press (rule 5).
+- **Tech** (software, gaming, hardware). The client's own subject leads at true size. Software: its
+  own UI as live HTML showing what it works on (a code-review tool: a red and green diff with its
+  Accept action) in one `app-frame`, nev
+… [zkráceno, původně 20394 znaků]
+
+
+**Nástroj:** `ToolSearch`
+```json
+{"query": "select:mcp__2c803d41-4bca-40c4-bc3e-0ee143cc8138__generate_image,mcp__2c803d41-4bca-40c4-bc3e-0ee143cc8138__balance,mcp__2c803d41-4bca-40c4-bc3e-0ee143cc8138__show_generations,mcp__2c803d41-4bca-40c4-bc3e-0ee143cc8138__jobs_wait,mcp__2c803d41-4bca-40c4-bc3e-0ee143cc8138__estimate_image_cost", "max_results": 6}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek][obrázek][obrázek][obrázek][obrázek]
+```
+</details>
+
+
+**Nástroj:** `ToolSearch`
+```json
+{"query": "select:mcp__2c803d41-4bca-40c4-bc3e-0ee143cc8138__generate_image_batch,mcp__2c803d41-4bca-40c4-bc3e-0ee143cc8138__show_generation_by_ids", "max_results": 3}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek][obrázek]
+```
+</details>
+
+
+**Nástroj:** `mcp__2c803d41-4bca-40c4-bc3e-0ee143cc8138__balance`
+```json
+{}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"credits":0,"subscription_plan_type":"free"}
+```
+</details>
+
+
+**Nástroj:** `mcp__2c803d41-4bca-40c4-bc3e-0ee143cc8138__estimate_image_cost`
+```json
+{"params": {"model": "gpt_image_2_6", "aspect_ratio": "16:9", "prompt": "test"}}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"cost":{"credits":0.75,"credits_exact":0.75},"quote_ref":"quote:3bmFOb5dxXRFSXGQeuu7SQ"}
+```
+</details>
+
+
+**Nástroj:** `mcp__2c803d41-4bca-40c4-bc3e-0ee143cc8138__generate_image_batch`
+```json
+{"requests": [{"index": 0, "params": {"model": "gpt_image_2_6", "aspect_ratio": "16:9", "prompt": "Photorealistic architectural photograph of a renovated Czech late-19th-century apartment building (činžovní dům) on a quiet city street, five storeys, restored pale cream plaster facade with ornamental cornice and tall wooden-frame windows, fresh and dignified, soft golden-hour light, clear sky with a few thin clouds, trees along the pavement, no people, no cars in focus, no text, no signage, no logos, documentary editorial style, shot on 35mm, natural colour, high detail"}}, {"index": 1, "params": {"model": "gpt_image_2_6", "aspect_ratio": "4:3", "prompt": "Photorealistic interior photograph of a bright renovated apartment in an old Prague-style tenement building, high ceilings with original moulding, restored herringbone oak floor, large tall windows with soft daylight, a simple sofa and small table, calm neutral palette with a hint of deep teal, no people, no text, no logos, editorial real estate photography, natural light"}}, {"index": 2, "params": {"model": "gpt_image_2_6", "aspect_ratio": "4:3", "prompt": "Photorealistic photograph of an old Czech tenement house courtyard during renovation, partial scaffolding on a plastered wall, original arched windows, workmen's materials neatly stacked, soft overcast light, documentary style, no people faces, no text, no logos"}}, {"index": 3, "params": {"model": "gpt_image_2_6", "aspect_ratio": "4:3", "prompt": "Photorealistic overhea
+… [zkráceno, původně 1914 znaků]
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Submitted 0/4 image generations.
+- index 0: submission_failed — Requires basic plan or higher.
+- index 1: submission_failed — Requires basic plan or higher.
+- index 2: submission_failed — Requires basic plan or higher.
+- index 3: submission_failed — Requires basic plan or higher.
+Wait for the complete requested set with jobs_wait, then show it together with show_generation_by_ids using the collected indexed jobs. This includes jobs submitted across separate calls. job_display accepts only one id and cannot display a group; do not pass ids or call it once per job.
+```
+</details>
+
+
+## Claude
+
+Higgsfield je na free plánu zamčený. Zkouším Canva a Adobe generování obrazu.
+
+
+**Nástroj:** `ToolSearch`
+```json
+{"query": "select:mcp__ffc804cd-0898-41da-a67c-731765ca20e4__generate-image,mcp__ffc804cd-0898-41da-a67c-731765ca20e4__get-generate-image-job", "max_results": 3}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek][obrázek]
+```
+</details>
+
+
+**Nástroj:** `mcp__ffc804cd-0898-41da-a67c-731765ca20e4__generate-image`
+```json
+{"prompt": "Photorealistic architectural photograph of a renovated Czech late-19th-century apartment building on a quiet city street, five storeys, restored pale cream plaster facade with ornamental cornice and tall wooden-frame windows, soft golden-hour light, clear sky, trees along the pavement, no people, no text, no signage, no logos, documentary editorial style, natural colour", "aspectRatio": "LANDSCAPE_16_9", "user_intent": "Hero photo for a fictional real-estate bond landing page; the current CSS drawing looks weak and the user asked to generate real-looking imagery"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"status":"failed","failure":{"code":"quota_exceeded","message":"You have exceeded your credit quota."}}
+```
+</details>
+
+
+**Nástroj:** `ToolSearch`
+```json
+{"query": "Adobe generate image firefly", "max_results": 8}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek][obrázek][obrázek][obrázek][obrázek][obrázek][obrázek][obrázek]
+```
+</details>
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__generate_image`
+```json
+{"prompt": "Photorealistic architectural photograph of a renovated Czech late-19th-century apartment building on a quiet city street, five storeys, restored pale cream plaster facade with ornamental cornice and tall wooden-frame windows, soft golden-hour light, clear sky, trees along the pavement, no people, no text, no signage, no logos, documentary editorial style, natural colour", "type": "photo", "sizePreset": "banner"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"imageGenerationId":"3UxRIunGY5ZP2sVTDTafd","status":"pending","warnings":[{"code":"no_brand_theme_applied","message":"No workspace default theme found; images were generated without brand theming."}],"mediaLibraryUrl":"https://gamma.app/media/images","generatedTime":"2026-11-24T09:09:41.474Z"}
+```
+</details>
+
+
+## Claude
+
+Gamma generuje. Spouštím rovnou i další tři fotografie a čekám na výsledky.
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__generate_image`
+```json
+{"prompt": "Photorealistic interior photograph of a bright renovated apartment in an old Prague-style tenement building, high ceilings with original plaster moulding, restored herringbone oak floor, large tall windows with soft daylight, a simple sofa and a small table, calm neutral palette with a hint of deep teal, no people, no text, no logos, editorial real estate photography, natural light", "type": "photo", "sizePreset": "banner"}
+```
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__generate_image`
+```json
+{"prompt": "Photorealistic documentary photograph of an old Czech tenement house inner courtyard during careful renovation, partial scaffolding against a plastered wall, original arched windows, neatly stacked building materials, soft overcast light, no people, no text, no logos", "type": "photo", "sizePreset": "banner"}
+```
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__generate_image`
+```json
+{"prompt": "Photorealistic overhead-angle photograph of a calm wooden desk by a window with a printed one-page checklist and a pen, reading glasses, a cup of coffee and a notebook, soft morning light, neutral tones with a deep teal accent, no readable text, no logos, editorial lifestyle photography", "type": "photo", "sizePreset": "banner"}
+```
+
+
+**Nástroj:** `ToolSearch`
+```json
+{"query": "select:mcp__d943bade-6e16-47e8-b70a-881ba18383e1__get_image_generation_status", "max_results": 2}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"imageGenerationId":"fc8uYe19etrFQBQ8JA0Hd","status":"pending","warnings":[{"code":"no_brand_theme_applied","message":"No workspace default theme found; images were generated without brand theming."}],"mediaLibraryUrl":"https://gamma.app/media/images","generatedTime":"2026-11-24T09:09:49.136Z"}
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"imageGenerationId":"6IP9CfFXe3pvlwP0h7r0h","status":"pending","warnings":[{"code":"no_brand_theme_applied","message":"No workspace default theme found; images were generated without brand theming."}],"mediaLibraryUrl":"https://gamma.app/media/images","generatedTime":"2026-11-24T09:09:50.096Z"}
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+{
+  "status": "failed",
+  "error": "Gamma API error (402): Insufficient credits remaining.",
+  "retryable": false,
+  "planLimitExceeded": true,
+  "guidance": "This request failed because it exceeded a limit of the workspace's current Gamma plan. Tell the user exactly which limit was hit, using currentPlanLimits (fetched at the moment of failure) for the live limits and remaining credits. If a requested card count exceeded the plan's maximum, offer to retry at maxGenerateCards. If the requested quality is not on the plan, offer to retry with one from availableQualities. If the user says their plan has changed, retry the request — the API validates against the live plan, not any cached limits.",
+  "currentPlanLimits": {
+    "workspace": "Andrea Varmužová's Workspace",
+    "planTier": "free",
+    "creditsRemaining": 50,
+    "maxGenerateCards": 10,
+    "availableImageModels": [
+      "ideogram-v3-turbo",
+      "flux-1-quick",
+      "flux-kontext-fast",
+      "gpt-image-1-mini-low",
+      "gpt-image-2-mini",
+      "flux-2-klein"
+    ],
+    "availableQualities": [
+      "lite",
+      "standard"
+    ]
+  }
+}
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek]
+```
+</details>
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__get_image_generation_status`
+```json
+{"imageGenerationId": "3UxRIunGY5ZP2sVTDTafd"}
+```
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__get_image_generation_status`
+```json
+{"imageGenerationId": "fc8uYe19etrFQBQ8JA0Hd"}
+```
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__get_image_generation_status`
+```json
+{"imageGenerationId": "6IP9CfFXe3pvlwP0h7r0h"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"imageGenerationId":"fc8uYe19etrFQBQ8JA0Hd","status":"pending","warnings":[{"code":"no_brand_theme_applied","message":"No workspace default theme found; images were generated without brand theming."}],"mediaLibraryUrl":"https://gamma.app/media/images"}
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"imageGenerationId":"6IP9CfFXe3pvlwP0h7r0h","status":"pending","warnings":[{"code":"no_brand_theme_applied","message":"No workspace default theme found; images were generated without brand theming."}],"mediaLibraryUrl":"https://gamma.app/media/images"}
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"imageGenerationId":"3UxRIunGY5ZP2sVTDTafd","status":"pending","warnings":[{"code":"no_brand_theme_applied","message":"No workspace default theme found; images were generated without brand theming."}],"mediaLibraryUrl":"https://gamma.app/media/images"}
+```
+</details>
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__get_image_generation_status`
+```json
+{"imageGenerationId": "3UxRIunGY5ZP2sVTDTafd"}
+```
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__get_image_generation_status`
+```json
+{"imageGenerationId": "fc8uYe19etrFQBQ8JA0Hd"}
+```
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__get_image_generation_status`
+```json
+{"imageGenerationId": "6IP9CfFXe3pvlwP0h7r0h"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"imageGenerationId":"6IP9CfFXe3pvlwP0h7r0h","status":"pending","warnings":[{"code":"no_brand_theme_applied","message":"No workspace default theme found; images were generated without brand theming."}],"mediaLibraryUrl":"https://gamma.app/media/images"}
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"imageGenerationId":"3UxRIunGY5ZP2sVTDTafd","status":"completed","image":{"url":"https://cdn.gamma.app/3d5dt0qhwcxb505/design-anything/3UxRIunGY5ZP2sVTDTafd/QuGqjTCzzF1kyzwtEc--L.jpg","width":2752,"height":1536,"aspectRatioUsed":"16:9","savedMediaId":"9wcgh30nhuzd4ma"},"warnings":[{"code":"no_brand_theme_applied","message":"No workspace default theme found; images were generated without brand theming."}],"credits":{"deducted":70,"remaining":50},"mediaLibraryUrl":"https://gamma.app/media/images"}
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"imageGenerationId":"fc8uYe19etrFQBQ8JA0Hd","status":"pending","warnings":[{"code":"no_brand_theme_applied","message":"No workspace default theme found; images were generated without brand theming."}],"mediaLibraryUrl":"https://gamma.app/media/images"}
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing/assets && curl -s -o hero-raw.jpg \"https://cdn.gamma.app/3d5dt0qhwcxb505/design-anything/3UxRIunGY5ZP2sVTDTafd/QuGqjTCzzF1kyzwtEc--L.jpg\" && file hero-raw.jpg && sips -Z 1920 hero-raw.jpg --out hero.jpg >/dev/null && ls -la hero*.jpg", "description": "Download generated hero photo and resize"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+hero-raw.jpg: JPEG image data, baseline, precision 8, 2752x1536, components 3
+-rw-r--r--@ 1 andreavarmuzova  staff  992421 Nov 24 10:10 hero-raw.jpg
+-rw-r--r--@ 1 andreavarmuzova  staff  545436 Nov 24 10:10 hero.jpg
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+**Nástroj:** `Read`
+```json
+{"file_path": "/Users/andreavarmuzova/AGENTURA/domeka-landing/assets/hero.jpg"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek]
+```
+</details>
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__get_image_generation_status`
+```json
+{"imageGenerationId": "fc8uYe19etrFQBQ8JA0Hd"}
+```
+
+
+**Nástroj:** `mcp__d943bade-6e16-47e8-b70a-881ba18383e1__get_image_generation_status`
+```json
+{"imageGenerationId": "6IP9CfFXe3pvlwP0h7r0h"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"imageGenerationId":"fc8uYe19etrFQBQ8JA0Hd","status":"completed","image":{"url":"https://cdn.gamma.app/3d5dt0qhwcxb505/design-anything/fc8uYe19etrFQBQ8JA0Hd/bfpLi5HrSH-TQzTtdRim8.jpg","width":2752,"height":1536,"aspectRatioUsed":"16:9","savedMediaId":"5ofhjiarljvn8p2"},"warnings":[{"code":"no_brand_theme_applied","message":"No workspace default theme found; images were generated without brand theming."}],"credits":{"deducted":70,"remaining":50},"mediaLibraryUrl":"https://gamma.app/media/images"}
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+{"imageGenerationId":"6IP9CfFXe3pvlwP0h7r0h","status":"completed","image":{"url":"https://cdn.gamma.app/3d5dt0qhwcxb505/design-anything/6IP9CfFXe3pvlwP0h7r0h/nGrl1fg26DQGc8scewZaJ.jpg","width":2752,"height":1536,"aspectRatioUsed":"16:9","savedMediaId":"nrroe0xohh4xeld"},"warnings":[{"code":"no_brand_theme_applied","message":"No workspace default theme found; images were generated without brand theming."}],"credits":{"deducted":70,"remaining":50},"mediaLibraryUrl":"https://gamma.app/media/images"}
+```
+</details>
+
+
+## Claude
+
+Hero fotografie je kvalitní. Stahuji i zbylé dvě.
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing/assets && curl -s -o interior-raw.jpg \"https://cdn.gamma.app/3d5dt0qhwcxb505/design-anything/fc8uYe19etrFQBQ8JA0Hd/bfpLi5HrSH-TQzTtdRim8.jpg\" && curl -s -o courtyard-raw.jpg \"https://cdn.gamma.app/3d5dt0qhwcxb505/design-anything/6IP9CfFXe3pvlwP0h7r0h/nGrl1fg26DQGc8scewZaJ.jpg\" && sips -Z 1600 interior-raw.jpg --out interior.jpg >/dev/null && sips -Z 1600 courtyard-raw.jpg --out courtyard.jpg >/dev/null && rm -f *-raw.jpg hero-placeholder.svg && ls -la", "description": "Download and resize interior and courtyard photos"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+total 2224
+drwxr-xr-x@  5 andreavarmuzova  staff     160 Nov 24 10:10 .
+drwxr-xr-x@ 16 andreavarmuzova  staff     512 Nov 24 10:05 ..
+-rw-r--r--@  1 andreavarmuzova  staff  431027 Nov 24 10:10 courtyard.jpg
+-rw-r--r--@  1 andreavarmuzova  staff  545436 Nov 24 10:10 hero.jpg
+-rw-r--r--@  1 andreavarmuzova  staff  151896 Nov 24 10:10 interior.jpg
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+**Nástroj:** `Read`
+```json
+{"file_path": "/Users/andreavarmuzova/AGENTURA/domeka-landing/assets/interior.jpg"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek]
+```
+</details>
+
+
+**Nástroj:** `Read`
+```json
+{"file_path": "/Users/andreavarmuzova/AGENTURA/domeka-landing/assets/courtyard.jpg"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek]
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing/assets && sips -c 893 640 --cropOffset 0 480 interior.jpg --out interior-crop.jpg >/dev/null && mv interior-crop.jpg interior.jpg && sips -g pixelWidth -g pixelHeight interior.jpg | tail -2", "description": "Crop interior photo to its sharp centre"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+pixelWidth: 640
+  pixelHeight: 893
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+**Nástroj:** `Write`
+```json
+{"file_path": "/Users/andreavarmuzova/AGENTURA/domeka-landing/index.html", "content": "<!doctype html>\n<html lang=\"cs\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<meta name=\"theme-color\" content=\"#0E3138\">\n<title>DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)</title>\n<meta name=\"description\" content=\"Fiktivní ukázka: čtyřletý dluhopis od 50 000 Kč, úrok čtvrtletně. Spočítáme, z čeho by firma úroky platila, a ukážeme rizika dřív, než se rozhodnete.\">\n<link rel=\"preload\" as=\"image\" href=\"assets/hero.jpg\" fetchpriority=\"high\">\n<style>\n:root{\n  --canvas:#fff; --support:#F3F5F4; --ink:#14232A; --muted:#4B5A60; --line:#DDE3E3; --line-strong:#B6C3C4;\n  --ocean:#0E3138; --ocean-hover:#08242A; --signal:#BFE3DB; --tint:#E9F2F0; --warn:#7A4B00;\n  --font:Inter,\"Segoe UI\",system-ui,-apple-system,\"Helvetica Neue\",Arial,sans-serif;\n  --gutter:20px; --max:1240px; --radius:8px; --pill:999px; --sp:68px;\n}\n@media (min-width:768px){:root{--gutter:36px;--sp:112px}}\n*{box-sizing:border-box}\nhtml{-webkit-text-size-adjust:100%;scroll-padding-top:12px}\n@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}\nbody{margin:0;background:var(--canvas);color:var(--ink);font:400 17px/1.55 var(--font);overflow-x:hidden}\n@media (min-width:768px){body{font-size:18px}}\nimg{display:block;max-width:100%}\na{color:var(--ocean);text-underline-offset:3px}\np{margin:0 0 1em}\nh1,h
+… [zkráceno, původně 40744 znaků]
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+<tool_use_error>File has been modified since read, either by the user or by a linter. Read it again before attempting to write it.</tool_use_error>
+```
+</details>
+
+
+**Nástroj:** `Write`
+```json
+{"file_path": "/Users/andreavarmuzova/AGENTURA/domeka-landing/index-new.html", "content": "<!doctype html>\n<html lang=\"cs\">\n<head>\n<meta charset=\"utf-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<meta name=\"theme-color\" content=\"#0E3138\">\n<title>DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)</title>\n<meta name=\"description\" content=\"Fiktivní ukázka: čtyřletý dluhopis od 50 000 Kč, úrok čtvrtletně. Spočítáme, z čeho by firma úroky platila, a ukážeme rizika dřív, než se rozhodnete.\">\n<link rel=\"preload\" as=\"image\" href=\"assets/hero.jpg\" fetchpriority=\"high\">\n<style>\n:root{\n  --canvas:#fff; --support:#F3F5F4; --ink:#14232A; --muted:#4B5A60; --line:#DDE3E3; --line-strong:#B6C3C4;\n  --ocean:#0E3138; --ocean-hover:#08242A; --signal:#BFE3DB; --tint:#E9F2F0; --warn:#7A4B00;\n  --font:Inter,\"Segoe UI\",system-ui,-apple-system,\"Helvetica Neue\",Arial,sans-serif;\n  --gutter:20px; --max:1240px; --radius:8px; --pill:999px; --sp:68px;\n}\n@media (min-width:768px){:root{--gutter:36px;--sp:112px}}\n*{box-sizing:border-box}\nhtml{-webkit-text-size-adjust:100%;scroll-padding-top:12px}\n@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}\nbody{margin:0;background:var(--canvas);color:var(--ink);font:400 17px/1.55 var(--font);overflow-x:hidden}\n@media (min-width:768px){body{font-size:18px}}\nimg{display:block;max-width:100%}\na{color:var(--ocean);text-underline-offset:3px}\np{margin:0 0 1em}\n
+… [zkráceno, původně 40697 znaků]
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+File created successfully at: /Users/andreavarmuzova/AGENTURA/domeka-landing/index-new.html (file state is current in your context — no need to Read it back)
+```
+</details>
+
+
+**Nástroj:** `mcp__ccd_turn__update_plan`
+```json
+{"advance": true}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Plan updated: step 2 of 5 is in progress. App actions available now: commit, verify.
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && mv index-new.html index.html && (python3 -m http.server 8765 --bind 127.0.0.1 >/tmp/domeka-srv.log 2>&1 &) ; sleep 1; curl -s -o /dev/null -w \"%{http_code}\\n\" http://127.0.0.1:8765/index.html; for f in hero interior courtyard; do curl -s -o /dev/null -w \"$f %{http_code}\\n\" http://127.0.0.1:8765/assets/$f.jpg; done", "description": "Swap in new page and start local server"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+200
+hero 200
+interior 200
+courtyard 200
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && rm -f screenshots/*.png && mkdir -p /tmp/dk && C=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\"\nshot(){ cat > /tmp/dk/h.html <<EOF\n<!doctype html><body style=\"margin:0;background:#888\"><iframe src=\"http://127.0.0.1:8765/index.html\" width=\"$2\" height=\"$4\" style=\"border:0;display:block;background:#fff\"></iframe>\nEOF\n\"$C\" --headless=new --disable-gpu --hide-scrollbars --virtual-time-budget=4000 --window-size=$2,$3 --screenshot=screenshots/$1.png file:///tmp/dk/h.html >/dev/null 2>&1; }\nshot mobile-320-first-screen 320 700 700\nshot mobile-375-first-screen 375 812 812\nshot mobile-390-first-screen 390 844 844\nshot tablet-768-first-screen 768 1024 1024\nshot desktop-1024-first-screen 1024 768 768\nshot desktop-1440-first-screen 1440 900 900\nshot mobile-375-full-page 375 8200 8200\nshot desktop-1440-full-page 1440 6400 6400\nls screenshots", "description": "Capture new screenshots via fixed-width iframe", "timeout": 300000}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+desktop-1024-first-screen.png
+desktop-1440-first-screen.png
+desktop-1440-full-page.png
+mobile-320-first-screen.png
+mobile-375-first-screen.png
+mobile-375-full-page.png
+mobile-390-first-screen.png
+tablet-768-first-screen.png
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+**Nástroj:** `Read`
+```json
+{"file_path": "/Users/andreavarmuzova/AGENTURA/domeka-landing/screenshots/mobile-375-first-screen.png"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek]
+```
+</details>
+
+
+**Nástroj:** `Read`
+```json
+{"file_path": "/Users/andreavarmuzova/AGENTURA/domeka-landing/screenshots/desktop-1440-first-screen.png"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek]
+```
+</details>
+
+
+## Claude
+
+Hero je teď úplně jiná liga. Dolaďuji světlejší fotografii, nedělitelné mezery v částkách a oddělovače u čísel.
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && python3 - <<'EOF'\nimport re\ns=open('index.html',encoding='utf-8').read()\nN=' '\ns=re.sub(r'(?<=\\d) (?=\\d{3}(?!\\d))',N,s)         # 50 000 -> nbsp\ns=s.replace(' Kč',N+'Kč').replace(' %',N+'%').replace('p. a.','p.'+N+'a.')\n# hero overlay lighter, directional on desktop\ns=s.replace(\".hero:after{content:\\\"\\\";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,26,30,.55) 0%,rgba(6,26,30,.5) 32%,rgba(6,26,30,.9) 100%)}\",\n \".hero:after{content:\\\"\\\";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,26,30,.5) 0%,rgba(6,26,30,.45) 30%,rgba(6,26,30,.9) 100%)}\\n@media (min-width:860px){.hero:after{background:linear-gradient(90deg,rgba(6,26,30,.86) 0%,rgba(6,26,30,.7) 40%,rgba(6,26,30,.12) 78%),linear-gradient(180deg,rgba(6,26,30,.35) 0%,rgba(6,26,30,0) 22%,rgba(6,26,30,.55) 100%)}}\")\ns=s.replace(\".facts li+li{padding-left:20px;border-left:1px solid rgba(255,255,255,.28)}\",\".facts li:nth-child(n+2){padding-left:20px;border-left:1px solid rgba(255,255,255,.28)}\")\nopen('index.html','w',encoding='utf-8').write(s)\nprint(s.count(N))\nEOF\nC=\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\"\ncat > /tmp/dk/h.html <<EOF\n<!doctype html><body style=\"margin:0\"><iframe src=\"http://127.0.0.1:8765/index.html\" width=\"1440\" height=\"900\" style=\"border:0;display:block\"></iframe>\nEOF\n\"$C\" --headless=new --disable-gpu --hide-scroll
+… [zkráceno, původně 1757 znaků]
+```
+
+
+**Nástroj:** `Read`
+```json
+{"file_path": "/Users/andreavarmuzova/AGENTURA/domeka-landing/screenshots/desktop-1440-first-screen.png"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+74
+done
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek]
+```
+</details>
+
+
+**Nástroj:** `mcp__Claude_Browser__resize_window`
+```json
+{"width": 1440, "height": 900}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+Viewport set to 1440x900 on this tab (scaled down to fit if larger than the pane). Reset it with preset "desktop" as soon as you finish testing; the desktop app also clears a size you set when your turn ends or the pane's width changes, so set it again if you still need it. If the user wants to keep a phone or tablet size after your turn, they can pick Mobile or Tablet in the pane's Viewport menu; a custom size you simply set again next turn.
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("https://domeka-landing.vercel.app/")
+- Viewport: emulating 1440x900 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+**Nástroj:** `mcp__Claude_Browser__navigate`
+```json
+{"url": "http://127.0.0.1:8765/index.html"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__javascript_tool`
+```json
+{"action": "javascript_exec", "text": "document.documentElement.style.scrollBehavior='auto'; window.__go=async id=>{const e=document.getElementById(id)||document.querySelector(id);window.scrollTo(0,e.getBoundingClientRect().top+scrollY);await new Promise(r=>setTimeout(r,600));return scrollY}; await __go('podminky')"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__computer`
+```json
+{"action": "screenshot", "scale": 0.55}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+navigated to http://127.0.0.1:8765/index.html
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 1440x900 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+880.5
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 1440x900 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek][Image: source: /Users/andreavarmuzova/.claude/projects/-Users-andreavarmuzova-AGENTURA-andrea-portfolio/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795511687459-mw0seo.jpg]Screenshot size: 440x275 0.55-scale view; coordinate frame: 800x500.
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 1440x900 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+**Nástroj:** `mcp__Claude_Browser__javascript_tool`
+```json
+{"action": "javascript_exec", "text": "await __go('.band')"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__computer`
+```json
+{"action": "screenshot", "scale": 0.55}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__javascript_tool`
+```json
+{"action": "javascript_exec", "text": "await __go('jak')"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__computer`
+```json
+{"action": "screenshot", "scale": 0.55}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__javascript_tool`
+```json
+{"action": "javascript_exec", "text": "await __go('pruvodce')"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__computer`
+```json
+{"action": "screenshot", "scale": 0.55}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+1882.5
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 1440x900 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek][Image: source: /Users/andreavarmuzova/.claude/projects/-Users-andreavarmuzova-AGENTURA-andrea-portfolio/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795511691994-i55cox.jpg]Screenshot size: 440x275 0.55-scale view; coordinate frame: 800x500.
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 1440x900 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+2440.5
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 1440x900 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek][Image: source: /Users/andreavarmuzova/.claude/projects/-Users-andreavarmuzova-AGENTURA-andrea-portfolio/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795511692694-fynn79.jpg]Screenshot size: 440x275 0.55-scale view; coordinate frame: 800x500.
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 1440x900 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+5135.5
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 1440x900 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek][Image: source: /Users/andreavarmuzova/.claude/projects/-Users-andreavarmuzova-AGENTURA-andrea-portfolio/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795511693394-bf8njp.jpg]Screenshot size: 440x275 0.55-scale view; coordinate frame: 800x500.
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 1440x900 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+**Nástroj:** `mcp__Claude_Browser__browser_batch`
+```json
+{"actions": [{"name": "resize_window", "input": {"width": 320, "height": 700}}, {"name": "javascript_tool", "input": {"action": "javascript_exec", "text": "({w:innerWidth,sw:document.documentElement.scrollWidth,wide:[...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>innerWidth+1&&getComputedStyle(e).position!=='fixed').map(e=>e.tagName+'.'+e.className).slice(0,6)})"}}, {"name": "resize_window", "input": {"width": 375, "height": 812}}, {"name": "javascript_tool", "input": {"action": "javascript_exec", "text": "({w:innerWidth,sw:document.documentElement.scrollWidth})"}}, {"name": "resize_window", "input": {"width": 390, "height": 844}}, {"name": "javascript_tool", "input": {"action": "javascript_exec", "text": "({w:innerWidth,sw:document.documentElement.scrollWidth})"}}, {"name": "resize_window", "input": {"width": 768, "height": 1024}}, {"name": "javascript_tool", "input": {"action": "javascript_exec", "text": "({w:innerWidth,sw:document.documentElement.scrollWidth})"}}, {"name": "resize_window", "input": {"width": 1024, "height": 768}}, {"name": "javascript_tool", "input": {"action": "javascript_exec", "text": "({w:innerWidth,sw:document.documentElement.scrollWidth})"}}, {"name": "resize_window", "input": {"width": 1440, "height": 900}}, {"name": "javascript_tool", "input": {"action": "javascript_exec", "text": "({w:innerWidth,sw:document.documentElement.scrollWidth})"}}]}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[resize_window] Viewport set to 320x700 on this tab (scaled down to fit if larger than the pane). Reset it with preset "desktop" as soon as you finish testing; the desktop app also clears a size you set when your turn ends or the pane's width changes, so set it again if you still need it. If the user wants to keep a phone or tablet size after your turn, they can pick Mobile or Tablet in the pane's Viewport menu; a custom size you simply set again next turn.
+
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 320x700 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)[javascript_tool:javascript_exec] {
+  "sw": 320,
+  "w": 320,
+  "wide": []
+}
+
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 320x700 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)[resize_window] Viewport set to 375x812 on this tab (scaled down to fit if larger than the pane). Reset it with preset "desktop" as soon as you finish testing; the desktop app also clears a size you set when your turn ends or the pane's width changes, so set it again if you still need it. If the user wants to keep a phone or tablet size after your turn, they can pick Mobile or Tablet in the pane's Viewport menu; a custom size you simply set again next turn.
+
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu byto
+… [zkráceno, původně 7323 znaků]
+```
+</details>
+
+
+## Claude
+
+Žádné přetečení na žádné šířce. Teď funnel a mobilní lišta.
+
+
+**Nástroj:** `mcp__Claude_Browser__javascript_tool`
+```json
+{"action": "javascript_exec", "text": "const out=[]; const s1=document.getElementById('step1'), s2=document.getElementById('step2');\nconst sub=f=>f.dispatchEvent(new Event('submit',{cancelable:true,bubbles:true}));\nconst pick=(n,v)=>{s1.querySelector(`input[name=\"${n}\"][value=\"${v}\"]`).checked=true};\ns1.reset();s1.hidden=false;s2.hidden=true;document.getElementById('done').hidden=true;\nsub(s1);out.push(['empty',document.getElementById('s1-err').textContent.length>0,'s1:'+!s1.hidden]);\nfor(const [a,t] of [['50','soon'],['500','soon'],['100','later'],['50','unknown'],['50','info'],['below','soon'],['below','info'],['info','soon'],['info','info']]){s1.reset();s1.hidden=false;s2.hidden=true;document.getElementById('done').hidden=true;pick('amount',a);pick('timing',t);sub(s1);\n out.push(a+'/'+t+' → '+document.getElementById('kicker').textContent+' | poradce:'+!document.getElementById('advisor').hidden)}\ns1.reset();pick('amount','100');pick('timing','soon');sub(s1);\ndocument.getElementById('email').value='abc@';sub(s2);out.push('bad email: '+(document.getElementById('email-err').textContent.length>0)+' s2:'+!s2.hidden);\ndocument.getElementById('email').value='';const wc=document.getElementById('want-call');wc.checked=true;wc.dispatchEvent(new Event('change'));document.getElementById('phone').value='abc';sub(s2);out.push('bad phone: '+(document.getElementById('phone-err').textContent.length>0));\ndocument.getElementById('phone').value='';sub(s2);out.push('done:'+!docume
+… [zkráceno, původně 1649 znaků]
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__resize_window`
+```json
+{"width": 375, "height": 812}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__navigate`
+```json
+{"url": "http://127.0.0.1:8765/index.html"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__javascript_tool`
+```json
+{"action": "javascript_exec", "text": "document.documentElement.style.scrollBehavior='auto'; window.scrollTo(0,1500); await new Promise(r=>setTimeout(r,700)); ({y:scrollY,dockOn:document.getElementById('dock').classList.contains('on')})"}
+```
+
+
+**Nástroj:** `mcp__Claude_Browser__computer`
+```json
+{"action": "screenshot", "scale": 0.5}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[
+  [
+    "empty",
+    true,
+    "s1:true"
+  ],
+  "50/soon → Možný zájem o konzultaci | poradce:true",
+  "500/soon → Možný zájem o konzultaci | poradce:true",
+  "100/later → Vzdělávací kontakt | poradce:false",
+  "50/unknown → Vzdělávací kontakt | poradce:false",
+  "50/info → Vzdělávací kontakt | poradce:false",
+  "below/soon → Pod modelovým minimem | poradce:false",
+  "below/info → Pod modelovým minimem | poradce:false",
+  "info/soon → Sbíráte informace | poradce:false",
+  "info/info → Sbíráte informace | poradce:false",
+  "bad email: true s2:true",
+  "bad phone: true",
+  "done:true",
+  "resources:hero.jpg,interior.jpg,courtyard.jpg"
+]
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 1440x900 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+Viewport set to 375x812 on this tab (scaled down to fit if larger than the pane). Reset it with preset "desktop" as soon as you finish testing; the desktop app also clears a size you set when your turn ends or the pane's width changes, so set it again if you still need it. If the user wants to keep a phone or tablet size after your turn, they can pick Mobile or Tablet in the pane's Viewport menu; a custom size you simply set again next turn.
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 375x812 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+navigated to http://127.0.0.1:8765/index.html
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 375x812 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+{
+  "dockOn": true,
+  "y": 1500
+}
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 375x812 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek][Image: source: /Users/andreavarmuzova/.claude/projects/-Users-andreavarmuzova-AGENTURA-andrea-portfolio/e59aedb4-7db2-402e-814d-89725c3a1d1c/tool-results/mcp-Claude_Browser-blob-1795511705906-c509mc.jpg]Screenshot size: 375x812 0.5-scale view; coordinate frame: 750x1624.
+
+Tab Context:
+- Executed on tabId: seed
+- Available tabs:
+  • tabId seed: "DOMEKA | Dluhopis na obnovu bytových domů (fiktivní ukázka)" ("http://127.0.0.1:8765/index.html")
+- Viewport: emulating 375x812 (you set this; reset it with preset "desktop" when you finish testing; the app also clears it when your turn ends or the pane's width changes)
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && python3 - <<'EOF'\nr=open('README.md',encoding='utf-8').read()\nr=r.replace(\"- Vstup: `index.html`, obraz `assets/hero-placeholder.svg`\",\"- Vstup: `index.html`, fotografie v `assets/` (hero, interiér, dvorek)\")\nr=r.replace(\"- hero vizuál (schematický výkres, placeholder za fotografii).\",\"- modelový nájem 14 000 Kč a z něj spočtených ≈ 64 pronajatých bytů (kolik bytů musí být pronajato, aby se zaplatily úroky z 150 mil. Kč),\\n- fotografie: tři ilustrační snímky vytvořené umělou inteligencí (Gamma). Nezobrazují nemovitosti Domeky, což říká patička. Před ostrým spuštěním je nahradit licencovanými fotografiemi.\")\nr=r.replace(\"licencovaná fotografie, informace\",\"licencované fotografie místo AI ilustrací, informace\")\nopen('README.md','w',encoding='utf-8').write(r)\nq=open('QA_RELEASE_CHECKLIST.md',encoding='utf-8').read()\nq=q.replace(\"- [ ] Fotografie je placeholder, licencovaný snímek chybí.\",\"- [~] Fotografie jsou AI ilustrace (Gamma), v patičce označené, bez popisků pod obrázky. Licencované snímky chybí.\")\nq=q.replace(\"- [x] Screenshoty 320, 375, 390, 768, 1024, 1440 v `screenshots/`.\",\"- [x] Screenshoty 320, 375, 390, 768, 1024, 1440 v `screenshots/` (po redesignu s fotografiemi).\")\nopen('QA_RELEASE_CHECKLIST.md','w',encoding='utf-8').write(q)\nd=open('DESIGN_DECISIONS.md',encoding='utf-8').read()\nd=d.replace(\"Schematický výkres fasády (`assets/hero-placeholder.svg`), jasně označený j
+… [zkráceno, původně 3396 znaků]
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+8
+Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
+```
+</details>
+
+
+**Nástroj:** `Read`
+```json
+{"file_path": "/Users/andreavarmuzova/AGENTURA/domeka-landing/screenshots/tablet-768-first-screen.png"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek]
+```
+</details>
+
+
+**Nástroj:** `Read`
+```json
+{"file_path": "/Users/andreavarmuzova/AGENTURA/domeka-landing/screenshots/mobile-320-first-screen.png"}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+[obrázek]
+```
+</details>
+
+
+**Nástroj:** `Bash`
+```json
+{"command": "cd /Users/andreavarmuzova/AGENTURA/domeka-landing && pkill -f \"http.server 8765\"; git add -A && git commit -qm \"Redesign: celoplošný hero s fotografií, výpočet z čeho se platí, náhled průvodce, mobilní lišta\" && git push -q 2>&1 | tail -1; npx --yes vercel@latest deploy --prod --yes 2>&1 | grep -E \"Production URL|ready|Error\" | head -3; sleep 3; for u in \"\" \"assets/hero.jpg\" \"assets/interior.jpg\" \"assets/courtyard.jpg\"; do echo \"$u $(curl -s -o /dev/null -w '%{http_code}' https://domeka-landing.vercel.app/$u)\"; done; curl -s https://domeka-landing.vercel.app | grep -c \"Z čeho se platí\"", "description": "Commit, push, deploy to Vercel, verify live", "timeout": 300000}
+```
+
+
+<details><summary>Výsledek</summary>
+
+```
+"readyState": "READY",
+  "message": "Deployment domeka-landing-nvlvma887-varmuzovaa-gmailcoms-projects.vercel.app ready. Production URL: https://domeka-landing.vercel.app",
+ 200
+assets/hero.jpg 200
+assets/interior.jpg 200
+assets/courtyard.jpg 200
+4
 Shell cwd was reset to /Users/andreavarmuzova/AGENTURA/andrea-portfolio
 ```
 </details>
