@@ -14,9 +14,9 @@ Zdroj: řádek 825.
 ## 2. Vizuální kvalita a srozumitelnost návrhu
 
 **Redakční znění:**
-Současné vizuální zpracování nepovažuji za dostatečné. Přepracuj stránku tak, aby odpovídala profesionálnímu klientskému výstupu. Podle potřeby využij dostupné nástroje a reference, například Adobe, Higgsfield nebo Refero. Rozhodnutí vysvětluj srozumitelně a výsledek ověř vůči zadání.
+Současné vizuální zpracování nepovažuji za dostatečné. Přepracuj stránku tak, aby odpovídala profesionálnímu klientskému výstupu. Podle potřeby využij dostupné nástroje a reference, například Adobe, Higgsfield nebo Refero, a skill pro kvalitu frontendového designu. Rozhodnutí vysvětluj srozumitelně a výsledek ověř vůči zadání.
 
-Zdroj: řádek 1084. Požadavek „100/100“ je zde vyjádřen jako požadavek na kvalitu a ověření, nikoli jako doložené skóre.
+Zdroj: řádek 1084, v němž je výslovně zmíněn „taste skill“. Následující vložený podklad od řádku 1097 uvádí `design-taste-frontend`. Požadavek „100/100“ je zde vyjádřen jako požadavek na kvalitu a ověření, nikoli jako doložené skóre.
 
 ## 3. Výběr fotografie a úprava textů
 

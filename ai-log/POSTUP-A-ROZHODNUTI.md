@@ -2,6 +2,23 @@
 
 Tento přehled vznikl dodatečně pro orientaci v odevzdání. Shrnuje záměr, vývoj řešení a doložené kontroly. Není doslovnou konverzací s AI ani nezávislým měřením obchodních výsledků.
 
+## Jak jsem práci s AI řídila
+
+AI jsem používala pro návrhy a realizaci. V průběhu práce jsem jí vracela konkrétní připomínky k obchodnímu účelu stránky, volbě fotografie, jazyku i připravenosti odevzdání. Když výsledek těmto požadavkům neodpovídal, zadávala jsem další revizi. Níže jsou profesionálně přeformulované příklady mých skutečných pokynů; odkazy vedou k jejich původnímu znění.
+
+| Oblast řízení | Redakčně upravený pokyn | Doklad v přepisu |
+|---|---|---|
+| Konverzní funnel | „Prověř strukturu stránky a konverzní funnel podle marketingových a obchodních principů. Vysvětli, jak jednotlivé kroky podporují hlavní cíl.“ | [Řádek 2596](claude-code-export.txt#L2596) |
+| Výběr nástrojů a skillu | „Při přepracování vizuálu využij podle potřeby Refero, Adobe nebo Higgsfield a skill pro kvalitu frontendového designu. Výsledek porovnej se zadáním.“ | [Řádek 1084](claude-code-export.txt#L1084); následně je v přepisu vložen skill `design-taste-frontend`. |
+| Obsah a prodejní argumentace | „Odstraň fotografii, která neodpovídá nabídce. Texty uprav tak, aby produkt srozumitelně vysvětlovaly a podporovaly zájem návštěvníka.“ | [Řádek 1843](claude-code-export.txt#L1843) |
+| Srozumitelnost | „Doplň kontrolu porozumění textu z pohledu copywritera a UX/UI designéra.“ | [Řádek 2466](claude-code-export.txt#L2466) |
+| Zveřejnění a předání | „Proveď celkovou kontrolu a zpřístupni repozitář tak, aby zadavatel otevřel všechny podklady a dostal úplné odevzdání.“ | [Řádek 2143](claude-code-export.txt#L2143); vytvoření repozitáře jsem potvrdila na [řádku 803](claude-code-export.txt#L803). |
+| Kontrola závěru AI | „Znovu posuď připravenost na reklamu. Mobilní zobrazení, hlavní akce a uvedení rizik samy ještě nedokládají dostatečně konverzní stránku.“ | [Řádek 3204](claude-code-export.txt#L3204) |
+
+Obchodním cílem řešení jsou skutečné investice od 50 000 Kč. Volba lead magnetu, dvě kvalifikační otázky a následný kontakt tomuto cíli podřizují návrh stránky. Vyšší kvalitu kontaktů je však teprve potřeba ověřit v reálném provozu.
+
+Technické provedení commitů a nasazení zajišťovala AI v rámci realizace. Mým požadavkem bylo veřejně dostupné a úplné odevzdání; konkrétní návaznost změn a rozsah ověření jsou uvedeny níže.
+
 ## 1. Obchodní cíl a cílová skupina
 
 Cílem zadání jsou investice od 50 000 Kč, nikoli samotný počet formulářů. Každý kontakt spotřebovává rozpočet na reklamu a čas poradce. Návrh proto zohledňuje jak získání kontaktu, tak jeho předběžnou kvalifikaci.
