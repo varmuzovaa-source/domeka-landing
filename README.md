@@ -49,7 +49,7 @@ Doplněno a **fiktivní**:
 - jméno emitenta Domeka a popis podnikání,
 - lead magnet a kvalifikační otázky,
 - modelový nájem 14 000 Kč a z něj spočtených ≈ 64 pronajatých bytů (kolik bytů musí být pronajato, aby se zaplatily úroky z 150 mil. Kč),
-- fotografie: dva ilustrační snímky vytvořené umělou inteligencí (Gamma). Nezobrazují nemovitosti Domeky, což říká patička. Před ostrým spuštěním je nahradit licencovanými fotografiemi.
+- fotografie: dva ilustrační snímky vytvořené umělou inteligencí. Nezobrazují nemovitosti Domeky, což říká patička. Před ostrým spuštěním je nahradit licencovanými fotografiemi.
 
 Žádné reference, ocenění, počty investorů, loga regulátorů ani pojišťoven.
 

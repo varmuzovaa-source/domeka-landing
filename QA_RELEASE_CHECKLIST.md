@@ -24,7 +24,7 @@ Legenda: [x] ověřeno, [~] ověřeno částečně, [ ] neověřeno.
 - [~] `prefers-reduced-motion`: plynulé rolování se zapíná jen bez omezení pohybu, jiné animace nejsou. Nezkoušeno s přepnutým systémovým nastavením.
 - [ ] Čtečka obrazovky (VoiceOver) netestována.
 - [ ] Safari/Firefox netestovány (testováno Chromium a headless Chrome). Používá se `:has()`, bez něj zůstává základní styl radií.
-- [~] Fotografie jsou AI ilustrace (Gamma), v patičce označené, bez popisků pod obrázky. Licencované snímky chybí.
+- [~] Fotografie jsou AI ilustrace, v patičce označené, bez popisků pod obrázky. Licencované snímky chybí.
 
 ## Odevzdání
 - [x] Veřejný GitHub repozitář: https://github.com/varmuzovaa-source/domeka-landing
