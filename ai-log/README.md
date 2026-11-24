@@ -1,27 +1,26 @@
-# AI log — důležitá poznámka
+# Domeka — záznam práce s AI
 
-Landing page byla v tomto pracovním prostředí vytvořena pomocí OpenAI ChatGPT, nikoli Claude Code.
+Tato složka dokládá práci s AI při přípravě výběrového úkolu Domeka.
 
-Zadání požaduje export skutečné konverzace z Claude Code pomocí příkazu `/export`. Takový export nelze věrohodně vyrobit bez spuštění Claude Code. Je třeba stránku otevřít v Claude Code, provést finální revizi a konverzaci vyexportovat příkazem `/export`; teprve pak vložit vygenerovaný soubor do této složky.
+## Doporučený začátek
 
-## Provedené zadání AI
-Navrhnout a implementovat českou mobilní investiční landing page pro fiktivní značku Domeka, cílovou skupinu 50+, s prioritou kvalifikovaných leadů nad počtem formulářů. Zadání: investice od 50 000 Kč, 4 roky, pevný kvartální kupon, zajištění bytovými domy, emise 150 mil. Kč, bez potřeby funkčního backendu. Zabránit falešným garancím a jasně popsat rizika.
+[Postup práce a rozhodnutí](POSTUP-A-ROZHODNUTI.md) vysvětluje obchodní cíl, návrh stránky, volbu lead magnetu, práci s AI a rozsah ověření. Jde o dodatečně zpracovaný přehled; autentický průběh je doložen historickým přepisem níže.
 
-## Lidské ověření před odevzdáním
-- Projít mobilní zobrazení a textace.
-- Ověřit všechny podmínky oproti původnímu e-mailu.
-- Doplnit skutečný `/export` konverzace Claude Code, pokud má splnit zadání v přesném znění.
+## Průběh práce
 
----
+První verze vznikla s ChatGPT. Následné přepracování stránky, textů a dokumentace probíhalo s Claude Code. Po této části následovala jazyková, marketingová a technická revize s Codexem. Závěrečné změny a výsledky kontrol jsou popsány v `../DESIGN_DECISIONS.md` a `../QA_RELEASE_CHECKLIST.md`.
 
-## Aktualizace 24. 11. 2026: redesign v Claude Code
+## Obsah složky
 
-Redesign, cestu zájemce (funnel), dokumentaci i nasazení provedl Claude Code (desktopová aplikace, model Claude Sonnet 5.5). Původní první verzi vytvořil ChatGPT, jak je popsáno výše.
+- **`claude-code-export.txt`** — historický textový přepis relace Claude Code, vytvořený převodem exportovaných dat `transcript.jsonl`. Obsahuje původní pokyny, odpovědi a záznam použitých nástrojů; dlouhé výstupy byly zkráceny. Není doslovným výstupem příkazu `/export` a nezachycuje následnou revizi v Codexu.
+- **`redakcne-upravena-zadani.md`** — dodatečná jazyková a strukturální revize vybraných pokynů autorky. Slouží jako čitelný doprovod. Nejde o původní prompty v jejich skutečně odeslaném znění a nenahrazuje historický přepis. Odkazy na řádky umožňují porovnat obě verze.
 
-- **Export:** `claude-code-export.txt`, upravený textový přepis relace; nejde o doslovný výstup příkazu `/export`.
-- **Jak vznikl:** z oficiálního exportu relace (`transcript.jsonl`) ho převedl skript. Příkaz `/export` samotný nelze z okna aplikace spustit automaticky, proto je tento soubor jeho ekvivalentem, nikoli doslovným výstupem.
-- **Co bylo upraveno:** vypuštěny skryté systémové instrukce, zkráceny dlouhé výstupy nástrojů, e-mailové adresy nahrazeny `<e-mail>` a výsledky čtení Gmailu vypuštěny, protože obsahovaly soukromé e-maily třetích osob. Zadání, odpovědi a pořadí kroků zůstaly zachovány.
-- **Doslovný `/export`:** lze doplnit spuštěním `/export` v okně relace a uložením vedle tohoto souboru.
+## Soukromí a úpravy přepisu
 
-## Následná revize v Codexu
-Po práci v Claude Code proběhla jazyková, marketingová a technická revize v Codexu. Historický claude-code-export.txt zůstává beze změny a tuto následnou práci nezachycuje. Rozsah změn a aktuální ověření popisují DESIGN_DECISIONS.md a QA_RELEASE_CHECKLIST.md.
+Z historického přepisu byly vypuštěny výsledky čtení soukromé pošty, e-mailové adresy a jména třetích osob byly anonymizovány. Dále byly vypuštěny skryté systémové instrukce a zkráceny dlouhé výstupy nástrojů. Tyto zásahy jsou přiznány v úvodu souboru.
+
+Původní pokyny v historickém přepisu nebyly při následné redakční revizi nahrazeny uhlazenějšími formulacemi. Upravené znění je oddělené, aby bylo zřejmé, jak práce skutečně probíhala a co bylo přeformulováno dodatečně.
+
+## Vztah k požadovanému exportu
+
+Zadání výslovně požaduje export konverzace příkazem `/export`. Přiložený převedený přepis není vydáván za jeho doslovný výstup. Pokud zadavatel vyžaduje přesně tento formát, je potřeba doplnit přímý export ze zdrojové relace Claude Code. Redakčně upravená zadání tento požadavek nenahrazují.

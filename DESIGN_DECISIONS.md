@@ -1,3 +1,5 @@
+> Tento dokument zachycuje historická rozhodnutí nebo původní pracovní požadavky. Aktuální podobu řešení popisují README.md a CRO_FUNNEL_SPEC.md; skutečně provedené kontroly uvádí QA_RELEASE_CHECKLIST.md. Starší návrhy zde nejsou potvrzením současného chování.
+
 # DOMEKA — audit, reference lock a designová rozhodnutí
 
 Datum: 24. 11. 2026. Fiktivní klient, fiktivní dluhopis.

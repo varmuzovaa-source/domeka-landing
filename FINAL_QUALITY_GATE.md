@@ -1,3 +1,5 @@
+> Tento dokument zachycuje historická rozhodnutí nebo původní pracovní požadavky. Aktuální podobu řešení popisují README.md a CRO_FUNNEL_SPEC.md; skutečně provedené kontroly uvádí QA_RELEASE_CHECKLIST.md. Starší návrhy zde nejsou potvrzením současného chování.
+
 # Domeka — finální kvalitativní brána pro Claude Code
 
 Tento soubor doplňuje `CLAUDE_MASTER_PROMPT.md`. Cílem není jen vizuálně hezké demo, ale přesvědčivý, poctivý mobilní funnel pro investora 50+ a obhajitelný výstup výběrového řízení.

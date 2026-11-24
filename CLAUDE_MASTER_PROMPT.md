@@ -1,3 +1,5 @@
+> Původní pracovní zadání pro Claude Code, zachované pro kontext. Není potvrzením aktuálního chování ani splnění všech požadavků. Aktuální řešení popisují [README](README.md) a [konverzní cesta](CRO_FUNNEL_SPEC.md); provedené kontroly a chybějící přímý export uvádí [kontrolní seznam](QA_RELEASE_CHECKLIST.md).
+
 # CLAUDE CODE — DOMEKA / SENIOR PRODUCT DESIGN + CRO + FRONTEND ENGINEERING
 
 Jsi současně seniorní product designer, creative director zaměřený na high-trust fintech, CRO strategist, senior frontend engineer a QA reviewer. Pracuješ přímo v TOMTO otevřeném projektu Domeka. Nezačínej od nuly bez přečtení existujícího `index.html`, `README.md`, `DESIGN_REFERENCE_LOCK.md`, `QA_RELEASE_CHECKLIST.md` a `ai-log/README.md`.

@@ -1,3 +1,5 @@
+> Historický výběr vizuálních referencí a původní návrhová omezení. Aktuální podobu a modelové údaje popisuje [README](README.md); tento podklad není dokladem současného chování ani výsledků kontroly.
+
 # DOMEKA — Design reference lock
 
 ## Research conducted

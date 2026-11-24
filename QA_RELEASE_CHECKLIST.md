@@ -1,6 +1,6 @@
 # Domeka — ověření po jazykové, marketingové a technické revizi
 
-Datum: 24. 11. 2026. Kontroloval Codex. Výchozí commit: 0f3fe8f; nové změny nejsou commitnuté ani nasazené.
+Datum: 24. 11. 2026. Kontroloval Codex. Kontroly patří k verzi stránky zveřejněné commitem `63123f6128c4225e5fdaeb5dccafb90cb6cf9e47` (revize vycházela z `0f3fe8f`). Následné sjednocení dokumentace nemění HTML ani PDF a nepředstavuje nové provedení níže uvedených testů.
 SHA-256 kontrolovaného index.html: `4ecd4e27d58510c6e9c5ee83dd08b76763ba4e6294cbe85e96e39eb9991b571c`.
 
 PASS = provedeno a prošlo; NOT-RUN = neprovedeno; N/A = mimo rozsah ukázky.
@@ -28,7 +28,7 @@ PASS = provedeno a prošlo; NOT-RUN = neprovedeno; N/A = mimo rozsah ukázky.
 | Skutečné doručení a ukládání | N/A | Andrea výslovně zvolila ukázku pro zadání. Bez backendu, nikoli připravenost pro skutečnou kampaň. |
 | Analytika | N/A | Pouze návrh měření, není nasazena a neposílá osobní údaje. |
 | Doslovný Claude Code /export | NOT-RUN | Existující upravený přepis ponechán; nelze vydávat za přímý export. |
-| Nové nasazení | NOT-RUN | Změny jsou pouze lokální; podle pravidel projektu commit/push až na výslovný pokyn. |
+| Nasazení revidované stránky | PASS | Commit `63123f6`, Vercel deployment `dpl_4xzkBMnnUeiYcvnTH4E2wuwXZUw4`, stav READY / production potvrzen konektorem. [Záznam nasazení](https://vercel.com/varmuzovaa-gmailcoms-projects/domeka-landing/4xzkBMnnUeiYcvnTH4E2wuwXZUw4). Veřejné HTML a PDF byly ověřeny: HTTP 200 a shoda s místními soubory. |
 
 ## Připravenost
-Prototyp má opravenou cestu k získání kontaktu, poctivé stavy a nové PDF. Bez nového Lighthouse, úplné přístupnostní kontroly a ověření nasazení nelze poctivě potvrdit 9/10 ve všech technických disciplínách. Pro ostrou kampaň navíc chybí ověřené emisní podklady, skutečný emitent, právní posouzení, informace o zpracování údajů a funkční zpracování kontaktů.
+Prototyp má opravenou cestu k získání kontaktu, poctivé stavy a nové PDF; nasazení revidované stránky je ověřené. Bez nového Lighthouse a úplné přístupnostní kontroly nelze poctivě potvrdit 9/10 ve všech technických disciplínách. Pro ostrou kampaň navíc chybí ověřené emisní podklady, skutečný emitent, právní posouzení, informace o zpracování údajů a funkční zpracování kontaktů.
