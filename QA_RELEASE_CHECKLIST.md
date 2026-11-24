@@ -26,7 +26,7 @@ Legenda: [x] ověřeno, [~] ověřeno částečně, [ ] neověřeno.
 - [ ] Fotografie je placeholder, licencovaný snímek chybí.
 
 ## Odevzdání
-- [ ] Veřejný GitHub repozitář.
-- [ ] Vercel URL otevřená bez přihlášení.
+- [x] Veřejný GitHub repozitář: https://github.com/varmuzovaa-source/domeka-landing
+- [x] Vercel: https://domeka-landing.vercel.app (HTTP 200 bez přihlášení, ověřeno curl a v prohlížeči na 375 px)
 - [ ] `ai-log/` s reálným exportem `/export` (nutné provést ručně).
 - [ ] E-mail zadavateli připraven a schválen. Nic nebylo odesláno.

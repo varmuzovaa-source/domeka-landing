@@ -1,5 +1,7 @@
 # Domeka — ukázková investiční landing page
 
+**Živá stránka:** https://domeka-landing.vercel.app · **Repozitář:** https://github.com/varmuzovaa-source/domeka-landing
+
 Fiktivní klient a fiktivní dluhopis, vytvořeno pro praktický úkol (Junior AI Developer). Statický web v češtině: HTML, CSS a trocha JavaScriptu, bez knihoven, bez backendu, bez externích požadavků.
 
 - Vstup: `index.html`, obraz `assets/hero-placeholder.svg`
